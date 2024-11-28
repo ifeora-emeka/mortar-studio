@@ -1,0 +1,35 @@
+{
+  "name": "create-mortar-app",
+  "version": "0.0.1",
+  "description": "CLI for generating a mortar app project",
+  "main": "dist/index.js",
+  "bin": {
+    "create-mortar-app": "./dist/cli.js"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc && npm link",
+    "prepublishOnly": "npm run build",
+    "publish": "npm version patch && npm publish --access public"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "*",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "@repo/common": "*"
+  },
+  "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "src/**/*",
+    "package.json"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

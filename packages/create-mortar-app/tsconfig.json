@@ -1,0 +1,15 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "esModuleInterop": true,  // To support importing CommonJS modules
+    "target": "ESNext",  // Targeting modern JavaScript
+    "moduleResolution": "node",  // Resolving modules like Node.js
+    "module": "ESNext",  // For ES module syntax
+    "declaration": true,  // Generate .d.ts files for type declarations
+    "strict": true  // Enabling strict type-checking options
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
