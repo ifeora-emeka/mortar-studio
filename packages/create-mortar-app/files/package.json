@@ -1,0 +1,19 @@
+{
+  "name": "mortar-studio-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "next": "15.0.3",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Emyboy/mortar-studio"
+  },
+  "private": true
+}
