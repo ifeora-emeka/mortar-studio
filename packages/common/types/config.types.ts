@@ -4,4 +4,5 @@ export interface MortarConfig {
     version: string;
     description: string;
     rootDir: string;
+    port?: number;
 }

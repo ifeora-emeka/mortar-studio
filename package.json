@@ -1,5 +1,5 @@
 {
-  "name": "mortar-studio",
+  "name": "mortar-studio-repo",
   "private": true,
   "scripts": {
     "build": "turbo build",
