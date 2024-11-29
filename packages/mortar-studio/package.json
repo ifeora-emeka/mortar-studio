@@ -18,6 +18,8 @@
   "devDependencies": {
     "@repo/typescript-config": "*",
     "@types/express": "^5.0.0",
+    "concurrently": "^9.1.0",
+    "nodemon": "^3.1.7",
     "ts-node": "latest",
     "typescript": "latest"
   },
