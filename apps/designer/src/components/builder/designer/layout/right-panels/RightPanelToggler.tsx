@@ -1,4 +1,4 @@
-import { ChartNoAxesGantt, ChevronLeft, Settings2, SwatchBook } from "lucide-react";
+import { ChevronLeft, Cpu, DraftingCompass, Settings2, SwatchBook } from "lucide-react";
 import EachToggleBtn from "../EachToggleBtn";
 import { useRightPanelContext } from "../../context/right-panel.context";
 
@@ -15,7 +15,10 @@ export default function RightPanelToggler() {
                         <Settings2 />
                     </EachToggleBtn>
                     <EachToggleBtn onClick={() => toggleRightPanel('custom-properties')} alignTooltip="left" tooltip="Custom properties" active={activePanel == 'custom-properties'}>
-                        <ChartNoAxesGantt />
+                        <Cpu />
+                    </EachToggleBtn>
+                    <EachToggleBtn onClick={() => toggleRightPanel('state')} alignTooltip="left" tooltip="Manage state" active={activePanel == 'state'}>
+                        <DraftingCompass />
                     </EachToggleBtn>
                 </div>
                 <div>

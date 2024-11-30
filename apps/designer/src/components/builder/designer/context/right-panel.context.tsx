@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-type Panel = 'styling' | 'custom-properties' | 'attributes';
+type Panel = 'styling' | 'custom-properties' | 'attributes' | 'state';
 
 interface RightPanelState {
   activePanel: Panel | null;

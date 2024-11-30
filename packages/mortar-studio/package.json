@@ -17,6 +17,7 @@
   ],
   "devDependencies": {
     "@repo/typescript-config": "*",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "concurrently": "^9.1.0",
     "nodemon": "^3.1.7",

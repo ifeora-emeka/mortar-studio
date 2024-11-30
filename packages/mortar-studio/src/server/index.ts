@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { allRoutes } from './routes.js';
 import { Routes } from '../types/route.types.js';
+import cors from 'cors';
 
 
 export class MortarStudioServer {
@@ -41,6 +42,7 @@ export class MortarStudioServer {
     private initializeMiddlewares() {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
+        this.app.use(cors())
     }
 }
 
