@@ -1,0 +1,1 @@
+export const LOCAL_DEV = process.env.LOCAL_DEV === 'true';
