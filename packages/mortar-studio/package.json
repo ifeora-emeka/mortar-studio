@@ -1,16 +1,16 @@
 {
   "name": "mortar-studio",
-  "version": "1.0.0",
+  "version": "0.0.15",
   "description": "An npm package for serving the MortarStudio",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "dev:watch": "tsc --watch",
-    "dev": "concurrently \"npm run dev:watch\" \"nodemon dist/server/index.js\"",
+    "dev": "cross-env LOCAL_DEV=true concurrently \"npm run dev:watch\" \"nodemon dist/server/index.js\"",
     "build": "rm -rf dist && tsc && cp -r designer dist/designer",
     "start": "node dist/server/index.js",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run build && npm version patch",
     "local": "cross-env LOCAL_DEV=true npm run dev"
   },
   "files": [

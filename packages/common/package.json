@@ -8,6 +8,7 @@
   "exports": {
     "./utils": "./dist/utils/index.js",
     "./types/config": "./types/config.types.ts",
+    "./schema/instance": "./dist/schemas/instance.schema.js",
     "./schema/page": "./dist/schemas/page.schema.js",
     "./schema/component": "./dist/schemas/components.schema.js",
     "./schema/element": "./dist/schemas/elements.schema.js"

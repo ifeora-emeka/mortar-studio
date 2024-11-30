@@ -19,8 +19,5 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ],
-  "dependencies": {
-    "react-frame-component": "^5.2.7"
-  }
+  ]
 }

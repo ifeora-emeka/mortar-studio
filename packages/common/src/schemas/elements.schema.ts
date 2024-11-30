@@ -17,4 +17,3 @@ export type MortarElement = {
     chakraProps: Record<string, any>;
     customProps: Record<string, any>;
 }
-export type CreateElement = z.infer<typeof CreateMortarElementSchema>;

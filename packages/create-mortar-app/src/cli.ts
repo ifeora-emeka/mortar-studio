@@ -38,7 +38,7 @@ const setupProjectStructure = (targetDir: string): void => {
     });
 
     const srcDir = path.join(targetDir, appDir);
-    const dirs = ['pages', 'components', 'theme', 'assets'];
+    const dirs = ['pages', 'components', 'theme', 'assets', "instances"];
     if (!fs.existsSync(srcDir)) {
         fs.mkdirSync(srcDir);
     }
@@ -78,8 +78,15 @@ const installDependencies = (): void => {
 };
 
 const finalize = (targetDir: string): void => {
-    const indexPath = path.join(targetDir, appDir, 'index.js');
-    const indexContent = `console.log('Welcome to your new Mortar app!');`;
+    const indexPath = path.join(targetDir, appDir, 'index.ts');
+    const indexContent = `
+    import { MortarStudioServer } from 'mortar-studio/server';
+        
+    const server = new MortarStudioServer({
+        rootDir: './src'
+    });
+    server.start();
+    `;
 
     fs.writeFileSync(indexPath, indexContent);
 
@@ -109,9 +116,9 @@ program.argument('[app_name]', 'Name of the app').action((app_name) => {
     updatePackageJson(targetDir, app_name);
     updateMortarConfig(targetDir, app_name);
     installDependencies();
-    if (execSync('git --version', { stdio: 'pipe' })) {
-        execSync('git init', { stdio: 'inherit' });
-    }
+    // if (execSync('git --version', { stdio: 'pipe' })) {
+    //     execSync('git init', { stdio: 'inherit' });
+    // }
     finalize(targetDir);
 });
 
