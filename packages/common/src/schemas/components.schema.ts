@@ -11,6 +11,6 @@ export type MortarComponent = {
     name: string;
     chakraProps: Record<string, any>;
     attributes: Record<string, string>;
-    htmlTag: string;
+    // htmlTag: string;
     elements: MortarElement[];
 }

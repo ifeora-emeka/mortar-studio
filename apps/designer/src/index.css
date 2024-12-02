@@ -4,6 +4,7 @@
 
 :root {
   --header-height: 3.5rem;
+  --header-height-sm: 3rem;
   --default-spacing: 0.7rem;
   --panel-width: calc(var(--header-height) * 6);
   --body-height: calc(100vh - var(--header-height));
