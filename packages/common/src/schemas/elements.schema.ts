@@ -1,19 +1,19 @@
 import * as z from 'zod';
-
-export const HtmlAttributesSchema = z.record(z.string(), z.string().optional());
+import { CssPropertiesSchema } from './styles.schema.js'
 
 export const CreateMortarElementSchema = z.object({
     htmlTag: z.string(),
-    attributes: HtmlAttributesSchema.optional().default({}),
-    chakraProps: z.object({}).optional().default({}),
-    customProps: z.object({}).optional().default({}),
+    parent_element_id: z.string().nullable(),
+    attributes: z.object({}),
+    customProps: z.object({}),
+    styles: CssPropertiesSchema,
 });
 
 export type MortarElement = {
     id: string;
     index: number;
+    parent_element_id: string | null;
     htmlTag: string;
     attributes: Record<string, string>;
-    chakraProps: Record<string, any>;
     customProps: Record<string, any>;
 }

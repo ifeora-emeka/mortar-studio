@@ -1,4 +1,4 @@
-import { useRightPanelContext } from "../../context/right-panel.context";
+import { useRightPanelContext } from "@/components/builder/context/right-panel.context";
 import RightPanelContainer from "./RightPanelContainer";
 import { useDesignerContext } from "@/__mock__/TestDesginerContext.tsx";
 import { Input } from "@/components/ui/input.tsx";
@@ -39,19 +39,22 @@ export default function StylesRightPanel() {
 
     return (
         <RightPanelContainer show={activePanel == 'styling'}>
-            <div>StylesRightPanel</div>
-            <div>
+            <div className={'p-default'}>
+                <div>StylesRightPanel</div>
+                <div>
                 <textarea
+                    className={'bg-background text-foreground w-full p-default rounded-lg outline-none mt-default'}
                     rows={6}
                     placeholder={'enter class name'}
                     value={className}
                     onChange={updateClassName}
                 />
-                <Input
-                    placeholder={'enter src attribute..'}
-                    value={src}
-                    onChange={updateSrc}
-                />
+                    <Input
+                        placeholder={'enter src attribute..'}
+                        value={src}
+                        onChange={updateSrc}
+                    />
+                </div>
             </div>
         </RightPanelContainer>
     );

@@ -1,27 +1,16 @@
+// DesignerPreview.tsx
+import React, { useState, useRef } from 'react';
 import Frame from 'react-frame-component';
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import {
-    ToggleGroup,
-    ToggleGroupItem,
-} from "@/components/ui/toggle-group"
-import {Computer, Moon, Phone, Sun, Tablet} from "lucide-react";
-import {Input} from "@/components/ui/input.tsx";
+import { v4 as uuidv4 } from 'uuid';
+import ElementBoundingBox from '@/components/builder/designer/components/ElementBoundingBox.tsx';
+import { useDesignerContext } from '@/__mock__/TestDesginerContext.tsx';
 import {Button} from "@/components/ui/button.tsx";
-import {useDesignerContext} from "@/__mock__/TestDesginerContext.tsx";
-import {v4 as uuidv4} from 'uuid';
-import React from "react";
 
 export default function DesignerPreview() {
-    const {dispatch, state: {elements}} = useDesignerContext();
-    const [width, setWith] = React.useState('w-[90%]');
-    const [mode, setMode] = React.useState('light');
+    const { dispatch, state: { elements, activeElementID } } = useDesignerContext();
+    const [width, setWith] = useState('w-[90%]');
+    const [mode, setMode] = useState('light');
+    const frameRef = useRef<HTMLIFrameElement>(null);
 
     const addElement = (htmlTag: string, textContent: string | null = null) => {
         const newElement = {
@@ -31,69 +20,25 @@ export default function DesignerPreview() {
             className: '',
             attributes: {},
         };
-        dispatch({type: 'ADD_ELEMENT', payload: newElement});
+        dispatch({ type: 'ADD_ELEMENT', payload: newElement });
     };
 
     const selectElement = (id: string) => {
-        dispatch({type: 'SET_DESIGNER_STATE', payload: {activeElementID: id}});
+        dispatch({ type: 'SET_DESIGNER_STATE', payload: { activeElementID: id } });
+    };
+
+    const setActiveElementID = (id: string | null) => {
+        dispatch({ type: 'SET_DESIGNER_STATE', payload: { activeElementID: id } });
     };
 
     return (
-        <div
-            className={'min-h-[--body-height] max-h-[--body-height] bg-background flex-1 flex justify-center'}>
-            <div id={'resizable-browser-window'}
-                 className={`relative min-h-[--body-height] max-h-[--body-height] ${width} flex flex-col`}>
-                <header
-                    className={'min-h-[--header-height-sm] bg-card border rounded-tl-lg rounded-tr-lg flex items-center justify-between px-default'}>
-                    <div className={'w-[30%]'}>
-                        <Breadcrumb>
-                            <BreadcrumbList>
-                                <BreadcrumbItem>
-                                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
-                                </BreadcrumbItem>
-                                <BreadcrumbSeparator/>
-                                <BreadcrumbItem>
-                                    <BreadcrumbLink
-                                        href="/components">Components</BreadcrumbLink>
-                                </BreadcrumbItem>
-                                <BreadcrumbSeparator/>
-                                <BreadcrumbItem>
-                                    <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
-                                </BreadcrumbItem>
-                            </BreadcrumbList>
-                        </Breadcrumb>
-                    </div>
-                    <div className={'w-[30%]'}>
-                        <Input className={'size-2/3'}/>
-                    </div>
-                    <div className={'w-[30%] flex justify-end'}>
-                        <ToggleGroup type="single">
-                            <ToggleGroupItem size={'sm'} value="light"
-                                             aria-label="Toggle bold" onClick={() => setWith('w-[40%]')}>
-                                <Phone className="h-4 w-4"/>
-                            </ToggleGroupItem>
-                            <ToggleGroupItem size={'sm'} value="dark"
-                                             aria-label="Toggle italic" onClick={() => setWith('w-[60%]')}>
-                                <Tablet className="h-4 w-4"/>
-                            </ToggleGroupItem>
-                            <ToggleGroupItem size={'sm'} value="dark"
-                                             aria-label="Toggle italic" onClick={() => setWith('w-[95%]')}>
-                                <Computer className="h-4 w-4"/>
-                            </ToggleGroupItem>
-                        </ToggleGroup>
-                        <ToggleGroup type="single">
-                            <ToggleGroupItem size={'sm'} value="light"
-                                             aria-label="Toggle bold" onClick={() => setMode('light')}>
-                                <Sun className="h-4 w-4"/>
-                            </ToggleGroupItem>
-                            <ToggleGroupItem size={'sm'} value="dark"
-                                             aria-label="Toggle italic" onClick={() => setMode('dark')}>
-                                <Moon className="h-4 w-4"/>
-                            </ToggleGroupItem>
-                        </ToggleGroup>
-                    </div>
+        <div className={'min-h-[--body-height] max-h-[--body-height] bg-background flex-1 flex justify-center'}>
+            <div id={'resizable-browser-window'} className={`relative min-h-[--body-height] max-h-[--body-height] ${width} flex flex-col shadow-md`}>
+                <header className={'min-h-[--header-height-sm] bg-card border rounded-tl-lg rounded-tr-lg flex items-center justify-between px-default'}>
+
                 </header>
                 <Frame
+                    ref={frameRef}
                     className={'bg-white border-l border-r flex-1 max-h-[calc(100vh-var(--header-height)-var(--header-height-sm))]'}
                     initialContent={`
                     <!DOCTYPE html>
@@ -104,6 +49,7 @@ export default function DesignerPreview() {
                         <script src="https://cdn.tailwindcss.com"></script>
                         <script>
                             tailwind.config = {
+                            darkMode: 'class',
                                 theme: {
                                     extend: {
                                         colors: {
@@ -114,43 +60,38 @@ export default function DesignerPreview() {
                             }
                         </script>
                     </head>
-                    <body class={"h-screen bg-white p-10"}>
+                    <body class={"h-screen bg-white dark:bg-slate-600 p-10"}>
                         <div id="frame-root"></div>
-                    </body> 
+                    </body>
                     </html>
                 `}
                     mountTarget="#frame-root"
                 >
-                    <div className={`${mode}`}>
-                    {
-                        elements.map((el) => {
+                    <div className={`${mode} bg-white dark:bg-slate-700`}>
+                        <Button variant={'secondary'} onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>Toggle Mode</Button>
+                        {elements.map((el) => {
                             return React.createElement(
                                 el.htmlTag,
                                 {
                                     key: el.id,
+                                    id: el.id,
                                     className: el.className,
                                     ...el.attributes,
                                     onClick: () => selectElement(el.id),
                                 },
                                 el.textContent
                             );
-                        })
-                    }
-
+                        })}
                     </div>
                 </Frame>
-                <div
-                    className={'flex gap-default z-50 bg-card shadow-xl border rounded-lg p-default fixed bottom-default left-1/2 transform -translate-x-1/2'}>
-                    <Button variant={'secondary'} onClick={() => addElement('p', 'Text')}>
-                        Text
-                    </Button>
-                    <Button variant={'secondary'} onClick={() => addElement('div')}>
-                        Div
-                    </Button>
-                    <Button variant={'secondary'} onClick={() => addElement('img')}>
-                        Image
-                    </Button>
+                <div className={'flex gap-default z-50 bg-card shadow-xl border rounded-lg p-default fixed bottom-default left-1/2 transform -translate-x-1/2'}>
+                    <Button variant={'secondary'} onClick={() => addElement('p', 'Text')}>Text</Button>
+                    <Button variant={'secondary'} onClick={() => addElement('div')}>Div</Button>
+                    <Button variant={'secondary'} onClick={() => addElement('img')}>Image</Button>
                 </div>
+                {activeElementID && (
+                    <ElementBoundingBox activeElementID={activeElementID} frameRef={frameRef} setActiveElementID={setActiveElementID} />
+                )}
             </div>
         </div>
     );

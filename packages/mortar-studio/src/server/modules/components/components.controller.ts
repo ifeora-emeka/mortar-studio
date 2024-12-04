@@ -1,23 +1,20 @@
 import {NextFunction, Request, Response} from "express";
 import slugify from "slugify";
 import {generateRandomID} from "@repo/common/utils";
-import path from "path";
 import {MortarComponent} from "@repo/common/schema/component";
 import {createJSONSrcFile} from "../../../utils/files.utils.js";
 
 export default class ComponentsController {
     public create = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const { htmlTag, chakraProps } = req.body;
+            const { name, chakraProps } = req.body;
             // @ts-ignore
-            const fileName = slugify(htmlTag, { strict: true }) + generateRandomID(12);
+            const fileName = slugify(name, { strict: true }) + generateRandomID(5);
 
             const elementData: MortarComponent = {
                 id: fileName,
-                name: htmlTag,
-                chakraProps,
+                name,
                 attributes: {},
-                htmlTag,
                 elements: []
             };
 
@@ -29,5 +26,4 @@ export default class ComponentsController {
         }
     }
 
-    // Other methods...
 }

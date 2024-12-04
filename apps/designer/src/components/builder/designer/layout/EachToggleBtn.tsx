@@ -15,9 +15,9 @@ export default function EachToggleBtn({ children, active, tooltip, alignTooltip,
         <>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <button className={cn("w-full h-header flex justify-center items-center text-muted-foreground border-b border-t border-background", {
-                        "bg-card text-foreground border-border": active,
-                        "hover:bg-card hover:text-foreground hover:border-border": !active
+                    <button className={cn("w-full h-header flex justify-center items-center text-muted-foreground", {
+                        "bg-accent text-foreground border-border": active,
+                        "hover:bg-accent hover:text-foreground hover:border-border": !active
                     })} onClick={onClick} aria-label={tooltip}>
                         {children}
                     </button>

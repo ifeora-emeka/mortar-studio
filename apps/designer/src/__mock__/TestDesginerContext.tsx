@@ -38,7 +38,7 @@ const designerReducer = (state: DesignerState, action: Action): DesignerState =>
             return { ...state, ...action.payload };
         case 'ADD_ELEMENT':
             const newElement = action.payload.htmlTag === 'img'
-                ? { ...action.payload, attributes: { ...action.payload.attributes, src: 'https://via.placeholder.com/150' } }
+                ? { ...action.payload, attributes: { ...action.payload.attributes, src: 'https://picsum.photos/200/300' } }
             : action.payload.htmlTag === 'div'
                 ? { ...action.payload, className: 'h-[100px] w-[100%] bg-blue-100' }
                 : action.payload;

@@ -1,4 +1,4 @@
-import { useLeftPanelContext } from "../../context/left-panel.context";
+import { useLeftPanelContext } from "@/components/builder/context/left-panel.context";
 import LeftPanelContainer from "./LeftPanelContainer";
 
 export default function ComponentsLeftPanel() {

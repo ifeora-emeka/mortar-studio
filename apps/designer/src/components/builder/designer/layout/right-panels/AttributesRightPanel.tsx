@@ -1,4 +1,4 @@
-import { useRightPanelContext } from "../../context/right-panel.context";
+import { useRightPanelContext } from "@/components/builder/context/right-panel.context";
 import RightPanelContainer from "./RightPanelContainer";
 
 export default function AttributesRightPanel() {

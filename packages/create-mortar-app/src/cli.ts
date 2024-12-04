@@ -38,7 +38,7 @@ const setupProjectStructure = (targetDir: string): void => {
     });
 
     const srcDir = path.join(targetDir, appDir);
-    const dirs = ['pages', 'components', 'theme', 'assets', "instances"];
+    const dirs = ['pages', 'components', 'variables', 'assets', 'public'];
     if (!fs.existsSync(srcDir)) {
         fs.mkdirSync(srcDir);
     }

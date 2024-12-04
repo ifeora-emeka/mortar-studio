@@ -15,7 +15,7 @@ class InstanceRoute implements Routes {
 
     private initializeRoutes() {
         // @ts-ignore
-        this.router.post(`${this.path}/:page_id`, validationMiddleware(CreateMortarInstanceSchema, 'body'), this.instanceController.createInstance);
+        this.router.post(`${this.path}/:page_slug`, validationMiddleware(CreateMortarInstanceSchema, 'body'), this.instanceController.createInstance);
     }
 }
 

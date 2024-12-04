@@ -4,7 +4,7 @@ import validationMiddleware from "../../middlewares/request.middleware.js";
 import { CreatePageSchema } from '@repo/common/schema/page'
 import PagesController from "./pages.controller.js";
 
-class IndexRoute implements Routes {
+class PageRoute implements Routes {
     public path = '/pages';
     public router = Router();
     public pageController = new PagesController();
@@ -17,7 +17,8 @@ class IndexRoute implements Routes {
         //@ts-ignore
         this.router.post(`${this.path}`, validationMiddleware(CreatePageSchema, 'body'), this.pageController.createPage);
         //@ts-ignore
+        this.router.get(`${this.path}`, this.pageController.getAllPages);
     }
 }
 
-export default IndexRoute;
+export default PageRoute;

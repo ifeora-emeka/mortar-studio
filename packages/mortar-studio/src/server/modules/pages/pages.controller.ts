@@ -17,7 +17,15 @@ export default class PagesController {
             });
             const pageID = `${pageSlug}-${generateRandomID(12)}`;
             const pagesDir = path.join(process.env.MORTAR_ROOT_DIRECTORY as string, `pages/${pageSlug}`);
-            const pageData: MortarPage = {title, description, route, id: pageID};
+            const pageData: MortarPage = {
+                title,
+                description,
+                route,
+                id: pageID,
+                slug: pageSlug
+            };
+
+            console.log('CREATING PAGE::', pageData);
 
             if (!fs.existsSync(pagesDir)) {
                 fs.mkdirSync(pagesDir, {recursive: true});
@@ -45,5 +53,27 @@ export default class PagesController {
         }
     };
 
-    // Other methods...
+    public getAllPages = (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const pagesDir = path.join(process.env.MORTAR_ROOT_DIRECTORY as string, 'pages');
+            const pages: MortarPage[] = [];
+
+            if (fs.existsSync(pagesDir)) {
+                const pageDirs = fs.readdirSync(pagesDir);
+                for (const dir of pageDirs) {
+                    const files = fs.readdirSync(path.join(pagesDir, dir));
+                    for (const file of files) {
+                        const fileContent = fs.readFileSync(path.join(pagesDir, dir, file), 'utf-8');
+                        const page: MortarPage = JSON.parse(fileContent);
+                        pages.push(page);
+                    }
+                }
+            }
+
+            res.status(200).json(pages);
+        } catch (error) {
+            next(error);
+
+        }
+    }
 }

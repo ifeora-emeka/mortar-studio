@@ -1,5 +1,5 @@
 import {Button} from "@/components/ui/button.tsx";
-import {GitBranch, GitBranchPlus, GitMerge, Trash2, Upload} from "lucide-react";
+import {GitBranch, GitBranchPlus, GitMerge, Moon, Trash2, Upload} from "lucide-react";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -8,13 +8,19 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import {useTheme} from "@/components/theme-provider.tsx";
 
 
 export default function DesignerHeader() {
+    const { setTheme, theme } = useTheme()
+
     return <header
         className="bg-card border-b h-header flex justify-between items-center px-default z-[1000]">
-        <h1 className="text-2xl font-bold">Mortar Studio</h1>
+        <h1 className="text-2xl font-bold text-muted-foreground">Mortar Studio</h1>
         <div className={'flex items-center gap-default'}>
+            <Button size={'icon'} variant={'secondary'} onClick={() => setTheme(theme == 'dark' ? 'light' : 'dark')}>
+                <Moon />
+            </Button>
             <DropdownMenu>
                 <DropdownMenuTrigger>
                     <Button variant={'secondary'}>

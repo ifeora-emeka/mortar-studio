@@ -14,4 +14,10 @@ export const CreatePageSchema = z.object({
     route: z.string(),
 });
 
-export type MortarPage = z.infer<typeof MortarPageSchema>;
+export interface MortarPage {
+    id: string;
+    title: string;
+    slug: string;
+    description: string;
+    route: string;
+}
