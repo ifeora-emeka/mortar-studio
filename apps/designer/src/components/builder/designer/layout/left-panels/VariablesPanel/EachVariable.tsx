@@ -1,24 +1,28 @@
-import { TableCell, TableRow } from "@/components/ui/table.tsx";
-import { Lock, EllipsisVertical, Pencil, Trash2 } from "lucide-react";
-import { MortarVariable } from "@repo/common/schema/variables";
-import { useEffect, useRef, useState } from "react";
-import { usePreviewContext } from "@/components/builder/context/preview.context.tsx";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils.ts";
+import {TableCell, TableRow} from "@/components/ui/table.tsx";
+import {Lock, Trash2} from "lucide-react";
+import {MortarVariable} from "@repo/common/schema/variables";
+import {useEffect, useRef, useState} from "react";
+import {usePreviewContext} from "@/components/builder/context/preview.context.tsx";
+import {cn} from "@/lib/utils.ts";
 
-const EachVariable = ({ variable }: { variable: (MortarVariable & { new?: boolean }); }) => {
-    const { updateItemInArray, state: { variables } } = usePreviewContext();
+const EachVariable = ({variable}: {
+    variable: (MortarVariable & { new?: boolean });
+}) => {
+    const {updateItemInArray, state: {variables}} = usePreviewContext();
     const [editMode, setEditMode] = useState(variable?.new || false);
     const inputRef = useRef<HTMLInputElement>(null);
-    const [name, setName] = useState(variable.name);
+    const [data, setData] = useState({
+        name: variable.name,
+        value: variable.value
+    });
 
     useEffect(() => {
-            setTimeout(() => {
-        if (editMode && inputRef.current) {
+        setTimeout(() => {
+            if (editMode && inputRef.current) {
                 inputRef.current.focus();
                 inputRef.current.select();
-        }
-            },250)
+            }
+        }, 250)
     }, [editMode]);
 
     useEffect(() => {
@@ -29,9 +33,14 @@ const EachVariable = ({ variable }: { variable: (MortarVariable & { new?: boolea
 
     const handleBlur = () => {
         const index = variables.findIndex(v => v.id === variable.id);
-        updateItemInArray({ index, key: 'variables', data: { name, new: false } });
+        updateItemInArray({index, key: 'variables', data: {name: data.name, new: false}});
         setEditMode(false);
     };
+
+    const updateValue = () => {
+        const index = variables.findIndex(v => v.id === variable.id);
+        updateItemInArray({index, key: 'variables', data: {value: data.value}});
+    }
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
@@ -40,21 +49,24 @@ const EachVariable = ({ variable }: { variable: (MortarVariable & { new?: boolea
     };
 
     return (
-        <TableRow className={cn("h-header")}>
+        <TableRow className={cn("h-header group")}>
             <TableCell>
-                <Lock className={'h-4 w-4 mx-auto text-muted-foreground'} />
+                <Lock className={'h-4 w-4 mx-auto text-muted-foreground'}/>
             </TableCell>
             <TableCell>
                 {editMode ? (
                     <input
                         autoFocus
                         type="text"
-                        value={name}
+                        value={data.name}
                         className="bg-transparent w-full"
                         ref={inputRef}
                         onBlur={handleBlur}
                         onKeyDown={handleKeyDown}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) => setData({
+                            ...data,
+                            name: e.target.value
+                        })}
                     />
                 ) : (
                     <span onDoubleClick={() => setEditMode(true)}>
@@ -62,21 +74,25 @@ const EachVariable = ({ variable }: { variable: (MortarVariable & { new?: boolea
                     </span>
                 )}
             </TableCell>
-            <TableCell>{variable.value}</TableCell>
+            <TableCell>
+                <input
+                    value={data.value}
+                    className={'bg-card text-card-foreground p-1 rounded-md'}
+                    onChange={(e) => {
+                        setData({
+                            ...data,
+                            value: e.target.value
+                        })
+                    }}
+                    onBlur={updateValue}
+                />
+            </TableCell>
             <TableCell>{variable.value}</TableCell>
             <TableCell>
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <button className="opacity-0 group-hover:opacity-100 text-muted-foreground hover:text-foreground">
-                            <EllipsisVertical />
-                        </button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                        <DropdownMenuItem><Pencil /> Edit</DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem><Trash2 /> Delete</DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                <button
+                    className="opacity-0 group-hover:opacity-100 text-muted-foreground hover:text-foreground">
+                    <Trash2 className={'h-4 w-4'}/>
+                </button>
             </TableCell>
         </TableRow>
     );

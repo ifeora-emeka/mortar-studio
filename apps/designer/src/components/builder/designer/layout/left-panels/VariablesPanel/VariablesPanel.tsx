@@ -52,6 +52,7 @@ const SetList = ({onSetSelect, selectedSetID}: {onSetSelect: (set:MortarVariable
                             variableSet={variableSet}
                             onClick={() => onSetSelect(variableSet)}
                             active={selectedSetID === variableSet.id}
+                            onSetSelect={onSetSelect}
                         />
                     ))
                 }

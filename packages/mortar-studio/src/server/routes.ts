@@ -3,6 +3,7 @@ import PagesRoute from "./modules/pages/pages.route.js";
 import ComponentsRoute from "./modules/components/components.route.js";
 import InstanceRoute from "./modules/instances/instance.route.js";
 import ElementsRoute from "./modules/elements/elements.route.js";
+import SyncRoute from "./modules/sync/sync.route.js";
 
 
 export const allRoutes = [
@@ -10,5 +11,6 @@ export const allRoutes = [
     new PagesRoute(),
     new ComponentsRoute(),
     new InstanceRoute(),
-    new ElementsRoute()
+    new ElementsRoute(),
+    new SyncRoute()
 ]

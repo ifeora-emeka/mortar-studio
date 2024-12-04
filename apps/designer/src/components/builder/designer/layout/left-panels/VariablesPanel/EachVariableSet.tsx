@@ -12,7 +12,7 @@ import {
 import {cn} from "@/lib/utils.ts";
 
 
-const EachVariableSet = ({ variableSet, onClick, active }: { variableSet: (MortarVariableSet & { new?: boolean }); onClick: () => void; active: boolean; }) => {
+const EachVariableSet = ({ variableSet, onClick, active, onSetSelect }: { variableSet: (MortarVariableSet & { new?: boolean }); onClick: () => void; active: boolean; onSetSelect: (set: MortarVariableSet) => void; }) => {
     const { updateItemInArray, state: { variableSets } } = usePreviewContext();
     const [editMode, setEditMode] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -34,6 +34,7 @@ const EachVariableSet = ({ variableSet, onClick, active }: { variableSet: (Morta
     const handleBlur = () => {
         const index = variableSets.findIndex(set => set.id === variableSet.id);
         updateItemInArray({ index, key: 'variableSets', data: { name, new: false } });
+        onSetSelect(variableSet)
         setEditMode(false);
     };
 

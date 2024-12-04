@@ -28,6 +28,20 @@ export default function VariableListPanel({show, selectedSetID}: {
 }) {
     const {state: {variables}, pushToArray} = usePreviewContext();
 
+    const defaultValue = (type: unknown) => {
+        switch (type) {
+            case "color":
+                return "#ffffff";
+            case "measurement":
+                return "0px";
+            case "boolean":
+                return "false";
+            case "text":
+                return "default value";
+            default:
+                return "default value";
+        }
+    }
 
     const handleAddVariable = (type: MortarVariable["type"]) => {
         if (!selectedSetID) return;
@@ -36,7 +50,7 @@ export default function VariableListPanel({show, selectedSetID}: {
             name: "Untitled variable",
             index: variables.length,
             type,
-            value: "",
+            value: defaultValue(type),
             isDarkMode: false,
             setID: selectedSetID,
             slug: slugify(`variable-${variables.length}`),
@@ -60,8 +74,8 @@ export default function VariableListPanel({show, selectedSetID}: {
                     <TableRow className={'hover:bg-card'}>
                         <TableHead className={'w-[80px]'}></TableHead>
                         <TableHead className={'w-[200px]'}>Name</TableHead>
-                        <TableHead>Light</TableHead>
-                        <TableHead>Dark</TableHead>
+                        <TableHead className={'w-[150px]'}>Light</TableHead>
+                        <TableHead className={'w-[150px]'}>Dark</TableHead>
                         <TableHead>
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>

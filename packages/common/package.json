@@ -8,6 +8,7 @@
   "exports": {
     "./utils": "./dist/utils/index.js",
     "./types/config": "./types/config.types.ts",
+    "./schema/api": "./dist/schemas/api.schema.js",
     "./schema/styles": "./dist/schemas/styles.schema.js",
     "./schema/variables": "./dist/schemas/variables.schema.js",
     "./schema/instance": "./dist/schemas/instance.schema.js",
