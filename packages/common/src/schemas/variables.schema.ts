@@ -4,21 +4,24 @@ export const CreateVariableSchema = z.object({
     name: z.string(),
     index: z.number(),
     type: z.enum(['color', 'measurement', 'boolean', 'text']),
-    value: z.string(),
-    isDarkMode: z.boolean(),
+    lightValue: z.string(),
+    darkValue: z.string().nullable(),
     setID: z.string()
 });
+
+export type MortarVariableType = 'color' | 'measurement' | 'boolean' | 'text';
 
 export type MortarVariable = {
     id: string;
     index: number;
     slug: string;
     name: string;
-    type: 'color' | 'measurement' | 'boolean' | 'text';
-    value: string; // Ex. 23px 35rem 'true' 'false' '#ffffff'
-    isDarkMode: boolean;
+    type: MortarVariableType;
+    lightValue: string;
+    darkValue: string | null;
     setID: string;
-    isStatic: boolean;
+    isStatic?: boolean;
+    new?: boolean;
 };
 
 export const CreateVariableSetSchema = z.object({
@@ -33,4 +36,5 @@ export type MortarVariableSet = {
     name: string;
     slug: string;
     index: number;
+    isStatic?: boolean;
 }

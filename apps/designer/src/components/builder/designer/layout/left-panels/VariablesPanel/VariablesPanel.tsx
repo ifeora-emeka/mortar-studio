@@ -14,15 +14,24 @@ import {useState} from "react";
 
 export default function VariablePanel() {
     const [selectedSet, setSelectedSet] = useState<MortarVariableSet | null>(null);
+    const {state: {activePanel}} = useLeftPanelContext()
     return (
         <>
-            <SetList onSetSelect={set => setSelectedSet(set)} selectedSetID={selectedSet?.id || null} />
-            <VariableListPanel show={(selectedSet) as unknown as boolean} selectedSetID={selectedSet?.id || null} />
+            <SetList
+                onSetSelect={set => setSelectedSet(set)}
+                selectedSetID={selectedSet?.id || null}
+            />
+            <VariableListPanel
+                show={(selectedSet && activePanel == 'variables') as unknown as boolean}
+                selectedSetID={selectedSet?.id || null}/>
         </>
     );
 }
 
-const SetList = ({onSetSelect, selectedSetID}: {onSetSelect: (set:MortarVariableSet) => void; selectedSetID: string | null;}) => {
+const SetList = ({onSetSelect, selectedSetID}: {
+    onSetSelect: (set: MortarVariableSet | null) => void;
+    selectedSetID: string | null;
+}) => {
     const {state: {activePanel}} = useLeftPanelContext();
     const {pushToArray, state: {variableSets}} = usePreviewContext();
 

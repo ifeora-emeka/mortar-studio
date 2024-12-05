@@ -16,7 +16,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {MortarVariable} from "@repo/common/schema/variables";
+import {MortarVariable, MortarVariableType} from "@repo/common/schema/variables";
 import {v7 as UID} from "uuid";
 import slugify from "slugify";
 import EachVariable
@@ -43,22 +43,21 @@ export default function VariableListPanel({show, selectedSetID}: {
         }
     }
 
-    const handleAddVariable = (type: MortarVariable["type"]) => {
+    const handleAddVariable = (type: MortarVariableType) => {
         if (!selectedSetID) return;
-        const newVariable: (MortarVariable & { new?: boolean }) = {
+        const newVariable: MortarVariable = {
             id: UID(),
             name: "Untitled variable",
             index: variables.length,
             type,
-            value: defaultValue(type),
-            isDarkMode: false,
+            lightValue: defaultValue(type),
+            darkValue: type !== 'color' ? defaultValue(type) : null,
             setID: selectedSetID,
             slug: slugify(`variable-${variables.length}`),
             new: true
         };
         pushToArray("variables", newVariable);
     };
-
 
 
     const filteredVariables = variables.filter(variable => variable.setID === selectedSetID);
@@ -72,15 +71,18 @@ export default function VariableListPanel({show, selectedSetID}: {
             <Table>
                 <TableHeader className={`h-header`}>
                     <TableRow className={'hover:bg-card'}>
-                        <TableHead className={'w-[80px]'}></TableHead>
-                        <TableHead className={'w-[200px]'}>Name</TableHead>
-                        <TableHead className={'w-[150px]'}>Light</TableHead>
-                        <TableHead className={'w-[150px]'}>Dark</TableHead>
-                        <TableHead>
+                        <TableHead className={'min-w-[50px] max-w-[50px]'}></TableHead>
+                        <TableHead
+                            className={'min-w-[200px] max-w-[200px]'}>Name</TableHead>
+                        <TableHead
+                            className={'min-w-[100px] max-w-[100px]'}>Light</TableHead>
+                        <TableHead
+                            className={'min-w-[100px] max-w-[100px]'}>Dark</TableHead>
+                        <TableHead className={'min-w-[50px] max-w-[50px] text-center'}>
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <button className={'mx-auto'}>
-                                        <Plus/>
+                                        <Plus className={'h-6 w-6'}/>
                                     </button>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent>
@@ -105,7 +107,7 @@ export default function VariableListPanel({show, selectedSetID}: {
                     ))}
                 </TableBody>
             </Table>
-            <div className={'h-52'} />
+            <div className={'h-52'}/>
         </div>
     );
 }

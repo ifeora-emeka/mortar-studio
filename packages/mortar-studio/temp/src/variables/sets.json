@@ -1,9 +1,37 @@
 [
   {
-    "name": "brand color UPDATE",
-    "id": "019393f7-f8f0-72fa-89b8-a270c5e1e4ea",
-    "slug": "set-0",
+    "id": "primary-color",
+    "name": "primary colors",
+    "slug": "primary-color",
     "index": 0,
+    "isStatic": true
+  },
+  {
+    "id": "secondary-color",
+    "name": "secondary colors",
+    "slug": "secondary-color",
+    "index": 1,
+    "isStatic": true
+  },
+  {
+    "id": "spacing",
+    "name": "spacing",
+    "slug": "spacing",
+    "index": 2,
+    "isStatic": true
+  },
+  {
+    "name": "text colors",
+    "id": "0193971a-daed-7579-9f68-65cc2bc4b1db",
+    "slug": "set-3",
+    "index": 3,
+    "new": false
+  },
+  {
+    "name": "text size",
+    "id": "019398a0-fc52-77de-9ce0-32e8a7622403",
+    "slug": "set-4",
+    "index": 4,
     "new": false
   }
 ]

@@ -6,6 +6,7 @@ import { Routes } from '../types/route.types.js';
 import cors from 'cors';
 import fs from 'fs';
 import { LOCAL_DEV } from "../config/app.config.js";
+import createStaticFiles from "../bootstrap/index.bootstrap.js";
 
 type MortarStudioServerConfig = {
     rootDir?: string;
@@ -70,5 +71,6 @@ if (LOCAL_DEV) {
     const server = new MortarStudioServer({
         rootDir: './temp/src'
     });
+    createStaticFiles();
     server.start();
 }

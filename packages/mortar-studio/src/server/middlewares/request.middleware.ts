@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction, RequestHandler } from 'express';
 import { ZodSchema, ZodError } from 'zod';
-import { HttpException } from '../exceptions/HttpException.js';
+
 
 const validationMiddleware = (
     schema: ZodSchema,

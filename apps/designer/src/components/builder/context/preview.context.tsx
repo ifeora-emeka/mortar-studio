@@ -1,8 +1,11 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import {createContext, useContext, useState, ReactNode, useEffect} from 'react';
 import { MortarComponent } from '@repo/common/schema/component';
 import { MortarElementInstance } from '@repo/common/schema/instance';
 import { MortarVariable, MortarVariableSet } from '@repo/common/schema/variables';
 import { MortarPage } from '@repo/common/schema/page';
+import axios from "axios";
+import {LOCAL_API_URL} from "@/components/builder/config/api.config.ts";
+import {toast} from "@/hooks/use-toast.ts";
 
 type Mode = 'light' | 'dark' | 'system';
 
@@ -20,6 +23,7 @@ interface PreviewContextProps {
     state: PreviewState;
     setPreviewState: (newState: Partial<PreviewState>) => void;
     pushToArray: <T>(key: keyof PreviewState, data: T) => void;
+    removeFromArray: (key: keyof PreviewState, id: string) => void;
     updateItemInArray: <T>(params: { index: number; key: keyof PreviewState; data: Partial<T> }) => void;
 }
 
@@ -48,6 +52,30 @@ export const PreviewProvider = ({ children }: { children: ReactNode }) => {
         setState((prevState) => ({ ...prevState, ...newState }));
     };
 
+    const sendSync = async () => {
+        const { variableSets, variables, components, pages } = state;
+        try {
+            const response = await axios.post(LOCAL_API_URL + '/sync', {
+                variableSets,
+                variables,
+                components,
+                pages
+            });
+            toast({
+                title: "Progress saved",
+            });
+            return response.data;
+        } catch (error) {
+            toast({
+                title: "Error syncing project",
+                description: "Changes you've made will not be saved",
+                variant: 'destructive'
+            });
+            console.error('Error in sendSync:', error);
+            throw error;
+        }
+    };
+
     const updateItemInArray = <T,>(params: { index: number; key: keyof PreviewState; data: Partial<T> }) => {
         const { index, key, data } = params;
         setState((prevState) => ({
@@ -67,7 +95,31 @@ export const PreviewProvider = ({ children }: { children: ReactNode }) => {
         }));
     };
 
-    console.log('PreviewProvider', state);
+    const removeFromArray = <T,>(key: keyof PreviewState, id: string) => {
+        setState((prevState) => ({
+            ...prevState,
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //@ts-expect-error
+            [key]: (prevState[key] as T[]).filter((item) => item.id !== id),
+        }));
+    };
+
+    useEffect(() => {
+        const debounceTimeout = setTimeout(() => {
+            sendSync();
+        }, 5000); // 1 second debounce delay
+
+        return () => {
+            clearTimeout(debounceTimeout);
+        };
+    }, [state]);
+
+    useEffect(() => {
+        const savedState = localStorage.getItem('mortar-preview');
+        if (savedState) {
+            setState(JSON.parse(savedState));
+        }
+    }, []);
 
     return (
         <PreviewContext.Provider
@@ -76,6 +128,7 @@ export const PreviewProvider = ({ children }: { children: ReactNode }) => {
                 setPreviewState,
                 updateItemInArray,
                 pushToArray,
+                removeFromArray
             }}
         >
             {children}

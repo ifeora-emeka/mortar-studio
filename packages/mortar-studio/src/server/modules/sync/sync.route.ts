@@ -16,6 +16,8 @@ class SyncRoute implements Routes {
     private initializeRoutes() {
         //@ts-ignore
         this.router.post(`${this.path}`, validationMiddleware(APISyncDataSchema, 'body'), this.syncController.create);
+        //@ts-ignore
+        this.router.get(`${this.path}`, this.syncController.getAll);
     }
 }
 
