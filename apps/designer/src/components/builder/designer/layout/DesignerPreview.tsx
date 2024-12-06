@@ -49,7 +49,7 @@ export default function DesignerPreview() {
                 `}
                     mountTarget="#frame-root"
                 >
-                    <div className={`${mode} bg-white dark:bg-slate-700`}>
+                    <div className={`${mode}`}>
                         <Button variant={'secondary'}
                                 onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>Toggle
                             Mode</Button>

@@ -2,10 +2,11 @@ import LeftPanelToggler from "./layout/left-panels/LeftPanelToggler";
 import LeftPanel from "./layout/left-panels/LeftPanel";
 import RightPanelToggler from "./layout/right-panels/RightPanelToggler";
 import RightPanels from "./layout/right-panels/RightPanels";
-import DesignerPreview from "./layout/DesignerPreview";
 import DesignerHeader
     from "@/components/builder/designer/layout/header/DesignerHeader.tsx";
+import {lazy} from "react";
 
+const DesignerPreview = lazy(() => import("./layout/DesignerPreview"));
 
 export default function Designer() {
     return <>

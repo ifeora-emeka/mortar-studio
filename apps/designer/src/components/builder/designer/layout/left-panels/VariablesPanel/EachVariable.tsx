@@ -123,7 +123,7 @@ const EachVariable = ({variable}: {
             <TableCell className={'min-w-[100px] max-w-[100px]'}>
                 {/*   DARK    */}
                 {
-                    variable.type === 'color' && <ColorInput
+                    variable.type === 'color' && data.darkValue && <ColorInput
                         value={data.darkValue}
                         onBlur={updateValue}
                         onChange={(value) => {
@@ -136,7 +136,7 @@ const EachVariable = ({variable}: {
                     />
                 }
                 {
-                    variable.type === 'measurement' && supportsDark && <MeasurementInput
+                    variable.type === 'measurement' && data.darkValue && supportsDark && <MeasurementInput
                         value={data.darkValue}
                         onBlur={updateValue}
                         onChange={(value) => {
