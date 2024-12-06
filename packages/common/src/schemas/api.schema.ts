@@ -7,7 +7,7 @@ import {
     MortarVariableSet
 } from "./variables.schema.js";
 import {CreateMortarStyleSchema, MortarStyle} from "./styles.schema.js";
-import {CreatePageSchema, MortarPage} from "./page.schema.js";
+import {CreateMortarPageSchema, MortarPage} from "./page.schema.js";
 import { z } from 'zod';
 
 export const APISyncDataSchema = z.object({
@@ -16,7 +16,7 @@ export const APISyncDataSchema = z.object({
     variableSets: z.array(CreateVariableSetSchema),
     variables: z.array(CreateVariableSchema),
     // styles: z.array(CreateMortarStyleSchema),
-    pages: z.array(CreatePageSchema),
+    pages: z.array(CreateMortarPageSchema),
 });
 
 export interface APISyncData {

@@ -1,0 +1,7 @@
+{
+  "id": "contact-us",
+  "title": "Contact Us",
+  "slug": "contact-us",
+  "description": "",
+  "route": "/contact/us"
+}

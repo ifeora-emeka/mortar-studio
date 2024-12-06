@@ -6,7 +6,7 @@ export default function RightPanelToggler() {
     const { state: { activePanel }, toggleRightPanel } = useRightPanelContext();
     return (
         <>
-            <div className="w-header h-full min-h-[--body-height] max-h-[--body-height] border-l z-[1000] bg-card flex flex-col justify-between">
+            <div className="w-header h-full min-h-[--body-height] max-h-[--body-height] border-l z-50 bg-card flex flex-col justify-between">
                 <div>
                     <EachToggleBtn onClick={() => toggleRightPanel('styling')} alignTooltip="left" tooltip="Styling" active={activePanel == 'styling'}>
                         <SwatchBook />

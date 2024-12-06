@@ -2,6 +2,8 @@
 import {useState, useRef} from 'react';
 import Frame from 'react-frame-component';
 import {Button} from "@/components/ui/button.tsx";
+import DesignerToolBar
+    from "@/components/builder/designer/components/DesignerToolBar.tsx";
 
 export default function DesignerPreview() {
     const [width] = useState('w-[90%]');
@@ -53,15 +55,7 @@ export default function DesignerPreview() {
                             Mode</Button>
                     </div>
                 </Frame>
-                <div
-                    className={'flex gap-default z-50 bg-card shadow-xl border rounded-lg p-default fixed bottom-default left-1/2 transform -translate-x-1/2'}>
-                    <Button variant={'secondary'} onClick={() => {
-                    }}>Text</Button>
-                    <Button variant={'secondary'} onClick={() => {
-                    }}>Div</Button>
-                    <Button variant={'secondary'} onClick={() => {
-                    }}>Image</Button>
-                </div>
+                <DesignerToolBar />
                 {/*{activeElementID && (*/}
                 {/*    <ElementBoundingBox*/}
                 {/*        activeElementID={activeElementID}*/}

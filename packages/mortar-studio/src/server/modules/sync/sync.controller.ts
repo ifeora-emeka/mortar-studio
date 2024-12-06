@@ -7,18 +7,31 @@ export default class SyncController {
 
     public create = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const { variables, variableSets,  }: APISyncData = req.body;
+            const { variables, variableSets, pages }: APISyncData = req.body;
 
             const variablesDir = path.join(process.env.MORTAR_ROOT_DIRECTORY as string, 'variables');
             const variablesFilePath = path.join(variablesDir, 'variables.json');
             const variableSetsFilePath = path.join(variablesDir, 'sets.json');
 
-            if (!fs.existsSync(variablesDir)) {
-                fs.mkdirSync(variablesDir, { recursive: true });
-            }
+            fs.mkdirSync(variablesDir, { recursive: true });
 
             fs.writeFileSync(variablesFilePath, JSON.stringify(variables, null, 2));
             fs.writeFileSync(variableSetsFilePath, JSON.stringify(variableSets, null, 2));
+
+            // Sync pages
+            const pagesDir = path.join(process.env.MORTAR_ROOT_DIRECTORY as string, 'pages');
+            fs.mkdirSync(pagesDir, { recursive: true });
+
+            pages.forEach(page => {
+                const pageDir = path.join(pagesDir, page.id);
+                fs.mkdirSync(pageDir, { recursive: true });
+
+                const pageFilePath = path.join(pageDir, 'page.json');
+                fs.writeFileSync(pageFilePath, JSON.stringify(page, null, 2));
+
+                const instancesFilePath = path.join(pageDir, 'instances.json');
+                fs.writeFileSync(instancesFilePath, JSON.stringify([], null, 2));
+            });
 
             res.status(201).json({ message: 'Sync data stored successfully' });
         } catch (error) {

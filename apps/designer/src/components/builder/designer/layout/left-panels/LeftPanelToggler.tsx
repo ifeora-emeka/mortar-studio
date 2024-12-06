@@ -16,7 +16,7 @@ export default function LeftPanelToggler() {
     const { state: { activePanel }, toggleLeftPanel } = useLeftPanelContext();
     return (
         <>
-            <div className="w-header h-full min-h-[--body-height] max-h-[--body-height] z-[1000] flex flex-col justify-between bg-card border-r">
+            <div className="w-header h-full min-h-[--body-height] max-h-[--body-height] z-50 flex flex-col justify-between bg-card border-r">
                 <div>
                     <EachToggleBtn onClick={() => toggleLeftPanel('pages')} alignTooltip="right" tooltip="Pages" active={activePanel == 'pages'}>
                         <File />

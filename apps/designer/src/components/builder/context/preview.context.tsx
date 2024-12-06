@@ -1,6 +1,7 @@
 import {createContext, useContext, useState, ReactNode, useEffect} from 'react';
 import { MortarComponent } from '@repo/common/schema/component';
 import { MortarElementInstance } from '@repo/common/schema/instance';
+import { MortarStyle } from '@repo/common/schema/styles'
 import { MortarVariable, MortarVariableSet } from '@repo/common/schema/variables';
 import { MortarPage } from '@repo/common/schema/page';
 import axios from "axios";
@@ -12,9 +13,11 @@ type Mode = 'light' | 'dark' | 'system';
 interface PreviewState {
     pages: MortarPage[];
     components: MortarComponent[];
+    styles: MortarStyle[];
+    instances: MortarElementInstance[];
     variableSets: (MortarVariableSet & { new?: boolean })[];
     variables: MortarVariable[];
-    activePageID: string | null;
+    activePage: MortarPage | null;
     activePageInstances: MortarElementInstance[];
     mode: Mode;
 }
@@ -43,8 +46,10 @@ export const PreviewProvider = ({ children }: { children: ReactNode }) => {
         components: [],
         variableSets: [],
         variables: [],
-        activePageID: null,
         activePageInstances: [],
+        styles: [],
+        instances: [],
+        activePage: null,
         mode: 'system',
     });
 
@@ -53,13 +58,15 @@ export const PreviewProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const sendSync = async () => {
-        const { variableSets, variables, components, pages } = state;
+        const { variableSets, variables, components, pages, styles, instances } = state;
         try {
             const response = await axios.post(LOCAL_API_URL + '/sync', {
                 variableSets,
                 variables,
                 components,
-                pages
+                pages,
+                styles,
+                instances
             });
             toast({
                 title: "Progress saved",
@@ -107,7 +114,7 @@ export const PreviewProvider = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
         const debounceTimeout = setTimeout(() => {
             sendSync();
-        }, 5000); // 1 second debounce delay
+        }, 5000);
 
         return () => {
             clearTimeout(debounceTimeout);

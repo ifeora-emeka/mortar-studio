@@ -1,5 +1,5 @@
 import ComponentsLeftPanel from "./ComponentsLeftPanel";
-import PagesLeftPanel from "./PagesLeftPanel";
+import PagesLeftPanel from "./pages/PagesLeftPanel.tsx";
 import VariablePanel
     from "@/components/builder/designer/layout/left-panels/VariablesPanel/VariablesPanel.tsx";
 
