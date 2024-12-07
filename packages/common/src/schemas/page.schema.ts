@@ -6,6 +6,7 @@ export const CreateMortarPageSchema = z.object({
     slug: z.string(),
     description: z.string().optional(),
     route: z.string(),
+    isStatic: z.boolean().optional(),
 });
 
 export interface MortarPage {
@@ -14,4 +15,5 @@ export interface MortarPage {
     slug: string;
     description: string;
     route: string;
+    isStatic?: boolean;
 }

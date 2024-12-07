@@ -1,0 +1,8 @@
+{
+  "id": "server-error",
+  "title": "Server Error",
+  "slug": "500",
+  "description": "Server Error",
+  "route": "*",
+  "isStatic": true
+}

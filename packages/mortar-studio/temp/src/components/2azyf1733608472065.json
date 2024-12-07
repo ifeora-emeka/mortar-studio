@@ -1,0 +1,91 @@
+{
+  "id": "2azyf1733608472065",
+  "name": "HomeAboutUs",
+  "elements": [
+    {
+      "id": "duqqk",
+      "attributes": {
+        "className": "flex flex-col bg-blue-200 p-5",
+        "class": "bg-green-300 min-h-[30vh] flex gap-10 px-20 py-[150px]"
+      },
+      "index": 0,
+      "parent_element_id": null,
+      "htmlTag": "div",
+      "customProps": {},
+      "children": [],
+      "styles": {}
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "duqqk",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-10 w-full"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "04ebb216-f336-4460-8960-73101e5c9fb7"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "duqqk",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "px-10 w-full"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "9f8c1bab-a727-4674-ba04-d30524fafada"
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "9f8c1bab-a727-4674-ba04-d30524fafada",
+      "attributes": {
+        "src": "https://picsum.photos/500/600",
+        "alt": "Placeholder image 150x150",
+        "className": "w-[150px] h-[150px]",
+        "class": "w-full rounded-xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "d198b068-b327-4c06-93f7-949875eee64d"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "04ebb216-f336-4460-8960-73101e5c9fb7",
+      "attributes": {
+        "class": "text-7xl font-bold"
+      },
+      "customProps": {
+        "children": [
+          "Default heading"
+        ]
+      },
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "6f337a1a-d743-4e1f-ae75-b5fc5cde9a66"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "04ebb216-f336-4460-8960-73101e5c9fb7",
+      "attributes": {},
+      "customProps": {
+        "children": [
+          "Default paragraph"
+        ]
+      },
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "425f1f2c-97eb-4aa8-a43d-62498d227104"
+    }
+  ],
+  "attributes": {}
+}

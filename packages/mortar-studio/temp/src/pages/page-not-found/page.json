@@ -1,0 +1,8 @@
+{
+  "id": "page-not-found",
+  "title": "Page Not Found",
+  "slug": "404",
+  "description": "Page Not Found",
+  "route": "*",
+  "isStatic": true
+}

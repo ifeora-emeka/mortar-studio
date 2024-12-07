@@ -10,7 +10,6 @@ import {LOCAL_API_URL} from "@/components/builder/config/api.config.ts";
 import {toast} from "@/hooks/use-toast.ts";
 
 type Mode = 'light' | 'dark' | 'system';
-
 interface PreviewState {
     pages: MortarPage[];
     components: MortarComponent[];
@@ -21,8 +20,7 @@ interface PreviewState {
     activePage: MortarPage | null;
     activePageInstances: MortarElementInstance[];
     mode: Mode;
-    activeElement: MortarElement | null;
-    elements: MortarElement[]
+    activeElements: MortarElement[];
 }
 
 interface PreviewContextProps {
@@ -58,14 +56,14 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         styles: [],
         instances: [],
         activePage: null,
-        activeElement: null,
-        elements: [],
+        activeElements: [],
         mode: 'system',
     });
 
+
     const setPreviewState = (newState: Partial<PreviewState>) => {
-        console.log('SET PREVIEW STATE:', {newState})
-        setState((prevState) => ({...prevState, ...newState}));
+            console.log('SET PREVIEW STATE:', {newState})
+            setState((prevState) => ({...prevState, ...newState}));
     };
 
     const sendSync = async () => {
@@ -105,11 +103,6 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         key: keyof PreviewState;
         data: Partial<T>
     }) => {
-        console.log('UPDATE ITEM IN ARRAY:', {
-            index: params.index,
-            key: params.key,
-            data: params.data
-        })
         const {index, key, data} = params;
         setState((prevState) => ({
             ...prevState,
@@ -139,9 +132,20 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
     };
 
     useEffect(() => {
+        if (state.pages.length > 0 && !state.activePage) {
+            const activePage = state.pages.find(page => page.route == "/");
+            if (activePage) {
+                setPreviewState({
+                    activePage
+                })
+            }
+        }
+    }, [state.pages])
+
+    useEffect(() => {
         const debounceTimeout = setTimeout(() => {
             sendSync();
-        }, 5000);
+        }, 9000);
 
         return () => {
             clearTimeout(debounceTimeout);

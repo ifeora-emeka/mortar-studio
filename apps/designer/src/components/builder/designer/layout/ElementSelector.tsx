@@ -7,7 +7,6 @@ const boundingBoxStyles: React.CSSProperties = {
     pointerEvents: 'none',
     zIndex: 9999,
     boxSizing: 'border-box',
-    // backgroundColor: 'rgba(74, 144, 226, 0.1)',
 };
 
 const componentBadgeStyles: React.CSSProperties = {
@@ -26,15 +25,15 @@ const componentBadgeStyles: React.CSSProperties = {
 export default function ElementSelector() {
     const {
         state: {
-            activeElement,
+            activeElements,
         }
     } = usePreviewContext();
-    const [boundingBox, setBoundingBox] = useState<DOMRect | null>(null);
+    const [boundingBoxes, setBoundingBoxes] = useState<DOMRect[]>([]);
 
     useEffect(() => {
-        const updateBoundingBox = () => {
-            if (!activeElement) {
-                setBoundingBox(null);
+        const updateBoundingBoxes = () => {
+            if (activeElements.length === 0) {
+                setBoundingBoxes([]);
                 return;
             }
 
@@ -44,78 +43,81 @@ export default function ElementSelector() {
             const iframeDocument = iframe.contentDocument || iframe.contentWindow?.document;
             if (!iframeDocument) return;
 
-            const selectedElement = iframeDocument.getElementById(activeElement.id);
-            if (!selectedElement) return;
+            const newBoundingBoxes = activeElements.map(activeElement => {
+                const selectedElement = iframeDocument.getElementById(activeElement.id);
+                if (!selectedElement) return null;
 
-            const rect = selectedElement.getBoundingClientRect();
+                const rect = selectedElement.getBoundingClientRect();
+                const iframeRect = iframe.getBoundingClientRect();
 
-            const iframeRect = iframe.getBoundingClientRect();
+                return {
+                    x: rect.x + iframeRect.x,
+                    y: rect.y + iframeRect.y,
+                    width: rect.width,
+                    height: rect.height,
+                    top: rect.top + iframeRect.y,
+                    right: rect.right + iframeRect.x,
+                    bottom: rect.bottom + iframeRect.y,
+                    left: rect.left + iframeRect.x,
+                } as DOMRect;
+            }).filter(Boolean) as DOMRect[];
 
-            setBoundingBox({
-                x: rect.x + iframeRect.x,
-                y: rect.y + iframeRect.y,
-                width: rect.width,
-                height: rect.height,
-                top: rect.top + iframeRect.y,
-                right: rect.right + iframeRect.x,
-                bottom: rect.bottom + iframeRect.y,
-                left: rect.left + iframeRect.x,
-            } as DOMRect);
+            setBoundingBoxes(newBoundingBoxes);
         };
 
-        updateBoundingBox();
+        updateBoundingBoxes();
 
-        window.addEventListener('resize', updateBoundingBox);
+        window.addEventListener('resize', updateBoundingBoxes);
 
         const handleMessage = (event: MessageEvent) => {
             if (event.data.type === 'selectElement') {
-                updateBoundingBox();
+                updateBoundingBoxes();
             }
         };
         window.addEventListener('message', handleMessage);
 
         return () => {
-            window.removeEventListener('resize', updateBoundingBox);
+            window.removeEventListener('resize', updateBoundingBoxes);
             window.removeEventListener('message', handleMessage);
         };
-    }, [activeElement]);
+    }, [activeElements]);
 
-    if (!boundingBox) return null;
-
-    if(!activeElement?.parent_element_id) return null;
+    if (boundingBoxes.length === 0) return null;
 
     return (
-        <div
-            style={{
-                ...boundingBoxStyles,
-                left: boundingBox.left - 146,
-                top: boundingBox.top - 105,
-                width: boundingBox.width,
-                height: boundingBox.height,
-                zIndex: 5000,
-                userSelect: 'none'
-            }}
-        >
-            {/* Component Name Badge */}
-            {activeElement && (
-                <div style={componentBadgeStyles}>
-                    {activeElement.htmlTag}
+        <>
+            {boundingBoxes.map((boundingBox, index) => (
+                <div
+                    key={index}
+                    style={{
+                        ...boundingBoxStyles,
+                        left: boundingBox.left - 146,
+                        top: boundingBox.top - 105,
+                        width: boundingBox.width,
+                        height: boundingBox.height,
+                        zIndex: 5000,
+                        userSelect: 'none'
+                    }}
+                >
+                    {activeElements[index] && (
+                        <div style={componentBadgeStyles}>
+                            {activeElements[index].htmlTag}
+                        </div>
+                    )}
+                    <div
+                        style={{
+                            position: 'absolute',
+                            top: '-4px',
+                            right: '-4px',
+                            width: '8px',
+                            height: '8px',
+                            backgroundColor: '#4A90E2',
+                            borderRadius: '50%',
+                            zIndex: 5001
+                        }}
+                    />
                 </div>
-            )}
-
-            {/* Resize Handle */}
-            <div
-                style={{
-                    position: 'absolute',
-                    top: '-4px',
-                    right: '-4px',
-                    width: '8px',
-                    height: '8px',
-                    backgroundColor: '#4A90E2',
-                    borderRadius: '50%',
-                    zIndex: 5001
-                }}
-            />
-        </div>
+            ))}
+        </>
     );
 }

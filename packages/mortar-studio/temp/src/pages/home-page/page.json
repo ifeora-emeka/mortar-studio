@@ -1,7 +1,8 @@
 {
   "id": "home-page",
-  "title": "Home page",
-  "slug": "home-page",
-  "description": "",
-  "route": "/"
+  "title": "Home",
+  "slug": "home",
+  "description": "Default Home Page",
+  "route": "/",
+  "isStatic": true
 }

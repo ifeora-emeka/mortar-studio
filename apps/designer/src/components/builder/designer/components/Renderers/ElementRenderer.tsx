@@ -1,18 +1,33 @@
 import { MortarElement } from "@repo/common/schema/element";
-import {usePreviewContext} from "@/components/builder/context/preview.context.tsx";
+import { usePreviewContext } from "@/components/builder/context/preview.context.tsx";
+
+const voidElements = new Set([
+    "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"
+]);
 
 export default function ElementRenderer({ element }: { element: MortarElement }) {
     const { setPreviewState } = usePreviewContext();
 
     const handleClick = (e: React.MouseEvent) => {
         e.stopPropagation();
-        setPreviewState({ activeElement: element });
-        const iframeWindow = window.top!;
-        iframeWindow.postMessage({ type: "selectElement", id: element.id }, "*");
+        setPreviewState({ activeElements: [element] });
     };
 
+    const Tag = element.htmlTag as keyof JSX.IntrinsicElements;
+
+    if (voidElements.has(Tag)) {
+        return (
+            <Tag
+                id={element.id}
+                {...element.attributes}
+                onClick={handleClick}
+                style={{ position: "relative" }}
+            />
+        );
+    }
+
     return (
-        <div
+        <Tag
             id={element.id}
             {...element.attributes}
             onClick={handleClick}
@@ -24,6 +39,6 @@ export default function ElementRenderer({ element }: { element: MortarElement })
                     <ElementRenderer key={child.id} element={child} />
                 )
             )}
-        </div>
+        </Tag>
     );
 }

@@ -3,7 +3,7 @@ import { usePreviewContext } from "@/components/builder/context/preview.context"
 
 const boundingBoxStyles: React.CSSProperties = {
     position: 'absolute',
-    border: '2px solid #FF5733',
+    border: '3px dotted #FF5733',
     pointerEvents: 'none',
     zIndex: 9998,
     boxSizing: 'border-box',
@@ -26,15 +26,15 @@ const componentBadgeStyles: React.CSSProperties = {
 export default function ComponentSelector() {
     const {
         state: {
-            activeElement,
+            activeElements,
             components
         }
     } = usePreviewContext();
     const [boundingBox, setBoundingBox] = useState<DOMRect | null>(null);
 
-    const activeComponent = activeElement
+    const activeComponent = activeElements.length > 0
         ? components.find(comp =>
-            comp.elements.some(el => el.id === activeElement.id)
+            comp.elements.some(el => el.id === activeElements[0].id)
         )
         : null;
 
