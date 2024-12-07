@@ -52,7 +52,8 @@ export const APIProvider = ({children}: { children: ReactNode }) => {
                 variableSets: response.data.variableSets,
                 variables: response.data.variables,
                 components: response.data.components,
-                pages: response.data.pages
+                pages: response.data.pages,
+                instances: response.data.instances,
             })
             return response.data;
         } catch (error) {

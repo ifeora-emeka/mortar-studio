@@ -5,11 +5,10 @@
     "slug": "primary-color-1",
     "name": "50",
     "type": "color",
-    "lightValue": "#a3a6dc",
-    "darkValue": "#312555",
+    "lightValue": "#f0f4fa",
+    "darkValue": "#f0f4fa",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-2",
@@ -17,11 +16,10 @@
     "slug": "primary-color-2",
     "name": "100",
     "type": "color",
-    "lightValue": "#eec1d7",
-    "darkValue": "#6c0c3a",
+    "lightValue": "#d9e2ec",
+    "darkValue": "#d9e2ec",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-3",
@@ -29,11 +27,10 @@
     "slug": "primary-color-3",
     "name": "200",
     "type": "color",
-    "lightValue": "#a6eb9a",
-    "darkValue": "#37a225",
+    "lightValue": "#b7c6d2",
+    "darkValue": "#b7c6d2",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-4",
@@ -41,11 +38,10 @@
     "slug": "primary-color-4",
     "name": "300",
     "type": "color",
-    "lightValue": "#c13266",
-    "darkValue": "#c13266",
+    "lightValue": "#8da9be",
+    "darkValue": "#8da9be",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-5",
@@ -53,11 +49,10 @@
     "slug": "primary-color-5",
     "name": "400",
     "type": "color",
-    "lightValue": "#eaeec6",
-    "darkValue": "#73640e",
+    "lightValue": "#6b8eae",
+    "darkValue": "#6b8eae",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-6",
@@ -65,11 +60,10 @@
     "slug": "primary-color-6",
     "name": "500",
     "type": "color",
-    "lightValue": "#e5cbd7",
-    "darkValue": "#490a29",
+    "lightValue": "#4a708b",
+    "darkValue": "#4a708b",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-7",
@@ -77,11 +71,10 @@
     "slug": "primary-color-7",
     "name": "600",
     "type": "color",
-    "lightValue": "#1e4bb2",
-    "darkValue": "#090c32",
+    "lightValue": "#2a5674",
+    "darkValue": "#2a5674",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-8",
@@ -89,11 +82,10 @@
     "slug": "primary-color-8",
     "name": "700",
     "type": "color",
-    "lightValue": "#34f57f",
-    "darkValue": "#34f57f",
+    "lightValue": "#1e3a56",
+    "darkValue": "#1e3a56",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-9",
@@ -104,8 +96,7 @@
     "lightValue": "#12263f",
     "darkValue": "#12263f",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-10",
@@ -113,11 +104,10 @@
     "slug": "primary-color-10",
     "name": "900",
     "type": "color",
-    "lightValue": "#f33893",
-    "darkValue": "#f33893",
+    "lightValue": "#09172a",
+    "darkValue": "#09172a",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-1",
@@ -125,11 +115,10 @@
     "slug": "secondary-color-1",
     "name": "50",
     "type": "color",
-    "lightValue": "#8e9ee7",
-    "darkValue": "#0e1d6a",
+    "lightValue": "#f3edea",
+    "darkValue": "#f3edea",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-2",
@@ -140,8 +129,7 @@
     "lightValue": "#e1d3cd",
     "darkValue": "#e1d3cd",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-3",
@@ -152,8 +140,7 @@
     "lightValue": "#d0b9b0",
     "darkValue": "#d0b9b0",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-4",
@@ -164,8 +151,7 @@
     "lightValue": "#c09f93",
     "darkValue": "#c09f93",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-5",
@@ -176,8 +162,7 @@
     "lightValue": "#af8576",
     "darkValue": "#af8576",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-6",
@@ -188,8 +173,7 @@
     "lightValue": "#9e6b59",
     "darkValue": "#9e6b59",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-7",
@@ -200,8 +184,7 @@
     "lightValue": "#8e513c",
     "darkValue": "#8e513c",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-8",
@@ -212,8 +195,7 @@
     "lightValue": "#7d3720",
     "darkValue": "#7d3720",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-9",
@@ -243,11 +225,10 @@
     "slug": "spacing-small",
     "name": "small",
     "type": "measurement",
-    "lightValue": "1000px",
-    "darkValue": "400%",
+    "lightValue": "0.25rem",
+    "darkValue": "0.25rem",
     "setID": "spacing",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "spacing-medium",
@@ -255,11 +236,10 @@
     "slug": "spacing-medium",
     "name": "medium",
     "type": "measurement",
-    "lightValue": "2000rem",
+    "lightValue": "0.5rem",
     "darkValue": "0.5rem",
     "setID": "spacing",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "spacing-large",
@@ -267,11 +247,10 @@
     "slug": "spacing-large",
     "name": "large",
     "type": "measurement",
-    "lightValue": "3000rem",
+    "lightValue": "1rem",
     "darkValue": "1rem",
     "setID": "spacing",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "spacing-xlarge",
@@ -279,11 +258,10 @@
     "slug": "spacing-xlarge",
     "name": "xlarge",
     "type": "measurement",
-    "lightValue": "4000rem",
+    "lightValue": "1.5rem",
     "darkValue": "1.5rem",
     "setID": "spacing",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "spacing-2xlarge",
@@ -291,11 +269,10 @@
     "slug": "spacing-2xlarge",
     "name": "2xlarge",
     "type": "measurement",
-    "lightValue": "5000rem",
+    "lightValue": "2rem",
     "darkValue": "2rem",
     "setID": "spacing",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "spacing-3xlarge",
@@ -303,11 +280,10 @@
     "slug": "spacing-3xlarge",
     "name": "3xlarge",
     "type": "measurement",
-    "lightValue": "6000rem",
+    "lightValue": "3rem",
     "darkValue": "3rem",
     "setID": "spacing",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "spacing-4xlarge",
@@ -315,11 +291,10 @@
     "slug": "spacing-4xlarge",
     "name": "4xlarge",
     "type": "measurement",
-    "lightValue": "7000rem",
+    "lightValue": "4rem",
     "darkValue": "4rem",
     "setID": "spacing",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "spacing-5xlarge",
@@ -327,76 +302,9 @@
     "slug": "spacing-5xlarge",
     "name": "5xlarge",
     "type": "measurement",
-    "lightValue": "100rem",
+    "lightValue": "5rem",
     "darkValue": "5rem",
     "setID": "spacing",
-    "isStatic": true,
-    "new": false
-  },
-  {
-    "id": "01939854-8306-76d2-aa8f-77adfd665d46",
-    "name": "default",
-    "index": 28,
-    "type": "color",
-    "lightValue": "#f7c8c8",
-    "darkValue": "#f7c8c8",
-    "setID": "0193971a-daed-7579-9f68-65cc2bc4b1db",
-    "slug": "variable-28",
-    "new": false
-  },
-  {
-    "id": "01939854-c10f-73c3-b7c2-6869de3b34ff",
-    "name": "muted",
-    "index": 29,
-    "type": "color",
-    "lightValue": "#2e2e32",
-    "darkValue": "#2e2e32",
-    "setID": "0193971a-daed-7579-9f68-65cc2bc4b1db",
-    "slug": "variable-29",
-    "new": false
-  },
-  {
-    "id": "01939895-0c49-7152-8fd7-d953f544fe4e",
-    "name": "one color like that",
-    "index": 30,
-    "type": "color",
-    "lightValue": "#adb0eb",
-    "darkValue": "#2c4de5",
-    "setID": "spacing",
-    "slug": "variable-30",
-    "new": false
-  },
-  {
-    "id": "019398a9-4cb4-7173-a57e-caa2696f29a0",
-    "name": "heading 1",
-    "index": 31,
-    "type": "measurement",
-    "lightValue": "3rem",
-    "darkValue": "0px",
-    "setID": "019398a0-fc52-77de-9ce0-32e8a7622403",
-    "slug": "variable-31",
-    "new": false
-  },
-  {
-    "id": "019398a9-c79d-7314-8dbf-2478d1ef9673",
-    "name": "heading 2",
-    "index": 32,
-    "type": "measurement",
-    "lightValue": "6rem",
-    "darkValue": "0px",
-    "setID": "019398a0-fc52-77de-9ce0-32e8a7622403",
-    "slug": "variable-32",
-    "new": false
-  },
-  {
-    "id": "019398aa-37ce-73d1-b5fd-c269bbc738f4",
-    "name": "heading 3",
-    "index": 33,
-    "type": "measurement",
-    "lightValue": "8px",
-    "darkValue": "0px",
-    "setID": "019398a0-fc52-77de-9ce0-32e8a7622403",
-    "slug": "variable-33",
-    "new": false
+    "isStatic": true
   }
 ]

@@ -16,4 +16,6 @@ export type MortarElement = {
     htmlTag: string;
     attributes: Record<string, string>;
     customProps: Record<string, any>;
+    styles: Record<string, any>;
+    children: (string | MortarElement)[];
 }

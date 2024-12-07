@@ -1,0 +1,7 @@
+{
+  "id": "home-page",
+  "title": "Home page",
+  "slug": "home-page",
+  "description": "",
+  "route": "/"
+}

@@ -19,26 +19,5 @@
     "slug": "spacing",
     "index": 2,
     "isStatic": true
-  },
-  {
-    "name": "text colors",
-    "id": "0193971a-daed-7579-9f68-65cc2bc4b1db",
-    "slug": "set-3",
-    "index": 3,
-    "new": false
-  },
-  {
-    "name": "text size",
-    "id": "019398a0-fc52-77de-9ce0-32e8a7622403",
-    "slug": "set-4",
-    "index": 4,
-    "new": false
-  },
-  {
-    "name": "others",
-    "id": "019398f3-a784-72a2-8b54-c3cc6ee29321",
-    "slug": "set-5",
-    "index": 5,
-    "new": false
   }
 ]

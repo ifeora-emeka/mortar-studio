@@ -1,0 +1,51 @@
+{
+  "id": "brgg71733593524411",
+  "name": "About us section",
+  "elements": [
+    {
+      "id": "1loit",
+      "attributes": {
+        "className": "flex flex-col p-10"
+      },
+      "index": 0,
+      "parent_element_id": null,
+      "htmlTag": "div",
+      "customProps": {},
+      "children": [],
+      "styles": {}
+    },
+    {
+      "id": "na6no3ew",
+      "attributes": {
+        "className": "text-4xl font-bold"
+      },
+      "index": 0,
+      "parent_element_id": "1loit",
+      "htmlTag": "h2",
+      "customProps": {
+        "children": [
+          "About Us"
+        ]
+      },
+      "children": [],
+      "styles": {}
+    },
+    {
+      "id": "n6no3ewewe3",
+      "attributes": {
+        "className": "text-slate-500"
+      },
+      "index": 1,
+      "parent_element_id": "1loit",
+      "htmlTag": "p",
+      "customProps": {
+        "children": [
+          "We are a team of developers and designers who are passionate about building web components and sharing them with the world."
+        ]
+      },
+      "children": [],
+      "styles": {}
+    }
+  ],
+  "attributes": {}
+}

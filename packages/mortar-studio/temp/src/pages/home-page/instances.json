@@ -1,0 +1,20 @@
+[
+  {
+    "id": "instance-qx5uhflm3l",
+    "page_id": "home-page",
+    "children": [],
+    "ref": "ref::component::74hv21733523129070",
+    "parentInstance": null,
+    "index": 0,
+    "incomingProps": []
+  },
+  {
+    "id": "instance-3324zypkr9",
+    "page_id": "home-page",
+    "children": [],
+    "ref": "ref::component::brgg71733593524411",
+    "parentInstance": null,
+    "index": 0,
+    "incomingProps": []
+  }
+]

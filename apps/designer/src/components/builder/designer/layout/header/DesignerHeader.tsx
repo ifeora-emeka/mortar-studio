@@ -16,10 +16,12 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {useTheme} from "@/components/theme-provider.tsx";
+import {usePreviewContext} from "@/components/builder/context/preview.context.tsx";
 
 
 export default function DesignerHeader() {
     const {setTheme, theme} = useTheme();
+    const { sendSync } = usePreviewContext();
 
     return <header
         className="bg-card border-b h-header flex justify-between items-center px-default z-[1000]">
@@ -49,7 +51,7 @@ export default function DesignerHeader() {
             </DropdownMenu>
 
 
-            <Button>
+            <Button onClick={sendSync}>
                 <Upload/> Push
             </Button>
 

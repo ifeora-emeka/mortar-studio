@@ -4,22 +4,26 @@ import {
     Tooltip,
     TooltipContent,
     TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/ui/tooltip.tsx";
 import {
     ArrowLeft,
     ArrowRight,
-    CaseSensitive,
+    CaseSensitive, Copy,
     PaintBucket,
     Plus
 } from "lucide-react";
+import ToolBarAddOptions
+    from "@/components/builder/designer/components/DesignerToolBar/ToolBarAddOptions.tsx";
+
 
 export default function DesignerToolBar() {
     return (
         <Draggable>
-            <div className={'p-[30px] left-1/2 transform -translate-x-1/2 cursor-move fixed bottom-default'}>
+            <div
+                className={'p-[30px] left-1/2 transform -translate-x-1/2 cursor-move fixed bottom-default group transition-opacity duration-300'}>
                 <div
                     className={
-                        "flex gap-default z-50 bg-card shadow-xl border rounded-lg p-sm   "
+                        "flex gap-sm z-50 bg-card shadow-xl border rounded-lg p-sm   "
                     }
                 >
                     <EachTool tooltip={"Move left"}>
@@ -34,9 +38,14 @@ export default function DesignerToolBar() {
                     <EachTool tooltip={"Text color"}>
                         <CaseSensitive/>
                     </EachTool>
-                    <EachTool tooltip={"Add"}>
-                        <Plus/>
+                    <EachTool tooltip={"Duplicate"}>
+                        <Copy/>
                     </EachTool>
+                    <ToolBarAddOptions>
+                        <EachTool tooltip={"Add"}>
+                            <Plus/>
+                        </EachTool>
+                    </ToolBarAddOptions>
                 </div>
             </div>
         </Draggable>
@@ -50,13 +59,13 @@ const EachTool = ({children, tooltip}: {
     return (
         <Tooltip>
             <TooltipTrigger asChild>
-                <button
+                <div
                     className={
                         "border text-muted-foreground p-sm rounded-lg hover:bg-accent hover:text-foreground [&>svg]:size-4"
                     }
                 >
                     {children}
-                </button>
+                </div>
             </TooltipTrigger>
             <TooltipContent className={"mb-3"}>
                 <p>{tooltip}</p>

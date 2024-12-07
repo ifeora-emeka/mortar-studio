@@ -45,7 +45,7 @@ const EachPage = ({active, page, onClick}: {
     return <div
         onClick={onClick}
         className={cn("p-default hover:bg-accent border rounded-lg flex items-center gap-default group cursor-pointer", {
-            "bg-card": active
+            "bg-accent": active
         })}>
         <div className="text-muted-foreground group-hover:text-foreground">
             <File/>
