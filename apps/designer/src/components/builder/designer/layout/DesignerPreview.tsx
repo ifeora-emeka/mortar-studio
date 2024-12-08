@@ -169,7 +169,6 @@ export default function DesignerPreview() {
         boundingBox.style.pointerEvents = 'none';
         boundingBox.style.zIndex = '9998';
         boundingBox.style.borderRadius = '4px';
-        boundingBox.style.boxShadow = '0 0 0 2px rgba(255, 87, 51, 0.2)';
 
         const tagBadge = document.createElement('div');
         tagBadge.className = 'parent-bounding-box-tag';

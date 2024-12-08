@@ -24,25 +24,25 @@ export default function DesignerToolBar() {
 
     const handleDelete = () => {
         if (activeElements.length > 0) {
-            deleteElement(activeElements[0].id);
+            deleteElement();
         }
     };
 
     const handleDuplicate = () => {
         if (activeElements.length > 0) {
-            duplicateElement(activeElements[0]);
+            duplicateElement();
         }
     };
 
     const handleMoveLeft = () => {
         if (activeElements.length > 0) {
-            decrementElementIndex(activeElements[0].id);
+            decrementElementIndex();
         }
     };
 
     const handleMoveRight = () => {
         if (activeElements.length > 0) {
-            incrementElementIndex(activeElements[0].id);
+            incrementElementIndex();
         }
     };
 

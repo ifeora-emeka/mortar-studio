@@ -21,7 +21,6 @@ export default function ElementRenderer({ element }: { element: MortarElement })
                 id={element.id}
                 {...element.attributes}
                 onClick={handleClick}
-                style={{ position: "relative" }}
             />
         );
     }
@@ -31,7 +30,6 @@ export default function ElementRenderer({ element }: { element: MortarElement })
             id={element.id}
             {...element.attributes}
             onClick={handleClick}
-            style={{ position: "relative" }}
         >
             {element.customProps.children}
             {element.children.map((child) =>

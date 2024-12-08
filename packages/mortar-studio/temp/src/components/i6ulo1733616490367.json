@@ -1,0 +1,45 @@
+{
+  "id": "i6ulo1733616490367",
+  "name": "Home hero section",
+  "elements": [
+    {
+      "id": "41tkn",
+      "attributes": {
+        "className": "flex flex-col bg-blue-200 p-5"
+      },
+      "index": 0,
+      "parent_element_id": null,
+      "htmlTag": "div",
+      "customProps": {},
+      "children": [],
+      "styles": {}
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "41tkn",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "38bc2421-4e6c-4d80-b319-a49019bf0497"
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "41tkn",
+      "attributes": {
+        "src": "https://picsum.photos/500/600",
+        "alt": "Placeholder image 150x150",
+        "className": "w-[150px] h-[150px]"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "6a3a7feb-30ff-4fc0-b9f6-1d2c30bef652"
+    }
+  ],
+  "attributes": {}
+}

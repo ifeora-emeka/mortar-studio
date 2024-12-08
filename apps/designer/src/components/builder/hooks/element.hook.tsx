@@ -86,22 +86,57 @@ export const useElement = () => {
         });
     };
 
-    const duplicateElement = (element: MortarElement) => {
+    const duplicateElement = () => {
+        const elementId = state.activeElements[0]?.id;
         const activeComponent = getActiveComponent();
         if (!activeComponent) return;
 
-        const duplicate = (el: MortarElement, parentId: string | null) => {
+        const elementIndex = activeComponent.elements.findIndex(el => el.id === elementId);
+        if (elementIndex === -1) return;
+
+        const element = activeComponent.elements[elementIndex];
+
+        if (!element.parent_element_id) {
+            const componentId = activeComponent.id;
+
+            // Find the instance that has the ref referencing the component
+            const instanceIndex = state.instances.findIndex(instance => instance.ref.endsWith(componentId));
+            if (instanceIndex !== -1) {
+                const instance = state.instances[instanceIndex];
+                const newInstance = {
+                    ...instance,
+                    id: uuidv4(),
+                    children: instance.children.map(child => ({
+                        ...child,
+                        id: uuidv4()
+                    }))
+                };
+                setPreviewState({
+                    instances: [...state.instances, newInstance]
+                });
+            }
+            return;
+        }
+
+        const duplicateElementRecursively = (element: MortarElement, parentId: string | null) => {
             const newElement: MortarElement = {
-                ...el,
+                ...element,
                 id: uuidv4(),
                 parent_element_id: parentId,
-                children: el.children.map(child => typeof child === 'string' ? child : duplicate(child, el.id).id),
+                children: element.children.map(childId => {
+                    if (typeof childId === 'string') {
+                        const childElement = activeComponent.elements.find(el => el.id === childId);
+                        return childElement ? duplicateElementRecursively(childElement, newElement.id).id : childId;
+                    }
+                    return childId;
+                })
             };
             return newElement;
         };
 
-        const newElement = duplicate(element, element.parent_element_id);
+        const newElement = duplicateElementRecursively(element, element.parent_element_id);
         const updatedElements = [...activeComponent.elements, newElement];
+
         const parentIndex = activeComponent.elements.findIndex(el => el.id === element.parent_element_id);
         if (parentIndex !== -1) {
             const parentElement = activeComponent.elements[parentIndex];
@@ -129,7 +164,8 @@ export const useElement = () => {
         }
     };
 
-    const deleteElement = (elementId: string) => {
+    const deleteElement = () => {
+        const elementId = state.activeElements[0]?.id
         const activeComponent = getActiveComponent();
         if (!activeComponent) return;
 
@@ -137,34 +173,52 @@ export const useElement = () => {
         if (elementIndex === -1) return;
 
         const element = activeComponent.elements[elementIndex];
-        const parentIndex = activeComponent.elements.findIndex(el => el.id === element.parent_element_id);
-        const updatedElements = activeComponent.elements.filter(el => el.id !== elementId);
 
+        if (!element.parent_element_id) {
+            const componentId = activeComponent.id;
+
+            const instanceIndex = state.instances.findIndex(instance => instance.ref.endsWith(componentId));
+            if (instanceIndex !== -1) {
+                setPreviewState({
+                    instances: state.instances.filter((_, index) => index !== instanceIndex)
+                });
+            }
+            return;
+        }
+
+        const deleteElementRecursively = (elementId: string) => {
+            const elementIndex = activeComponent.elements.findIndex(el => el.id === elementId);
+            if (elementIndex === -1) return;
+
+            const element = activeComponent.elements[elementIndex];
+            element.children.forEach(childId => {
+                if (typeof childId === 'string') {
+                    deleteElementRecursively(childId);
+                }
+            });
+
+            activeComponent.elements = activeComponent.elements.filter(el => el.id !== elementId);
+        };
+
+        deleteElementRecursively(elementId);
+
+        const parentIndex = activeComponent.elements.findIndex(el => el.id === element.parent_element_id);
         if (parentIndex !== -1) {
             const parentElement = activeComponent.elements[parentIndex];
             const updatedParentElement = {
                 ...parentElement,
                 children: parentElement.children.filter(childId => childId !== elementId)
             };
-            const updatedComponent = {
-                ...activeComponent,
-                elements: updatedElements.map(el => el.id === parentElement.id ? updatedParentElement : el)
-            };
-            setPreviewState({
-                components: state.components.map(comp => comp.id === activeComponent.id ? updatedComponent : comp)
-            });
-        } else {
-            const updatedComponent = {
-                ...activeComponent,
-                elements: updatedElements
-            };
-            setPreviewState({
-                components: state.components.map(comp => comp.id === activeComponent.id ? updatedComponent : comp)
-            });
+            activeComponent.elements = activeComponent.elements.map(el => el.id === parentElement.id ? updatedParentElement : el);
         }
+
+        setPreviewState({
+            components: state.components.map(comp => comp.id === activeComponent.id ? activeComponent : comp)
+        });
     };
 
-    const incrementElementIndex = (elementId: string) => {
+    const incrementElementIndex = () => {
+        const elementId = state.activeElements[0]?.id;
         const activeComponent = getActiveComponent();
         if (!activeComponent) return;
 
@@ -204,7 +258,8 @@ export const useElement = () => {
         });
     };
 
-    const decrementElementIndex = (elementId: string) => {
+    const decrementElementIndex = () => {
+        const elementId = state.activeElements[0]?.id;
         const activeComponent = getActiveComponent();
         if (!activeComponent) return;
 

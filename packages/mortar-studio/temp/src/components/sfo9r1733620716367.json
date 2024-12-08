@@ -1,0 +1,189 @@
+{
+  "id": "sfo9r1733620716367",
+  "name": "FAQ Section",
+  "elements": [
+    {
+      "id": "9ti7u",
+      "attributes": {
+        "className": "flex flex-col bg-blue-200 p-5",
+        "class": "bg-orange-100 py-[7rem] px-[4rem]"
+      },
+      "index": 0,
+      "parent_element_id": null,
+      "htmlTag": "div",
+      "customProps": {},
+      "children": [],
+      "styles": {}
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "9ti7u",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-10 flex gap-10"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "3de2ec3a-a0d2-4986-b56b-288c779479f8"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "3de2ec3a-a0d2-4986-b56b-288c779479f8",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "w-full flex flex-col gap-10 justify-between"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "bae2fe17-88d6-4bd2-8972-abb24057fa23"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "3de2ec3a-a0d2-4986-b56b-288c779479f8",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-10 w-full relative"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "f8f88ecb-ed39-46c4-ad66-32f9f94efa93"
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "f8f88ecb-ed39-46c4-ad66-32f9f94efa93",
+      "attributes": {
+        "src": "https://img.freepik.com/free-photo/brunette-woman-boater-is-covering-her-eye-with-half-orange-looking-camera-against-isolated-background_197531-17708.jpg?semt=ais_hybrid",
+        "alt": "Placeholder image 150x150",
+        "className": "w-[150px] h-[150px]",
+        "class": "rounded-xl shadow-xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "47af6639-f70d-4608-b2c6-5710732530f1"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "bae2fe17-88d6-4bd2-8972-abb24057fa23",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-10"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "15d6e053-7ae3-471f-9626-9771d18d77fb"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "bae2fe17-88d6-4bd2-8972-abb24057fa23",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-10 flex items-center justify-start"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "1fd5cf1d-c2d5-408f-b5cb-5a0c22584a4d"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "15d6e053-7ae3-471f-9626-9771d18d77fb",
+      "attributes": {
+        "class": "text-5xl font-bold"
+      },
+      "customProps": {
+        "children": [
+          "Default heading"
+        ]
+      },
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "584ec994-707d-4ba6-9c03-8649e35dc976"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "15d6e053-7ae3-471f-9626-9771d18d77fb",
+      "attributes": {
+        "class": "text-xl text-orange-800"
+      },
+      "customProps": {
+        "children": [
+          "Default paragraph"
+        ]
+      },
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "2221ae94-7352-4fa1-9944-47d061a3eaf8"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "1fd5cf1d-c2d5-408f-b5cb-5a0c22584a4d",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "px-9 py-3 bg-green-600 text-white text-lg rounded-lg"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "a516e0a5-6fe4-4385-a177-a768dc9da541"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "a516e0a5-6fe4-4385-a177-a768dc9da541",
+      "attributes": {},
+      "customProps": {
+        "children": [
+          "Default paragraph"
+        ]
+      },
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "db59da8f-87dc-4f0c-9cf5-4c20d80af7e1"
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "f8f88ecb-ed39-46c4-ad66-32f9f94efa93",
+      "attributes": {
+        "src": "https://wallpapers.com/images/hd/vibrant-orange-juice-splash-m2twqbw37vv4vtn1-m2twqbw37vv4vtn1.png",
+        "alt": "Placeholder image 150x150",
+        "className": "w-[150px] h-[150px]",
+        "class": "absolute w-[550px] top-[-13rem] -right-[4rem]"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "3804a8bf-a96a-4637-9ead-c48e65fc84f0"
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "f8f88ecb-ed39-46c4-ad66-32f9f94efa93",
+      "attributes": {
+        "src": "https://png.pngtree.com/png-vector/20240824/ourmid/pngtree-orange-slices-in-a-splash-with-leaf-floating-on-it-png-image_13604045.png",
+        "alt": "Placeholder image 150x150",
+        "className": "w-[150px] h-[150px]",
+        "class": "absolute bottom-[-7rem] left-[-100px] w-[300px]"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "a88eee2a-0033-4e94-a6e2-67df99bbe7cd"
+    }
+  ],
+  "attributes": {}
+}
