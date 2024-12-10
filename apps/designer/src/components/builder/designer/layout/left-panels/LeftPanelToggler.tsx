@@ -1,7 +1,7 @@
 import {
     Component,
     Cuboid,
-    File,
+    File, Layers2,
     LifeBuoy,
     Logs,
     Paintbrush,
@@ -20,6 +20,9 @@ export default function LeftPanelToggler() {
                 <div>
                     <EachToggleBtn onClick={() => toggleLeftPanel('pages')} alignTooltip="right" tooltip="Pages" active={activePanel == 'pages'}>
                         <File />
+                    </EachToggleBtn>
+                    <EachToggleBtn onClick={() => toggleLeftPanel('layers')} alignTooltip="right" tooltip="Layers" active={activePanel == 'layers'}>
+                        <Layers2 />
                     </EachToggleBtn>
                     <EachToggleBtn onClick={() => toggleLeftPanel('components')} alignTooltip="right" tooltip="Components" active={activePanel == 'components'}>
                         <Component />

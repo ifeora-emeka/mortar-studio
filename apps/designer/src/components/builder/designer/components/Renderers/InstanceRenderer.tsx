@@ -17,6 +17,6 @@ export default function InstanceRenderer({instance}: {
     }
 
     return <>
-        <ComponentRenderer component={componentToRender} />
+        <ComponentRenderer component={componentToRender} instance={instance} />
     </>
 }

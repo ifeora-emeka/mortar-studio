@@ -17,32 +17,16 @@ import ToolBarAddOptions
     from "@/components/builder/designer/components/DesignerToolBar/ToolBarAddOptions.tsx";
 import {useElement} from "@/components/builder/hooks/element.hook.tsx";
 import {usePreviewContext} from "@/components/builder/context/preview.context.tsx";
+import ToolbarCopyOptions
+    from "@/components/builder/designer/components/DesignerToolBar/ToolbarCopyOptions.tsx";
 
 export default function DesignerToolBar() {
-    const { deleteElement, incrementElementIndex, decrementElementIndex, duplicateElement } = useElement();
+    const { deleteElement, incrementElementIndex, decrementElementIndex } = useElement();
     const { state: { activeElements } } = usePreviewContext();
 
     const handleDelete = () => {
         if (activeElements.length > 0) {
             deleteElement();
-        }
-    };
-
-    const handleDuplicate = () => {
-        if (activeElements.length > 0) {
-            duplicateElement();
-        }
-    };
-
-    const handleMoveLeft = () => {
-        if (activeElements.length > 0) {
-            decrementElementIndex();
-        }
-    };
-
-    const handleMoveRight = () => {
-        if (activeElements.length > 0) {
-            incrementElementIndex();
         }
     };
 
@@ -55,10 +39,10 @@ export default function DesignerToolBar() {
                         "flex gap-sm z-50 bg-card shadow-xl border rounded-lg p-sm"
                     }
                 >
-                    <EachTool tooltip={"Move left"} onClick={handleMoveLeft}>
+                    <EachTool tooltip={"Move left"} onClick={decrementElementIndex}>
                         <ArrowLeft/>
                     </EachTool>
-                    <EachTool tooltip={"Move right"} onClick={handleMoveRight}>
+                    <EachTool tooltip={"Move right"} onClick={incrementElementIndex}>
                         <ArrowRight/>
                     </EachTool>
                     <EachTool tooltip={"Background color"}>
@@ -67,9 +51,11 @@ export default function DesignerToolBar() {
                     <EachTool tooltip={"Text color"}>
                         <CaseSensitive/>
                     </EachTool>
-                    <EachTool tooltip={"Duplicate"} onClick={handleDuplicate}>
-                        <Copy/>
-                    </EachTool>
+                    <ToolbarCopyOptions>
+                        <EachTool tooltip={"Make copies"}>
+                            <Copy/>
+                        </EachTool>
+                    </ToolbarCopyOptions>
                     <EachTool tooltip={"Delete"} onClick={handleDelete}>
                         <Trash/>
                     </EachTool>

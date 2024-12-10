@@ -1,0 +1,66 @@
+{
+  "id": "n6h5p1733784862887",
+  "name": "Home hero section",
+  "elements": [
+    {
+      "htmlTag": "div",
+      "parent_element_id": null,
+      "attributes": {
+        "className": "flex flex-col bg-blue-200 p-5",
+        "class": "p-10 flex flex-col items-center bg-orange-100 gap-10"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "zexxc"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "zexxc",
+      "attributes": {
+        "class": "text-4xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "7dc38616-87c3-45f7-b9fb-71729a66a4f4",
+      "textContent": "This is Heading 1"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "zexxc",
+      "attributes": {
+        "class": "text-2xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "a9400d3b-6449-4096-aacc-85d9b8bc0185",
+      "textContent": "The smaller heading 2"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "zexxc",
+      "attributes": {
+        "class": "text-6xl font-bold"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "2037086c-b739-47e5-a388-a65ea8541967",
+      "textContent": "This is HEADING 3"
+    }
+  ],
+  "props": [
+    {
+      "id": "heading-9i2f4",
+      "defaultValue": "main heading text",
+      "dataType": "string",
+      "label": "Heading"
+    }
+  ]
+}

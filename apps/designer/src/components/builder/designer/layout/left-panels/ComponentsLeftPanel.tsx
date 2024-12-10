@@ -10,6 +10,8 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import {useElement} from "@/components/builder/hooks/element.hook.tsx";
+import { generateRandomID } from '@repo/common/utils'
 
 
 export default function ComponentsLeftPanel() {
@@ -28,31 +30,52 @@ export default function ComponentsLeftPanel() {
     )
 }
 
-const EachComponent = ({component}: { component: MortarComponent }) => {
-    return <div>
-        <div
-            role={'button'}
-            aria-label={`${component.name} component`}
-            className={'hover:bg-accent p-default border rounded-lg flex items-center group'}>
-            <div
-                className={'flex-1 truncate text-muted-foreground group-hover:text-foreground'}>
-                <span>{component.name}</span>
-            </div>
-            <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                    <button
-                        className={'active:opacity-100 focus:opacity-100 hover:text-foreground text-muted-foreground opacity-0 group-hover:opacity-100'}>
-                        <EllipsisVertical className={'h-5 w-5'}/>
-                    </button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                    <DropdownMenuItem><Pencil /> Edit</DropdownMenuItem>
-                    <DropdownMenuItem><Plus/> Add to selected</DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem><Trash2 /> Delete</DropdownMenuItem>
-                </DropdownMenuContent>
-            </DropdownMenu>
+const EachComponent = ({ component }: { component: MortarComponent }) => {
+    const { state: { activePage, instances }, pushToArray } = usePreviewContext();
+    const { appendElement } = useElement();
 
+    const handleAddToSelected = () => {
+        if (!activePage) return;
+
+        const newInstance = {
+            id: `instance-${generateRandomID(11)}`,
+            index: instances.length,
+            ref: `ref::component::${component.id}`,
+            incomingProps: [],
+            parentInstance: null,
+            children: [],
+            page_id: activePage.id,
+        };
+
+        pushToArray('instances', newInstance);
+        appendElement(newInstance);
+    };
+
+    return (
+        <div>
+            <div
+                role={'button'}
+                aria-label={`${component.name} component`}
+                className={'hover:bg-accent p-default border rounded-lg flex items-center group'}>
+                <div
+                    className={'flex-1 truncate text-muted-foreground group-hover:text-foreground'}>
+                    <span>{component.name}</span>
+                </div>
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <button
+                            className={'active:opacity-100 focus:opacity-100 hover:text-foreground text-muted-foreground opacity-0 group-hover:opacity-100'}>
+                            <EllipsisVertical className={'h-5 w-5'} />
+                        </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                        <DropdownMenuItem><Pencil /> Edit</DropdownMenuItem>
+                        <DropdownMenuItem onClick={handleAddToSelected}><Plus /> Add to selected</DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem><Trash2 /> Delete</DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+            </div>
         </div>
-    </div>
-}
+    );
+};

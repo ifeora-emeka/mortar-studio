@@ -27,6 +27,7 @@ import {MortarComponent} from '@repo/common/schema/component';
 import {MortarElementInstance} from '@repo/common/schema/instance'
 import {MortarElement} from '@repo/common/schema/element'
 import {generateRandomID} from '@repo/common/utils'
+import {staticFrame} from "@/components/builder/static-elements/frame.static.ts";
 
 const formSchema = z.object({
     componentName: z.string().min(3, {
@@ -63,16 +64,11 @@ export default function AddComponentModal({open, onOpen}: {
 
         const frameID = generateRandomID(5)
         const frameElement: MortarElement = {
+            ...staticFrame(),
             id: frameID,
             attributes: {
                 className: "flex flex-col bg-blue-200 p-5"
             },
-            index: 0,
-            parent_element_id: null,
-            htmlTag: 'div',
-            customProps: {},
-            children: [],
-            styles: {},
         }
 
         const newComponent: MortarComponent = {
@@ -81,7 +77,7 @@ export default function AddComponentModal({open, onOpen}: {
             elements: [
                 frameElement,
             ],
-            attributes: {},
+            props: [],
         }
 
         if (activePage) {

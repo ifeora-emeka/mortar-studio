@@ -6,7 +6,14 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import {FrameIcon, Heading, ImageIcon, Pilcrow, SquareDashed} from "lucide-react";
+import {
+    FrameIcon,
+    Heading,
+    ImageIcon,
+    LayoutList,
+    Pilcrow,
+    SquareDashed
+} from "lucide-react";
 import AddComponentModal
     from "@/components/builder/designer/components/AddComponentModal.tsx";
 import {useState} from "react";
@@ -29,8 +36,12 @@ export default function ToolBarAddOptions({children}: { children: React.ReactNod
             </DropdownMenuTrigger>
             <DropdownMenuContent className={'mb-default'}>
                 <DropdownMenuLabel>Components</DropdownMenuLabel>
-                <DropdownMenuItem onClick={() => setShowAdd(true)}><SquareDashed/>Empty
-                    component</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setShowAdd(true)}>
+                    <SquareDashed/>New component
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setShowAdd(true)}>
+                    <LayoutList/>Existing component
+                </DropdownMenuItem>
                 <DropdownMenuSeparator/>
                 <DropdownMenuLabel>Elements</DropdownMenuLabel>
                 <DropdownMenuItem

@@ -7,9 +7,7 @@ export function staticHeading(): MortarElement {
     return {
         ...defaultStaticElements,
         htmlTag: 'h1',
-        customProps: {
-            children: ['Default heading']
-        }
+        textContent: "Default heading"
     }
 
 }

@@ -8,7 +8,7 @@ import {compileInstances} from "@repo/common/utils";
 import { MortarElement } from "@repo/common/schema/element";
 
 export default function DesignerPreview() {
-    const {state: {activePage, instances, activeElements, components}, setPreviewState} = usePreviewContext();
+    const { state: { activePage, instances, activeElements, activePageInstances, activeComponents } } = usePreviewContext();
     const [width] = useState('w-[95%]');
     const frameRef = useRef<HTMLIFrameElement>(null);
     const instancesByPageID = activePage ? instances.filter(i => i.page_id === activePage.id) : [];
@@ -21,12 +21,14 @@ export default function DesignerPreview() {
                     const frameRoot = frameDoc.getElementById('frame-root');
                     if (frameRoot && activeElements.length > 0) {
                         const selectedElement = activeElements[0];
-                        const selectedElementDom = frameDoc.getElementById(selectedElement.id);
+                        const mortarStudioID = `ref::${activePageInstances[0].id}::${activeComponents[0].id}::${selectedElement.id}`;
+                        const selectedElementDom = frameDoc.querySelector(`[ms-id="${mortarStudioID}"]`);
                         if (selectedElementDom) {
                             updateBoundingBox(frameRoot, selectedElementDom as HTMLElement, frameDoc);
                             const parentElement = getParentElement(selectedElement);
                             if (parentElement) {
-                                const parentElementDom = frameDoc.getElementById(parentElement.id);
+                                const parentMortarStudioID = `ref::${activePageInstances[0].id}::${activeComponents[0].id}::${parentElement.id}`;
+                                const parentElementDom = frameDoc.querySelector(`[ms-id="${parentMortarStudioID}"]`);
                                 if (parentElementDom) {
                                     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                                     // @ts-expect-error
@@ -50,7 +52,7 @@ export default function DesignerPreview() {
                 frameRef.current.removeEventListener('resize', handleResize);
             }
         };
-    }, [activeElements]);
+    }, [activeElements, activePageInstances, activeComponents]);
 
     useEffect(() => {
         if (frameRef.current) {
@@ -63,7 +65,8 @@ export default function DesignerPreview() {
 
                     if (activeElements.length > 0) {
                         const selectedElement = activeElements[0];
-                        const selectedElementDom = frameDoc.getElementById(selectedElement.id);
+                        const mortarStudioID = `ref::${activePageInstances[0].id}::${activeComponents[0].id}::${selectedElement.id}`;
+                        const selectedElementDom = frameDoc.querySelector(`[ms-id="${mortarStudioID}"]`);
 
                         if (selectedElementDom) {
                             createBoundingBox(frameRoot, selectedElementDom as HTMLElement, selectedElement, frameDoc);
@@ -75,7 +78,8 @@ export default function DesignerPreview() {
 
                             const parentElement = getParentElement(selectedElement);
                             if (parentElement) {
-                                const parentElementDom = frameDoc.getElementById(parentElement.id);
+                                const parentMortarStudioID = `ref::${activePageInstances[0].id}::${activeComponents[0].id}::${parentElement.id}`;
+                                const parentElementDom = frameDoc.querySelector(`[ms-id="${parentMortarStudioID}"]`);
                                 if (parentElementDom) {
                                     createParentBoundingBox(frameRoot, parentElementDom as HTMLElement, parentElement, frameDoc);
 
@@ -92,10 +96,10 @@ export default function DesignerPreview() {
                 }
             }
         }
-    }, [activeElements]);
+    }, [activeElements, activePageInstances, activeComponents]);
 
     const getParentElement = (element: MortarElement) => {
-        return components.flatMap(component => component.elements).find(el => el.id === element.parent_element_id) || null;
+        return activeComponents.flatMap(component => component.elements).find(el => el.id === element.parent_element_id) || null;
     };
 
     const createBoundingBox = (
@@ -119,7 +123,7 @@ export default function DesignerPreview() {
         boundingBox.style.left = `${rect.left + scrollLeft - clientLeft}px`;
         boundingBox.style.width = `${rect.width}px`;
         boundingBox.style.height = `${rect.height}px`;
-        boundingBox.style.border = '3px solid #4299E1'; // Tailwind blue-500
+        boundingBox.style.border = '3px solid #4299E1';
         boundingBox.style.boxSizing = 'border-box';
         boundingBox.style.pointerEvents = 'none';
         boundingBox.style.zIndex = '9999';
@@ -131,13 +135,13 @@ export default function DesignerPreview() {
         tagBadge.style.position = 'absolute';
         tagBadge.style.top = '-24px';
         tagBadge.style.left = '0';
-        tagBadge.style.backgroundColor = '#4299E1'; // Tailwind blue-500
+        tagBadge.style.backgroundColor = '#4299E1';
         tagBadge.style.color = 'white';
         tagBadge.style.padding = '2px 6px';
         tagBadge.style.borderRadius = '4px 4px 0 0';
         tagBadge.style.fontSize = '12px';
         tagBadge.style.fontFamily = 'system-ui, sans-serif';
-        tagBadge.textContent = elementData.htmlTag;
+        tagBadge.textContent = `${elementData.htmlTag} - index:${elementData.index}`;
 
         boundingBox.appendChild(tagBadge);
         frameRoot.appendChild(boundingBox);
@@ -154,7 +158,7 @@ export default function DesignerPreview() {
 
         const rect = parentElement.getBoundingClientRect();
 
-        const scrollTop = frameDoc.documentElement.scrollTop;
+        const scrollTop = frameDoc.documentElement?.scrollTop;
         const scrollLeft = frameDoc.documentElement.scrollLeft;
         const clientTop = frameDoc.documentElement.clientTop || 0;
         const clientLeft = frameDoc.documentElement.clientLeft || 0;
@@ -196,7 +200,7 @@ export default function DesignerPreview() {
         if (boundingBox) {
             const rect = selectedElement.getBoundingClientRect();
 
-            const scrollTop = frameDoc.documentElement.scrollTop;
+            const scrollTop = frameDoc.documentElement?.scrollTop;
             const scrollLeft = frameDoc.documentElement.scrollLeft;
             const clientTop = frameDoc.documentElement.clientTop || 0;
             const clientLeft = frameDoc.documentElement.clientLeft || 0;
@@ -211,17 +215,16 @@ export default function DesignerPreview() {
     const updateParentBoundingBox = (
         frameRoot: HTMLElement,
         parentElement: HTMLElement,
-        // elementData: MortarElement,
         frameDoc: Document
     ) => {
         const boundingBox = frameRoot.querySelector('.parent-bounding-box') as HTMLElement;
-        if (boundingBox) {
+        if (boundingBox && frameDoc.documentElement) {
             const rect = parentElement.getBoundingClientRect();
 
-            const scrollTop = frameDoc.documentElement.scrollTop;
-            const scrollLeft = frameDoc.documentElement.scrollLeft;
-            const clientTop = frameDoc.documentElement.clientTop || 0;
-            const clientLeft = frameDoc.documentElement.clientLeft || 0;
+            const scrollTop = frameDoc.documentElement?.scrollTop || 0;
+            const scrollLeft = frameDoc.documentElement?.scrollLeft || 0;
+            const clientTop = frameDoc.documentElement?.clientTop || 0;
+            const clientLeft = frameDoc.documentElement?.clientLeft || 0;
 
             boundingBox.style.top = `${rect.top + scrollTop - clientTop}px`;
             boundingBox.style.left = `${rect.left + scrollLeft - clientLeft}px`;
@@ -233,7 +236,7 @@ export default function DesignerPreview() {
     return (
         <div
             className={'min-h-[--body-height] max-h-[--body-height] bg-background flex-1 flex justify-center'}
-            onClick={() => setPreviewState({activeElements: []})}>
+        >
             {
                 activePage && <div
                     id={'resizable-browser-window'}
@@ -299,7 +302,7 @@ export default function DesignerPreview() {
                         </>
                     </Frame>
 
-                    <DesignerToolBar/>
+                    <DesignerToolBar />
                 </div>
             }
         </div>

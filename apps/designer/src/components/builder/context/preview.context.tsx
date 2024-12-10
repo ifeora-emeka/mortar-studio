@@ -10,6 +10,7 @@ import {LOCAL_API_URL} from "@/components/builder/config/api.config.ts";
 import {toast} from "@/hooks/use-toast.ts";
 
 type Mode = 'light' | 'dark' | 'system';
+
 interface PreviewState {
     pages: MortarPage[];
     components: MortarComponent[];
@@ -19,6 +20,7 @@ interface PreviewState {
     variables: MortarVariable[];
     activePage: MortarPage | null;
     activePageInstances: MortarElementInstance[];
+    activeComponents: MortarComponent[];
     mode: Mode;
     activeElements: MortarElement[];
 }
@@ -55,6 +57,7 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         activePageInstances: [],
         styles: [],
         instances: [],
+        activeComponents: [],
         activePage: null,
         activeElements: [],
         mode: 'system',
@@ -62,8 +65,8 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
 
 
     const setPreviewState = (newState: Partial<PreviewState>) => {
-            console.log('SET PREVIEW STATE:', {newState})
-            setState((prevState) => ({...prevState, ...newState}));
+        console.log('SET PREVIEW STATE:', {newState})
+        setState((prevState) => ({...prevState, ...newState}));
     };
 
     const sendSync = async () => {
@@ -131,6 +134,8 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         }));
     };
 
+
+
     useEffect(() => {
         if (state.pages.length > 0 && !state.activePage) {
             const activePage = state.pages.find(page => page.route == "/");
@@ -152,7 +157,7 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         };
     }, [state.components, state.pages, state.variables, state.variableSets, state.styles, state.instances]);
 
-    // console.log('PREVIEW CONTEXT::::', state)
+    console.log('PREVIEW CONTEXT::::', state)
 
     return (
         <PreviewContext.Provider
@@ -162,7 +167,7 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
                 updateItemInArray,
                 pushToArray,
                 removeFromArray,
-                sendSync
+                sendSync,
             }}
         >
             {children}

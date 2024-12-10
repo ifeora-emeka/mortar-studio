@@ -7,9 +7,6 @@ export function staticParagraph(): MortarElement {
     return {
         ...defaultStaticElements,
         htmlTag: 'p',
-        customProps: {
-            children: ['Default paragraph']
-        }
+        textContent: "Default paragraph"
     }
-
 }

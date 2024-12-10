@@ -53,6 +53,12 @@ A Mortar Studio project adheres to a structured directory and file format as fol
 5. **`./mortar-studio.config.json`**  
    The main configuration file for the project. This file contains metadata and project settings.
 
+## Rendering concepts
+1. **Instance**: A reference to a component with incoming props that maps to the props required by the component. It tells the compiler where to render the component using it's index and page ID.
+2. **Component**: A reusable piece of UI that can be rendered multiple times across different pages or instances. It also holds the structure of the props required for the component and an array of elements that make up the component. Each element follows a parent child relationship using thier parent ID and index to determine.
+3. **Elements**: The smallest unit of a component that can be rendered. It can be a text element, image element, or any other HTML element. Each element has an id, index to help with the ordering of siblings for a parent element, parent ID and children.
+4. **Element ms-id**: This is an ID that let's us know the component and instance responsible for rendering that element and we also use that for targeting the element (Ex. when adding a bounding box)
+
 ## Features
 - **No-Code Builder:** Design apps visually with ease.
 - **Code Export:** Generate clean and reusable code for **React (Vite)**, **Next.js**, or **Nuxt.js**.

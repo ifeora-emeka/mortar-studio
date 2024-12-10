@@ -1,12 +1,13 @@
 import * as z from 'zod';
 import { CssPropertiesSchema } from './styles.schema.js'
 
+
 export const CreateMortarElementSchema = z.object({
     htmlTag: z.string(),
     parent_element_id: z.string().nullable(),
     attributes: z.object({}),
-    customProps: z.object({}),
-    styles: CssPropertiesSchema,
+    style: CssPropertiesSchema,
+    textContent: z.string().nullable(),
 });
 
 export type MortarElement = {
@@ -15,7 +16,7 @@ export type MortarElement = {
     parent_element_id: string | null;
     htmlTag: string;
     attributes: Record<string, string>;
-    customProps: Record<string, any>;
-    styles: Record<string, any>;
-    children: (string | MortarElement)[];
+    style: Record<string, any>;
+    children: MortarElement[];
+    textContent: string | null;
 }

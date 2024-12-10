@@ -18,9 +18,11 @@
   },
   "devDependencies": {
     "@repo/typescript-config": "*",
+    "@types/chroma-js": "^2.4.4",
     "typescript": "latest"
   },
   "dependencies": {
+    "chroma-js": "^3.1.2",
     "zod": "^3.23.8"
   }
 }

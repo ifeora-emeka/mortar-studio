@@ -1,15 +1,10 @@
 import * as z from 'zod';
+import {MortarComponentPropsSchema} from "./components.schema.js";
 
 export const CreateMortarInstanceSchema: z.ZodSchema = z.lazy(() => z.object({
     index: z.number(),
     ref: z.string().regex(/^ref::[a-zA-Z0-9_]+::[a-zA-Z0-9_]+$/, { message: "Invalid reference format." }),
-    incomingProps: z.array(z.object({
-        label: z.string(),
-        value: z.any(),
-        defaultValue: z.any().optional(),
-        dataType: z.enum(['string', 'number', 'boolean', 'array', 'object']),
-        isRequired: z.boolean(),
-    })),
+    incomingProps: MortarComponentPropsSchema,
     parentInstance: z.string().nullable(),
     children: z.array(CreateMortarInstanceSchema),
     // page_id: z.string(),
