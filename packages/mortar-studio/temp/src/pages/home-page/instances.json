@@ -7,5 +7,14 @@
     "parentInstance": null,
     "index": 0,
     "incomingProps": []
+  },
+  {
+    "id": "instance-lnxv5zbiiv",
+    "page_id": "home-page",
+    "children": [],
+    "ref": "ref::component::dmb7p1733803581372",
+    "parentInstance": null,
+    "index": 0,
+    "incomingProps": []
   }
 ]

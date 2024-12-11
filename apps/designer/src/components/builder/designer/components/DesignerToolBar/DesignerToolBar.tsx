@@ -23,12 +23,15 @@ import ToolbarCopyOptions
 export default function DesignerToolBar() {
     const { deleteElement, incrementElementIndex, decrementElementIndex } = useElement();
     const { state: { activeElements } } = usePreviewContext();
+    const isParent = !activeElements[0]?.parent_element_id;
 
     const handleDelete = () => {
-        if (activeElements.length > 0) {
+        if (activeElements.length > 0 && activeElements[0]?.parent_element_id) {
             deleteElement();
         }
     };
+
+    if(!activeElements[0]) return null;
 
     return (
         <Draggable>
@@ -39,26 +42,34 @@ export default function DesignerToolBar() {
                         "flex gap-sm z-50 bg-card shadow-xl border rounded-lg p-sm"
                     }
                 >
-                    <EachTool tooltip={"Move left"} onClick={decrementElementIndex}>
-                        <ArrowLeft/>
-                    </EachTool>
-                    <EachTool tooltip={"Move right"} onClick={incrementElementIndex}>
-                        <ArrowRight/>
-                    </EachTool>
+                    {
+                        !isParent && <>
+                            <EachTool tooltip={"Move left"} onClick={decrementElementIndex}>
+                                <ArrowLeft/>
+                            </EachTool>
+                            <EachTool tooltip={"Move right"} onClick={incrementElementIndex}>
+                                <ArrowRight/>
+                            </EachTool>
+                        </>
+                    }
                     <EachTool tooltip={"Background color"}>
                         <PaintBucket/>
-                    </EachTool>
-                    <EachTool tooltip={"Text color"}>
-                        <CaseSensitive/>
                     </EachTool>
                     <ToolbarCopyOptions>
                         <EachTool tooltip={"Make copies"}>
                             <Copy/>
                         </EachTool>
                     </ToolbarCopyOptions>
-                    <EachTool tooltip={"Delete"} onClick={handleDelete}>
-                        <Trash/>
-                    </EachTool>
+                    {
+                        !isParent && <>
+                            <EachTool tooltip={"Text color"}>
+                                <CaseSensitive/>
+                            </EachTool>
+                            <EachTool tooltip={"Delete"} onClick={handleDelete}>
+                                <Trash/>
+                            </EachTool>
+                        </>
+                    }
                     <ToolBarAddOptions>
                         <EachTool tooltip={"Add"}>
                             <Plus/>

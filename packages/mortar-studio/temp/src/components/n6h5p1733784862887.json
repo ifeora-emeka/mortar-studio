@@ -24,7 +24,7 @@
       "customProps": {},
       "styles": {},
       "children": [],
-      "index": 1,
+      "index": 0,
       "id": "7dc38616-87c3-45f7-b9fb-71729a66a4f4",
       "textContent": "This is Heading 1"
     },
@@ -37,7 +37,7 @@
       "customProps": {},
       "styles": {},
       "children": [],
-      "index": 0,
+      "index": 2,
       "id": "a9400d3b-6449-4096-aacc-85d9b8bc0185",
       "textContent": "The smaller heading 2"
     },
@@ -50,7 +50,7 @@
       "customProps": {},
       "styles": {},
       "children": [],
-      "index": 2,
+      "index": 6,
       "id": "2037086c-b739-47e5-a388-a65ea8541967",
       "textContent": "This is HEADING 3"
     }

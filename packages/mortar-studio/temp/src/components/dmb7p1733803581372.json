@@ -1,0 +1,640 @@
+{
+  "id": "dmb7p1733803581372",
+  "name": "DeeplyNested",
+  "elements": [
+    {
+      "htmlTag": "div",
+      "parent_element_id": null,
+      "attributes": {
+        "className": "flex flex-col bg-blue-200 p-5",
+        "class": "p-10 bg-green-100 grid grid-col-4 gap-10"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "hvlhs"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "hvlhs",
+      "attributes": {
+        "class": "text-center text-4xl font-bold mb-5"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "443d162e-73c6-4b8a-abfe-eeb41a158115",
+      "textContent": "Showing duplicates"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "146a0a0f-af99-4031-839d-5c997e849720",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "a88ba722-cd61-4bfb-9cfd-fec6ed7e71aa",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "4b5fba6b-9bdc-4697-8077-82c8f57d26e0",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "c95310fd-96dc-43a0-8179-6ea010c8ad47",
+      "textContent": "First card"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "c955728d-0e31-4444-a92c-2c89cfd320ae",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "94e2336e-ac6d-4610-830d-e97af2b0b5fb",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "257c6814-38d3-4372-80ed-df62b9b5b7f5",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-5 bg-blue-100 rounded-xl border\nborder-blue-200 flex flex-col gap-3 justify-between"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "4b5fba6b-9bdc-4697-8077-82c8f57d26e0"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "15eb520a-3152-4d85-8534-f2aa6aaf26d2",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "1c5a6056-5d66-4a60-b74d-7b864c36c941",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "23587aa9-5f50-4467-9394-96e5e9b53dcc",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "688f5f30-c164-41d1-9be8-2546c009e752",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "84a1bc0c-0772-4572-bc64-7b9cb2412144",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "2b1167a9-e341-4052-8974-7b1e098b4916",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "7524e6e6-0618-4332-ae6a-9a3423793ef5",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "d30e7891-d74a-4d91-991e-453494b842f3",
+      "textContent": "Card 2 Heading"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "ac096c47-9a7c-4b37-9cb2-21a61dacc20e",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "768b1114-c275-4a85-932e-4094d4ce4576",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "85ccfba4-6b6c-434b-b6a3-d3a99f4273aa",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "d030194e-2f96-4388-8b15-373dfcfd5f85",
+      "textContent": "Card 2 Heading"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "a257ea37-5258-4a2d-989f-199a7865fe91",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "0b099d95-4091-424e-9545-c3d43141d160",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "a2c64eb3-4cb7-4b20-8dfc-9e0f64888341",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "9c8f3814-2029-4852-9877-bf4390798bdc",
+      "textContent": "Card 2 Heading"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "5b61d1e3-30c3-4d2a-9a5e-966656db5c41",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "6122ae2d-f6e2-4e94-a114-aeae4d399556",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "0590e66b-1be3-4db7-999b-070eaa715f1e",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "9606e0da-a74f-4e06-964b-503f2b901b49",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "3da35def-8a8b-4a55-a8a8-c114ef1cad00",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "5daeea67-034b-42b1-8ed6-b4e2e04650f9",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "8a2dfe09-2ff5-44d0-8fa4-93537e6ef5e7",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "ccd5ca30-a46c-4a45-8f7e-ae4c1fa2e56f",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "6f80bd0d-61e6-450d-8ca5-3cefb9850687",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "01c75ff0-4927-4e75-81ce-e31ed9df32d0",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "65bbb3bf-da59-4c3f-b5d5-79b0318119af",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "99297e94-4f81-4b4a-97ff-37d4b62ee594",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "bbf27f5f-5b24-4213-a6c1-18f717d44080",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "15dca249-b703-47dc-bf51-753dff71397b",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "6956b26d-d256-4f2d-919a-46618de97034",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "24387254-1bb5-450b-a42c-9758c75b90bb",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "hvlhs",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-10 bg-purple-500 grid grid-cols-3 gap-5"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "257c6814-38d3-4372-80ed-df62b9b5b7f5"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "4b5fba6b-9bdc-4697-8077-82c8f57d26e0",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "a412187a-9fd7-470c-95e1-41a8b8f0aaeb",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "7524e6e6-0618-4332-ae6a-9a3423793ef5",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "0acc5275-d89b-4bed-a124-a83f14d56e6c",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "85ccfba4-6b6c-434b-b6a3-d3a99f4273aa",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "aa6e4750-0fd2-40db-85bf-a6d874d59190",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "a2c64eb3-4cb7-4b20-8dfc-9e0f64888341",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "5214bbe1-9577-4b74-bd7c-d1e37675a2d1",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "4b5fba6b-9bdc-4697-8077-82c8f57d26e0",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "c955728d-0e31-4444-a92c-2c89cfd320ae"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "7524e6e6-0618-4332-ae6a-9a3423793ef5",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "ac096c47-9a7c-4b37-9cb2-21a61dacc20e"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "85ccfba4-6b6c-434b-b6a3-d3a99f4273aa",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "a257ea37-5258-4a2d-989f-199a7865fe91"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "a2c64eb3-4cb7-4b20-8dfc-9e0f64888341",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "5b61d1e3-30c3-4d2a-9a5e-966656db5c41"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "0eb3756b-df77-49ca-9a80-56d82283e54f",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "197770d3-a568-437c-965a-39aa66a7f675",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "e496db7f-3fdb-46e3-8863-052088783703",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "9179759a-4c3b-4a3f-8f69-801d40e454ac",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "16a723ba-8e4e-4972-99d9-f2a2346cb8e5",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "61ebd345-b45a-4185-851c-b149e6e332b5",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "f4f56df3-02e1-4f72-98d8-8ca256436e5d",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "cc1b5c51-ff1b-4466-b943-316dc0167dab",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "d3300558-8901-48da-b689-41be7b4af696",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "aef5d82d-8022-4ff8-922e-a29c3f7e7d16",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "63617f5d-185f-452a-9da5-7ae6572960ac",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "2ab8c31a-7a82-4dee-b77e-dc64388a7046",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "f27264d0-0dde-4033-a824-05ca4b2a2de0",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "d4b9e974-d12a-4216-ad94-ff92a1b7ce54",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "72c197a2-f882-47e3-9610-f58350aaacc6",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "16091de1-e317-4269-bdc2-b3bad04782f2",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "bc3f41e5-3c38-4579-ac54-acc989846bce",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "451be447-4bba-48f9-a512-2a528be102ef",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "342d20bd-2074-4a33-bdbe-f9f1908b4116",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "8596e620-25d6-4c9f-80f7-143954050f57",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "5ff5d047-f121-48fc-b5a2-786665fc2047",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "f6fd8f0f-7bd4-4ac5-a61d-16856958ef52",
+      "textContent": "Index 4"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "5ff5d047-f121-48fc-b5a2-786665fc2047",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "39566384-48ea-4619-9df2-30615d35f287",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "0c827330-dde2-4b42-8fe4-9ee9bf3c0f5b",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "458e8de8-23af-4161-8d0b-eee16639dc29",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "5ff5d047-f121-48fc-b5a2-786665fc2047",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "0c827330-dde2-4b42-8fe4-9ee9bf3c0f5b"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "257c6814-38d3-4372-80ed-df62b9b5b7f5",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-5 bg-blue-100 rounded-xl border\nborder-blue-200 flex flex-col gap-3 justify-between"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "5ff5d047-f121-48fc-b5a2-786665fc2047"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "d2f2e9cb-647c-4436-b7c7-26c3d9d95946",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "92b361a9-998e-42e1-9d7c-27ac4d46fbf4",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "d50950f6-8213-42a6-8e1e-8922740a8f70",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "530f0e97-023b-42f2-9b6d-dc0b1b9f0b76",
+      "textContent": "Index 1"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "d50950f6-8213-42a6-8e1e-8922740a8f70",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "aece7882-bd33-412e-b024-7467228d4f27",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "557351ae-3811-42bb-b4c9-e2dbb7addc4a",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "3496fac4-ea21-4e95-8629-3987170a25b0",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "d50950f6-8213-42a6-8e1e-8922740a8f70",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "557351ae-3811-42bb-b4c9-e2dbb7addc4a"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "257c6814-38d3-4372-80ed-df62b9b5b7f5",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-5 bg-blue-100 rounded-xl border\nborder-blue-200 flex flex-col gap-3 justify-between"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "d50950f6-8213-42a6-8e1e-8922740a8f70"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "2d92964a-00ae-4a8d-b011-a9893ed9d09a",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "a69728f3-c12e-4299-af12-c3ee6c867c4d",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "5ff5d047-f121-48fc-b5a2-786665fc2047",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 3,
+      "id": "00d986fa-2efe-47a9-8cef-352f9ea4891f",
+      "ref": "ref::component::n6h5p1733784862887",
+      "incomingProps": [],
+      "parentInstance": null,
+      "page_id": "about"
+    }
+  ],
+  "props": []
+}

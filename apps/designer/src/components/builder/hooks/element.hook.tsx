@@ -7,6 +7,7 @@ import {
 import {MortarElementInstance} from "@repo/common/schema/instance";
 import {MortarComponent} from "@repo/common/schema/component";
 
+
 export const useElement = () => {
     const {state, setPreviewState} = usePreviewContext();
 
@@ -21,10 +22,14 @@ export const useElement = () => {
     };
 
     const appendElement = (elementData: Partial<MortarElement>) => {
+        const {components: allComponents} = state;
         const activeComponent = getActiveComponent();
-        if (!activeComponent) return;
-
         const activeElement = state.activeElements[0];
+        if (!activeComponent || !activeElement) return;
+
+        const components = allComponents;
+        const activeComponentIndex = components.findIndex(comp => comp.id == activeComponent.id);
+
         const newElement: MortarElement = {
             ...defaultStaticElements,
             ...elementData,
@@ -34,17 +39,14 @@ export const useElement = () => {
             children: elementData.children || [],
         };
 
-        const updatedElements = [...activeComponent.elements, newElement];
+        activeComponent.elements = [
+            ...activeComponent.elements,
+            newElement,
+        ];
 
-        const updatedComponent = {
-            ...activeComponent,
-            elements: updatedElements,
-        };
+        components[activeComponentIndex] = activeComponent;
 
-        setPreviewState({
-            components: state.components.map(comp => comp.id === activeComponent.id ? updatedComponent : comp),
-            activeElements: [newElement]
-        });
+        setPreviewState({components});
     };
 
     const prependElement = () => {
@@ -52,75 +54,178 @@ export const useElement = () => {
     };
 
     const duplicateElement = () => {
+        const { activeElements, activeComponents, components: allComponents } = state;
 
+        if (activeElements.length === 0) return;
+
+        const activeElement = activeElements[0];
+        const activeComponent = activeComponents[0];
+        if (!activeComponent || !activeElement.parent_element_id) return;
+
+        const newElements: MortarElement[] = [];
+
+        const duplicateElementWithChildren = (element: MortarElement, newParentId: string | null, newIndex: number): MortarElement => {
+            const newElementId = uuidv4();
+            const newElement: MortarElement = {
+                ...element,
+                id: newElementId,
+                parent_element_id: newParentId,
+                index: newIndex,
+                children: element.children.map((child, idx) => duplicateElementWithChildren(child, newElementId, idx))
+            };
+            newElements.push(newElement);
+            return newElement;
+        };
+
+        const parentElement = activeComponent.elements.find(el => el.id === activeElement.parent_element_id);
+        if (!parentElement) return;
+
+        const siblings = activeComponent.elements.filter(el => el.parent_element_id === parentElement.id).sort((a, b) => a.index - b.index);
+        siblings.forEach((sibling) => {
+            if (sibling.index > activeElement.index) {
+                sibling.index += 1;
+            }
+        });
+
+        const newParentIndex = activeElement.index + 1;
+        duplicateElementWithChildren(activeElement, activeElement.parent_element_id, newParentIndex);
+
+        const updatedComponent = {
+            ...activeComponent,
+            elements: [
+                ...activeComponent.elements,
+                ...newElements
+            ]
+        };
+
+        setPreviewState({
+            components: allComponents.map(comp => comp.id === activeComponent.id ? updatedComponent : comp),
+        });
+
+        setTimeout(() => {
+            setPreviewState({
+                activeElements: [newElements[0]]
+            });
+        }, 0);
     };
 
-    const deleteElement = () => {
 
+    const deleteElement = () => {
+        const { activeElements, activeComponents, components: allComponents } = state;
+
+        if (activeElements.length === 0) return;
+
+        const activeElement = activeElements[0];
+        const activeComponent = activeComponents[0];
+        if (!activeComponent) return;
+
+        const deleteElementWithChildren = (element: MortarElement, elements: MortarElement[]): MortarElement[] => {
+            return elements.filter(el => el.id !== element.id && el.parent_element_id !== element.id)
+                .map(el => ({
+                    ...el,
+                    children: deleteElementWithChildren(el, el.children)
+                }));
+        };
+
+        const updatedElements = deleteElementWithChildren(activeElement, activeComponent.elements);
+
+        const parentElement = activeComponent.elements.find(el => el.id === activeElement.parent_element_id);
+        if (parentElement) {
+            const siblings = updatedElements.filter(el => el.parent_element_id === parentElement.id).sort((a, b) => a.index - b.index);
+            siblings.forEach((sibling, idx) => {
+                sibling.index = idx;
+            });
+        }
+
+        const updatedComponent = {
+            ...activeComponent,
+            elements: updatedElements,
+        };
+
+        setPreviewState({
+            components: allComponents.map(comp => comp.id === activeComponent.id ? updatedComponent : comp),
+            activeElements: [],
+        });
     };
 
     const incrementElementIndex = () => {
-        const {activeElements, activeComponents, components: allComponents} = state;
+        const { activeElements, activeComponents, components: allComponents } = state;
 
         if (activeElements.length === 0) return;
 
         const activeElement = activeElements[0];
         const activeComponent = activeComponents[0];
-        if (!activeComponent) return;
+        if (!activeComponent || !activeElement.parent_element_id) return;
 
-        const components = allComponents;
-        const activeComponentIndex = components.findIndex(comp => comp.id === activeComponent.id);
-        const componentElements = components[activeComponentIndex].elements.sort((a, b) => a.index - b.index);
-        const targetElementIndex = componentElements.findIndex(el => el.id === activeElement.id);
+        const parentElement = activeComponent.elements.find(el => el.id === activeElement.parent_element_id);
+        if (!parentElement) return;
 
-        if (targetElementIndex < componentElements.length - 1) {
-            const nextElement = componentElements[targetElementIndex + 1];
+        const siblings = activeComponent.elements.filter(el => el.parent_element_id === parentElement.id).sort((a, b) => a.index - b.index);
 
-            // Swap the indices
-            const tempIndex = activeElement.index;
-            activeElement.index = nextElement.index;
-            nextElement.index = tempIndex;
+        const currentIndex = siblings.findIndex(el => el.id === activeElement.id);
+        if (currentIndex === -1 || currentIndex === siblings.length - 1) return;
 
-            // Update the component elements
-            componentElements[targetElementIndex] = nextElement;
-            componentElements[targetElementIndex + 1] = activeElement;
+        const nextElement = siblings[currentIndex + 1];
+        const tempIndex = activeElement.index;
+        activeElement.index = nextElement.index;
+        nextElement.index = tempIndex;
 
-            components[activeComponentIndex].elements = componentElements;
+        siblings.sort((a, b) => a.index - b.index).forEach((sibling, idx) => {
+            sibling.index = idx;
+        });
 
-            setPreviewState({components, activeElements})
-        }
+        const updatedComponent = {
+            ...activeComponent,
+            elements: activeComponent.elements.map(el => {
+                const sibling = siblings.find(sib => sib.id === el.id);
+                return sibling ? sibling : el;
+            })
+        };
+
+        setPreviewState({
+            components: allComponents.map(comp => comp.id === activeComponent.id ? updatedComponent : comp),
+            activeElements: [activeElement]
+        });
     };
 
     const decrementElementIndex = () => {
-        const {activeElements, activeComponents, components: allComponents} = state;
+        const { activeElements, activeComponents, components: allComponents } = state;
 
         if (activeElements.length === 0) return;
 
         const activeElement = activeElements[0];
         const activeComponent = activeComponents[0];
-        if (!activeComponent) return;
+        if (!activeComponent || !activeElement.parent_element_id) return;
 
-        const components = allComponents;
-        const activeComponentIndex = components.findIndex(comp => comp.id === activeComponent.id);
-        const componentElements = components[activeComponentIndex].elements.sort((a, b) => a.index - b.index);
-        const targetElementIndex = componentElements.findIndex(el => el.id === activeElement.id);
+        const parentElement = activeComponent.elements.find(el => el.id === activeElement.parent_element_id);
+        if (!parentElement) return;
 
-        if (targetElementIndex > 0) {
-            const previousElement = componentElements[targetElementIndex - 1];
+        const siblings = activeComponent.elements.filter(el => el.parent_element_id === parentElement.id).sort((a, b) => a.index - b.index);
 
-            // Swap the indices
-            const tempIndex = activeElement.index;
-            activeElement.index = previousElement.index;
-            previousElement.index = tempIndex;
+        const currentIndex = siblings.findIndex(el => el.id === activeElement.id);
+        if (currentIndex === -1 || currentIndex === 0) return;
 
-            // Update the component elements
-            componentElements[targetElementIndex] = previousElement;
-            componentElements[targetElementIndex - 1] = activeElement;
+        const prevElement = siblings[currentIndex - 1];
+        const tempIndex = activeElement.index;
+        activeElement.index = prevElement.index;
+        prevElement.index = tempIndex;
 
-            components[activeComponentIndex].elements = componentElements;
+        siblings.sort((a, b) => a.index - b.index).forEach((sibling, idx) => {
+            sibling.index = idx;
+        });
 
-            setPreviewState({components, activeElements});
-        }
+        const updatedComponent = {
+            ...activeComponent,
+            elements: activeComponent.elements.map(el => {
+                const sibling = siblings.find(sib => sib.id === el.id);
+                return sibling ? sibling : el;
+            })
+        };
+
+        setPreviewState({
+            components: allComponents.map(comp => comp.id === activeComponent.id ? updatedComponent : comp),
+            activeElements: [activeElement]
+        });
     };
 
     const updateElementAttributes = (attributes: Record<string, string>) => {
@@ -192,6 +297,86 @@ export const useElement = () => {
         });
     };
 
+    const copyActiveElement = () => {
+        const { activeElements, activeComponents } = state;
+
+        if (activeElements.length === 0) return;
+
+        const activeElement = activeElements[0];
+        const activeComponent = activeComponents[0];
+        if (!activeComponent || !activeElement) return;
+
+        const duplicateElementWithChildren = (element: MortarElement): MortarElement => {
+            const newElement: MortarElement = {
+                ...element,
+                id: uuidv4(),
+                parent_element_id: element.parent_element_id,
+                children: element.children.map(child => duplicateElementWithChildren(child))
+            };
+            return newElement;
+        };
+
+        const elementToCopy = duplicateElementWithChildren(activeElement);
+
+        sessionStorage.setItem('copiedElement', JSON.stringify(elementToCopy));
+    };
+
+    const pasteElement = () => {
+        const { activeElements, activeComponents, components: allComponents } = state;
+
+        if (activeElements.length === 0) return;
+
+        const activeElement = activeElements[0];
+        const activeComponent = activeComponents[0];
+        if (!activeComponent || !activeElement) return;
+
+        const copiedElementStr = sessionStorage.getItem('copiedElement');
+        if (!copiedElementStr) return;
+
+        const elementToPaste: MortarElement = JSON.parse(copiedElementStr);
+
+        const newElements: MortarElement[] = [];
+
+        const duplicateElementWithChildren = (element: MortarElement, newParentId: string | null, newIndex: number): MortarElement => {
+            const newElementId = uuidv4();
+            const newElement: MortarElement = {
+                ...element,
+                id: newElementId,
+                parent_element_id: newParentId,
+                index: newIndex,
+                children: []
+            };
+            newElements.push(newElement);
+
+            element.children.forEach((child, idx) => {
+                duplicateElementWithChildren(child, newElementId, idx);
+            });
+
+            return newElement;
+        };
+
+        const lastIndex = activeComponent.elements
+            .filter(el => el.parent_element_id === activeElement.id)
+            .reduce((maxIndex, el) => Math.max(maxIndex, el.index), -1);
+
+        duplicateElementWithChildren(elementToPaste, activeElement.id, lastIndex + 1);
+
+        const updatedComponent = {
+            ...activeComponent,
+            elements: [
+                ...activeComponent.elements,
+                ...newElements
+            ]
+        };
+
+        setPreviewState({
+            components: allComponents.map(comp =>
+                comp.id === activeComponent.id ? updatedComponent : comp
+            ),
+            activeElements: [newElements[0]]
+        });
+    };
+
     return {
         appendElement,
         prependElement,
@@ -201,6 +386,8 @@ export const useElement = () => {
         decrementElementIndex,
         updateElementAttributes,
         setActiveElement,
-        updateElement
+        updateElement,
+        copyActiveElement,
+        pasteElement
     };
 };
