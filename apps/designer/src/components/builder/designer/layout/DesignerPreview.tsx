@@ -8,7 +8,7 @@ import {compileInstances} from "@repo/common/utils";
 import { MortarElement } from "@repo/common/schema/element";
 
 export default function DesignerPreview() {
-    const { state: { activePage, instances, activeElements, activePageInstances, activeComponents } } = usePreviewContext();
+    const { state: { activePage, instances, activeElements, activePageInstances, activeComponents, components } } = usePreviewContext();
     const [width] = useState('w-[95%]');
     const frameRef = useRef<HTMLIFrameElement>(null);
     const instancesByPageID = activePage ? instances.filter(i => i.page_id === activePage.id) : [];
@@ -296,12 +296,13 @@ export default function DesignerPreview() {
                                     return <InstanceRenderer
                                         key={instance.id}
                                         instance={instance}
+                                        activeElements={activeElements}
+                                        components={components}
                                     />
                                 })
                             }
                         </>
                     </Frame>
-
                     <DesignerToolBar />
                 </div>
             }

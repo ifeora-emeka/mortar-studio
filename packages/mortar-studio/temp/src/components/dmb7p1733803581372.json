@@ -40,19 +40,6 @@
       "textContent": "Default card button"
     },
     {
-      "htmlTag": "h1",
-      "parent_element_id": "4b5fba6b-9bdc-4697-8077-82c8f57d26e0",
-      "attributes": {
-        "class": "font-bold text-3xl"
-      },
-      "customProps": {},
-      "styles": {},
-      "children": [],
-      "index": 0,
-      "id": "c95310fd-96dc-43a0-8179-6ea010c8ad47",
-      "textContent": "First card"
-    },
-    {
       "htmlTag": "p",
       "parent_element_id": "c955728d-0e31-4444-a92c-2c89cfd320ae",
       "attributes": {},
@@ -62,19 +49,6 @@
       "index": 0,
       "id": "94e2336e-ac6d-4610-830d-e97af2b0b5fb",
       "textContent": "Default card button"
-    },
-    {
-      "htmlTag": "div",
-      "parent_element_id": "257c6814-38d3-4372-80ed-df62b9b5b7f5",
-      "attributes": {
-        "className": "h-[100px] w-[100%] bg-blue-100",
-        "class": "p-5 bg-blue-100 rounded-xl border\nborder-blue-200 flex flex-col gap-3 justify-between"
-      },
-      "customProps": {},
-      "styles": {},
-      "children": [],
-      "index": 2,
-      "id": "4b5fba6b-9bdc-4697-8077-82c8f57d26e0"
     },
     {
       "htmlTag": "p",
@@ -263,24 +237,13 @@
       "parent_element_id": "hvlhs",
       "attributes": {
         "className": "h-[100px] w-[100%] bg-blue-100",
-        "class": "p-10 bg-purple-500 grid grid-cols-3 gap-5"
+        "class": "p-10 bg-purple-500 grid grid-cols-3 gap-10"
       },
       "customProps": {},
       "styles": {},
       "children": [],
       "index": 1,
       "id": "257c6814-38d3-4372-80ed-df62b9b5b7f5"
-    },
-    {
-      "htmlTag": "p",
-      "parent_element_id": "4b5fba6b-9bdc-4697-8077-82c8f57d26e0",
-      "attributes": {},
-      "customProps": {},
-      "styles": {},
-      "children": [],
-      "index": 1,
-      "id": "a412187a-9fd7-470c-95e1-41a8b8f0aaeb",
-      "textContent": "Card 1 sub heading..."
     },
     {
       "htmlTag": "p",
@@ -314,19 +277,6 @@
       "index": 1,
       "id": "5214bbe1-9577-4b74-bd7c-d1e37675a2d1",
       "textContent": "Card 1 sub heading..."
-    },
-    {
-      "htmlTag": "div",
-      "parent_element_id": "4b5fba6b-9bdc-4697-8077-82c8f57d26e0",
-      "attributes": {
-        "className": "h-[100px] w-[100%] bg-blue-100",
-        "class": "p-3 bg-blue-400 text-white rounded-xl "
-      },
-      "customProps": {},
-      "styles": {},
-      "children": [],
-      "index": 1,
-      "id": "c955728d-0e31-4444-a92c-2c89cfd320ae"
     },
     {
       "htmlTag": "div",
@@ -478,30 +428,6 @@
       "textContent": "Default card button"
     },
     {
-      "htmlTag": "h1",
-      "parent_element_id": "5ff5d047-f121-48fc-b5a2-786665fc2047",
-      "attributes": {
-        "class": "font-bold text-3xl"
-      },
-      "customProps": {},
-      "styles": {},
-      "children": [],
-      "index": 0,
-      "id": "f6fd8f0f-7bd4-4ac5-a61d-16856958ef52",
-      "textContent": "Index 4"
-    },
-    {
-      "htmlTag": "p",
-      "parent_element_id": "5ff5d047-f121-48fc-b5a2-786665fc2047",
-      "attributes": {},
-      "customProps": {},
-      "styles": {},
-      "children": [],
-      "index": 1,
-      "id": "39566384-48ea-4619-9df2-30615d35f287",
-      "textContent": "Card 1 sub heading..."
-    },
-    {
       "htmlTag": "p",
       "parent_element_id": "0c827330-dde2-4b42-8fe4-9ee9bf3c0f5b",
       "attributes": {},
@@ -511,32 +437,6 @@
       "index": 0,
       "id": "458e8de8-23af-4161-8d0b-eee16639dc29",
       "textContent": "Default card button"
-    },
-    {
-      "htmlTag": "div",
-      "parent_element_id": "5ff5d047-f121-48fc-b5a2-786665fc2047",
-      "attributes": {
-        "className": "h-[100px] w-[100%] bg-blue-100",
-        "class": "p-3 bg-blue-400 text-white rounded-xl "
-      },
-      "customProps": {},
-      "styles": {},
-      "children": [],
-      "index": 2,
-      "id": "0c827330-dde2-4b42-8fe4-9ee9bf3c0f5b"
-    },
-    {
-      "htmlTag": "div",
-      "parent_element_id": "257c6814-38d3-4372-80ed-df62b9b5b7f5",
-      "attributes": {
-        "className": "h-[100px] w-[100%] bg-blue-100",
-        "class": "p-5 bg-blue-100 rounded-xl border\nborder-blue-200 flex flex-col gap-3 justify-between"
-      },
-      "customProps": {},
-      "styles": {},
-      "children": [],
-      "index": 1,
-      "id": "5ff5d047-f121-48fc-b5a2-786665fc2047"
     },
     {
       "htmlTag": "p",
@@ -558,7 +458,7 @@
       "customProps": {},
       "styles": {},
       "children": [],
-      "index": 0,
+      "index": 1,
       "id": "530f0e97-023b-42f2-9b6d-dc0b1b9f0b76",
       "textContent": "Index 1"
     },
@@ -569,7 +469,7 @@
       "customProps": {},
       "styles": {},
       "children": [],
-      "index": 1,
+      "index": 2,
       "id": "aece7882-bd33-412e-b024-7467228d4f27",
       "textContent": "Card 1 sub heading..."
     },
@@ -594,7 +494,7 @@
       "customProps": {},
       "styles": {},
       "children": [],
-      "index": 2,
+      "index": 3,
       "id": "557351ae-3811-42bb-b4c9-e2dbb7addc4a"
     },
     {
@@ -623,17 +523,477 @@
     },
     {
       "htmlTag": "div",
-      "parent_element_id": "5ff5d047-f121-48fc-b5a2-786665fc2047",
+      "parent_element_id": "257c6814-38d3-4372-80ed-df62b9b5b7f5",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-5 bg-blue-100 rounded-xl border\nborder-blue-200 flex flex-col gap-3 justify-between"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "0828e6cb-c681-4b11-9daa-267e16e880fc"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "0828e6cb-c681-4b11-9daa-267e16e880fc",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "b0dac143-e040-4b76-ba28-578e77981345",
+      "textContent": "Index 4"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "0828e6cb-c681-4b11-9daa-267e16e880fc",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "506dbe41-4164-4f1a-805e-7919678b2861",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "0828e6cb-c681-4b11-9daa-267e16e880fc",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 3,
+      "id": "f69efbbe-1114-4873-97c1-48a92b88addc"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "f69efbbe-1114-4873-97c1-48a92b88addc",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "03e763ac-3ba1-4c0c-95f4-a5da0184ce18",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "0828e6cb-c681-4b11-9daa-267e16e880fc",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 4,
+      "id": "0d138c6c-fce8-46c5-8096-d8fec63d6442",
+      "ref": "ref::component::n6h5p1733784862887",
+      "incomingProps": [],
+      "parentInstance": null,
+      "page_id": "about"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "9c0036bb-5258-44ad-bf3c-e861aa1d2679",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "f467703b-625c-44a0-9519-ce6df2dabb8f",
+      "textContent": "Move to hero"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "9c0036bb-5258-44ad-bf3c-e861aa1d2679",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "588617fa-27d6-4105-b793-f7c95e649850",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "fb4abfaf-ae2f-44e8-9029-40fe52382301",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "0cd23619-04ae-4bfd-a8ed-5fd8547ab510",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "9c0036bb-5258-44ad-bf3c-e861aa1d2679",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 3,
+      "id": "fb4abfaf-ae2f-44e8-9029-40fe52382301"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "9c0036bb-5258-44ad-bf3c-e861aa1d2679",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 4,
+      "id": "9c31ef83-1b03-4da8-a252-84426887e2cb",
+      "ref": "ref::component::n6h5p1733784862887",
+      "incomingProps": [],
+      "parentInstance": null,
+      "page_id": "about"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "257c6814-38d3-4372-80ed-df62b9b5b7f5",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-5 bg-blue-100 rounded-xl border\nborder-blue-200 flex flex-col gap-3 justify-between"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "9c0036bb-5258-44ad-bf3c-e861aa1d2679"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "dec68014-90b6-4a4d-940a-e8ac5d529125",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "27ec691d-d977-4273-a6a5-520aa96f5549",
+      "textContent": "Index 1"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "dec68014-90b6-4a4d-940a-e8ac5d529125",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "be016778-e198-4220-99b0-eb6bd79d909b",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "1f4a883a-9761-40f1-9942-3430831bcbd6",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "1fbb66f4-4c41-40d3-b44b-900243e6a7ae",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "dec68014-90b6-4a4d-940a-e8ac5d529125",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "1f4a883a-9761-40f1-9942-3430831bcbd6"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "d853f7ce-bdcf-4961-b2fd-9d2ad12239fe",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "fee16773-716d-4f61-96bc-a886e65d7819",
+      "textContent": "Index 4"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "d853f7ce-bdcf-4961-b2fd-9d2ad12239fe",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "0c6ba7ab-e91e-4756-89e9-11669748dd58",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "e3085abb-3d2d-4a21-af65-d9d37abc5f31",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "387ad696-75c3-4660-b4a8-ff8e9a4b8e86",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "d853f7ce-bdcf-4961-b2fd-9d2ad12239fe",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "e3085abb-3d2d-4a21-af65-d9d37abc5f31"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "d853f7ce-bdcf-4961-b2fd-9d2ad12239fe",
       "attributes": {},
       "customProps": {},
       "styles": {},
       "children": [],
       "index": 3,
-      "id": "00d986fa-2efe-47a9-8cef-352f9ea4891f",
+      "id": "8ab57a98-d21a-48cd-b584-7ca9dfa27d5d",
       "ref": "ref::component::n6h5p1733784862887",
       "incomingProps": [],
       "parentInstance": null,
       "page_id": "about"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "fc4d1e7f-fc3f-41ae-9445-cf5212fdaa60",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "952da21e-dc16-4b46-a275-b36f830759be",
+      "textContent": "First card"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "fc4d1e7f-fc3f-41ae-9445-cf5212fdaa60",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "ce4648db-6f01-4071-ac93-05e9c0c31193",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "bb49bc22-d3f2-4777-b74b-a212e16d819b",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "8cbc028f-aad7-4f2b-ba01-0d148d96ccac",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "fc4d1e7f-fc3f-41ae-9445-cf5212fdaa60",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "bb49bc22-d3f2-4777-b74b-a212e16d819b"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "821930d1-20a8-485e-911e-d7a70314062c",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "5922d544-6428-4b0d-a2da-cd93c85e0f16",
+      "textContent": "Index 4"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "821930d1-20a8-485e-911e-d7a70314062c",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "92a71de1-4fd6-4c14-ac16-c1a372e8d3ae",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "b6132a8e-c752-421d-b51c-e19804c7ec50",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "2f0bdd38-a06f-4d54-9179-d5a270e4c86d",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "821930d1-20a8-485e-911e-d7a70314062c",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "b6132a8e-c752-421d-b51c-e19804c7ec50"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "821930d1-20a8-485e-911e-d7a70314062c",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 3,
+      "id": "64cbd792-8e8c-494f-a1eb-13806efa9649",
+      "ref": "ref::component::n6h5p1733784862887",
+      "incomingProps": [],
+      "parentInstance": null,
+      "page_id": "about"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "9a2b60f1-0649-46ce-85be-22e4ea742bd5",
+      "attributes": {
+        "class": "font-bold text-3xl"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "fbf5e9ec-fd8a-4040-af9f-704ff35b0ce7",
+      "textContent": "Move to hero"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "9a2b60f1-0649-46ce-85be-22e4ea742bd5",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "f409f904-c93f-42c1-84ff-85c91dc768a6",
+      "textContent": "Card 1 sub heading..."
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "17b23817-71eb-4e41-8794-818b153fd714",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "ff8bd061-e503-47d0-8399-9447b3f97632",
+      "textContent": "Default card button"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "9a2b60f1-0649-46ce-85be-22e4ea742bd5",
+      "attributes": {
+        "className": "h-[100px] w-[100%] bg-blue-100",
+        "class": "p-3 bg-blue-400 text-white rounded-xl "
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "17b23817-71eb-4e41-8794-818b153fd714"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "9a2b60f1-0649-46ce-85be-22e4ea742bd5",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 3,
+      "id": "9f035ae8-be0e-41a3-9afc-55d59c8a3b1b",
+      "ref": "ref::component::n6h5p1733784862887",
+      "incomingProps": [],
+      "parentInstance": null,
+      "page_id": "about"
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "d50950f6-8213-42a6-8e1e-8922740a8f70",
+      "attributes": {
+        "src": "https://picsum.photos/500/600",
+        "alt": "Placeholder image 150x150",
+        "className": "w-[150px] h-[150px]"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "4ec057ab-fc9d-4975-be0d-971472025412"
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "0828e6cb-c681-4b11-9daa-267e16e880fc",
+      "attributes": {
+        "src": "https://picsum.photos/500/600",
+        "alt": "Placeholder image 150x150",
+        "className": "w-[150px] h-[150px]"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "a7a1da69-a4ec-4bbf-b148-9b6ff85511f9"
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "9c0036bb-5258-44ad-bf3c-e861aa1d2679",
+      "attributes": {
+        "src": "https://picsum.photos/500/600",
+        "alt": "Placeholder image 150x150",
+        "className": "w-[150px] h-[150px]"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "9069c479-eaac-4883-baf7-b209c1469505"
     }
   ],
   "props": []

@@ -19,7 +19,8 @@
     "lightValue": "#d9e2ec",
     "darkValue": "#d9e2ec",
     "setID": "primary-color",
-    "isStatic": true
+    "isStatic": true,
+    "new": false
   },
   {
     "id": "primary-color-3",
@@ -107,7 +108,8 @@
     "lightValue": "#09172a",
     "darkValue": "#09172a",
     "setID": "primary-color",
-    "isStatic": true
+    "isStatic": true,
+    "new": false
   },
   {
     "id": "secondary-color-1",
