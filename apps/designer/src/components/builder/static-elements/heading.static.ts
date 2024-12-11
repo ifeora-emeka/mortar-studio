@@ -7,7 +7,10 @@ export function staticHeading(): MortarElement {
     return {
         ...defaultStaticElements,
         htmlTag: 'h1',
-        textContent: "Default heading"
+        textContent: "Default heading",
+        attributes: {
+            className: "text-2xl font-bold"
+        }
     }
 
 }

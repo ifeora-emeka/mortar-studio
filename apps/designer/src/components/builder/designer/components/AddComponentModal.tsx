@@ -89,7 +89,8 @@ export default function AddComponentModal({open, onOpen}: {
                     ref: `ref::component::${newComponent.id}`,
                     parentInstance: null,
                     index: 0,
-                    incomingProps: []
+                    incomingProps: [],
+                    parentElement: null
                 }
                 pushToArray('instances', newComponentInstance);
             }, 0)

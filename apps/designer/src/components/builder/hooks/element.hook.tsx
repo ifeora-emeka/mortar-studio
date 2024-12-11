@@ -377,6 +377,52 @@ export const useElement = () => {
         });
     };
 
+    const cutActiveElement = () => {
+        const { activeElements, activeComponents, components: allComponents } = state;
+
+        if (activeElements.length === 0) return;
+
+        const activeElement = activeElements[0];
+        const activeComponent = activeComponents[0];
+        if (!activeComponent || !activeElement || !activeElement.parent_element_id) return;
+
+        // Copy the active element to session storage
+        const elementToCut: MortarElement = {
+            ...activeElement,
+            children: activeElement.children.map(child => ({...child}))
+        };
+        sessionStorage.setItem('copiedElement', JSON.stringify(elementToCut));
+
+        // Delete the active element
+        const deleteElementWithChildren = (element: MortarElement, elements: MortarElement[]): MortarElement[] => {
+            return elements.filter(el => el.id !== element.id && el.parent_element_id !== element.id)
+                .map(el => ({
+                    ...el,
+                    children: deleteElementWithChildren(el, el.children)
+                }));
+        };
+
+        const updatedElements = deleteElementWithChildren(activeElement, activeComponent.elements);
+
+        const parentElement = activeComponent.elements.find(el => el.id === activeElement.parent_element_id);
+        if (parentElement) {
+            const siblings = updatedElements.filter(el => el.parent_element_id === parentElement.id).sort((a, b) => a.index - b.index);
+            siblings.forEach((sibling, idx) => {
+                sibling.index = idx;
+            });
+        }
+
+        const updatedComponent = {
+            ...activeComponent,
+            elements: updatedElements,
+        };
+
+        setPreviewState({
+            components: allComponents.map(comp => comp.id === activeComponent.id ? updatedComponent : comp),
+            activeElements: [],
+        });
+    };
+
     return {
         appendElement,
         prependElement,
@@ -388,6 +434,7 @@ export const useElement = () => {
         setActiveElement,
         updateElement,
         copyActiveElement,
-        pasteElement
+        pasteElement,
+        cutActiveElement
     };
 };

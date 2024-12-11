@@ -1,20 +1,22 @@
 [
   {
-    "id": "instance-fd78gvmpjl",
+    "id": "instance-ygwhz7wxl4",
     "page_id": "home-page",
     "children": [],
-    "ref": "ref::component::n6h5p1733784862887",
+    "ref": "ref::component::kdv361733948840213",
     "parentInstance": null,
     "index": 0,
-    "incomingProps": []
+    "incomingProps": [],
+    "parentElement": null
   },
   {
-    "id": "instance-lnxv5zbiiv",
+    "id": "instance-7emcip49ys",
     "page_id": "home-page",
     "children": [],
-    "ref": "ref::component::dmb7p1733803581372",
+    "ref": "ref::component::xjh781733949050326",
     "parentInstance": null,
     "index": 0,
-    "incomingProps": []
+    "incomingProps": [],
+    "parentElement": null
   }
 ]

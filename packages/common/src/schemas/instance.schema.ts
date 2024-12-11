@@ -7,6 +7,7 @@ export const CreateMortarInstanceSchema: z.ZodSchema = z.lazy(() => z.object({
     incomingProps: MortarComponentPropsSchema,
     parentInstance: z.string().nullable(),
     children: z.array(CreateMortarInstanceSchema),
+    parentElement: z.string().nullable(),
     // page_id: z.string(),
 }));
 
@@ -22,8 +23,9 @@ export type MortarElementInstance = {
     id: string;
     index: number;
     parentInstance: string | null;
+    parentElement: string | null;
     ref: string;
-    page_id: string;
+    page_id: string | null;
     incomingProps: InstanceProps[];
     children: MortarElementInstance[];
 }

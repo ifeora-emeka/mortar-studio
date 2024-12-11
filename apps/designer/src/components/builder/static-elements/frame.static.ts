@@ -8,7 +8,7 @@ export function staticFrame(): MortarElement {
         ...defaultStaticElements,
         htmlTag: 'div',
         attributes: {
-            className: 'h-[100px] w-[100%] bg-blue-100'
+            className: 'h-[100px] w-[100%] bg-blue-100 p-5'
         }
     }
 

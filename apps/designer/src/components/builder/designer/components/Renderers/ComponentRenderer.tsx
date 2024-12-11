@@ -5,10 +5,12 @@ import ElementRenderer
 import {MortarElementInstance} from "@repo/common/schema/instance";
 import {MortarElement} from "@repo/common/schema/element";
 
-export default function ComponentRenderer({component, instance, activeElements}: {
+export default function ComponentRenderer({component, instance, activeElements, components, instances}: {
     component: MortarComponent;
     instance: MortarElementInstance;
     activeElements: MortarElement[];
+    components: MortarComponent[];
+    instances: MortarElementInstance[];
 }) {
     const elements = compileElements(component.elements);
 
@@ -21,6 +23,8 @@ export default function ComponentRenderer({component, instance, activeElements}:
                     instance={instance}
                     component={component}
                     activeElements={activeElements}
+                    components={components}
+                    instances={instances}
                 />
             ))}
         </>

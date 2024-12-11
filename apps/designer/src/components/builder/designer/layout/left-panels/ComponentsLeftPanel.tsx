@@ -2,7 +2,13 @@ import {useLeftPanelContext} from "@/components/builder/context/left-panel.conte
 import LeftPanelContainer from "./LeftPanelContainer";
 import {usePreviewContext} from "@/components/builder/context/preview.context.tsx";
 import {MortarComponent} from '@repo/common/schema/component'
-import {EllipsisVertical, Pencil, Plus, Trash2} from "lucide-react";
+import {
+    EllipsisVertical,
+    File,
+    Pencil,
+    SquareMousePointer,
+    Trash2
+} from "lucide-react";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -12,11 +18,13 @@ import {
 } from "@/components/ui/dropdown-menu"
 import {useElement} from "@/components/builder/hooks/element.hook.tsx";
 import { generateRandomID } from '@repo/common/utils'
+import {useInstance} from "@/components/builder/hooks/instance.hook.tsx";
 
 
 export default function ComponentsLeftPanel() {
     const {state: {components}} = usePreviewContext()
     const {state: {activePanel}} = useLeftPanelContext();
+
     return (
         <LeftPanelContainer show={activePanel === 'components'}>
             <div className="flex flex-col gap-sm p-sm">
@@ -31,8 +39,9 @@ export default function ComponentsLeftPanel() {
 }
 
 const EachComponent = ({ component }: { component: MortarComponent }) => {
-    const { state: { activePage, instances }, pushToArray } = usePreviewContext();
+    const { state: { activePage, instances, activeElements }, pushToArray } = usePreviewContext();
     const { appendElement } = useElement();
+    const { addInstanceToActiveElement } = useInstance();
 
     const handleAddToSelected = () => {
         if (!activePage) return;
@@ -50,6 +59,21 @@ const EachComponent = ({ component }: { component: MortarComponent }) => {
         pushToArray('instances', newInstance);
         appendElement(newInstance);
     };
+
+    const createInstaceForElement = () => {
+        if(!activeElements[0]) return;
+
+        addInstanceToActiveElement({
+            id: `instance-${generateRandomID(11)}`,
+            index: instances.length,
+            ref: `ref::component::${component.id}`,
+            incomingProps: [],
+            parentInstance: null,
+            children: [],
+            page_id:  null,
+            parentElement: activeElements[0].id
+        })
+    }
 
     return (
         <div>
@@ -70,9 +94,16 @@ const EachComponent = ({ component }: { component: MortarComponent }) => {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
                         <DropdownMenuItem><Pencil /> Edit</DropdownMenuItem>
-                        <DropdownMenuItem onClick={handleAddToSelected}><Plus /> Add to selected</DropdownMenuItem>
+                        <DropdownMenuItem onClick={handleAddToSelected}>
+                            <File /> Add to page
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={createInstaceForElement}>
+                            <SquareMousePointer /> Add to selected
+                        </DropdownMenuItem>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem><Trash2 /> Delete</DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <Trash2 /> Delete
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>

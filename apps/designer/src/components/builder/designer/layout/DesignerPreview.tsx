@@ -1,4 +1,3 @@
-// DesignerPreview.tsx
 import {useState, useRef, useEffect} from 'react';
 import Frame from 'react-frame-component';
 import DesignerToolBar from "@/components/builder/designer/components/DesignerToolBar/DesignerToolBar.tsx";
@@ -168,7 +167,7 @@ export default function DesignerPreview() {
         boundingBox.style.left = `${rect.left + scrollLeft - clientLeft}px`;
         boundingBox.style.width = `${rect.width}px`;
         boundingBox.style.height = `${rect.height}px`;
-        boundingBox.style.border = '2px dashed #FF5733'; // Tailwind red-500
+        boundingBox.style.border = '2px dashed #FF5733';
         boundingBox.style.boxSizing = 'border-box';
         boundingBox.style.pointerEvents = 'none';
         boundingBox.style.zIndex = '9998';
@@ -179,7 +178,7 @@ export default function DesignerPreview() {
         tagBadge.style.position = 'absolute';
         tagBadge.style.top = '-24px';
         tagBadge.style.left = '0';
-        tagBadge.style.backgroundColor = '#FF5733'; // Tailwind red-500
+        tagBadge.style.backgroundColor = '#FF5733';
         tagBadge.style.color = 'white';
         tagBadge.style.padding = '2px 6px';
         tagBadge.style.borderRadius = '4px 4px 0 0';
@@ -298,6 +297,7 @@ export default function DesignerPreview() {
                                         instance={instance}
                                         activeElements={activeElements}
                                         components={components}
+                                        instances={instances}
                                     />
                                 })
                             }

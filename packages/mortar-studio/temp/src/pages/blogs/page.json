@@ -1,0 +1,7 @@
+{
+  "id": "blogs",
+  "title": "Blogs",
+  "slug": "blogs",
+  "description": "",
+  "route": "/blog"
+}

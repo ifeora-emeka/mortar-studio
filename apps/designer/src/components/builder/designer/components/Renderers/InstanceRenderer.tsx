@@ -4,10 +4,11 @@ import ComponentRenderer
 import {MortarElement} from "@repo/common/schema/element";
 import {MortarComponent} from "@repo/common/schema/component";
 
-export default function InstanceRenderer({instance, activeElements, components}: {
+export default function InstanceRenderer({instance, activeElements, components, instances}: {
     instance: MortarElementInstance;
     activeElements: MortarElement[];
     components: MortarComponent[];
+    instances: MortarElementInstance[];
 }) {
     const componentToRender = components.find(comp => comp.id == instance.ref.split("::")[2])
 
@@ -22,6 +23,8 @@ export default function InstanceRenderer({instance, activeElements, components}:
             component={componentToRender}
             instance={instance}
             activeElements={activeElements}
+            components={components}
+            instances={instances}
         />
     </>
 }

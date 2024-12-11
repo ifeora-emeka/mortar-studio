@@ -8,7 +8,7 @@ import {
 import {
     ArrowLeft,
     ArrowRight,
-    CaseSensitive, Copy,
+    CaseSensitive,
     PaintBucket,
     Plus,
     Trash
@@ -17,8 +17,6 @@ import ToolBarAddOptions
     from "@/components/builder/designer/components/DesignerToolBar/ToolBarAddOptions.tsx";
 import {useElement} from "@/components/builder/hooks/element.hook.tsx";
 import {usePreviewContext} from "@/components/builder/context/preview.context.tsx";
-import ToolbarCopyOptions
-    from "@/components/builder/designer/components/DesignerToolBar/ToolbarCopyOptions.tsx";
 
 export default function DesignerToolBar() {
     const { deleteElement, incrementElementIndex, decrementElementIndex } = useElement();
@@ -31,7 +29,7 @@ export default function DesignerToolBar() {
         }
     };
 
-    if(!activeElements[0]) return null;
+    // if(!activeElements[0]) return null;
 
     return (
         <Draggable>
@@ -55,11 +53,6 @@ export default function DesignerToolBar() {
                     <EachTool tooltip={"Background color"}>
                         <PaintBucket/>
                     </EachTool>
-                    <ToolbarCopyOptions>
-                        <EachTool tooltip={"Make copies"}>
-                            <Copy/>
-                        </EachTool>
-                    </ToolbarCopyOptions>
                     {
                         !isParent && <>
                             <EachTool tooltip={"Text color"}>

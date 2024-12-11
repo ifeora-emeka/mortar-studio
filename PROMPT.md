@@ -1,4 +1,4 @@
-# AI Context
+# Mortar Studio: Context and Features
 
 ## About
 **Mortar Studio** is a no-code **Tailwind TypeScript app builder** that empowers developers and web designers to create websites and applications efficiently. With Mortar Studio, you can:
@@ -15,18 +15,28 @@
 2. **`mortar-studio-cli`**  
    A Command Line Interface (CLI) tool that allows developers to create Mortar Studio projects effortlessly via their terminal. Run the command `npx create-mortar-app` to generate a project scaffold.
 
-## Concepts
+## Core Concepts
 Mortar Studio adopts a **component-based architecture**, with key concepts outlined below:
 
-1. **Pages**  
-   Pages are the primary building blocks of your project. These represent individual screens or routes.
-   - Pages are created directly in the builder, which communicates with the local API to store their data as JSON files.
-   - Example: `src/pages/<page_id>/page.json`
+### Pages
+Pages are the primary building blocks of your project. These represent individual screens or routes.
+- Pages are created directly in the builder, which communicates with the local API to store their data as JSON files.
+- Example: `src/pages/<page_id>/page.json`
 
-2. **Instances**  
-   Instances define how and where components are rendered within your project.
-   - They hold information about the component's props, children, and a reference to the component being rendered.
+### Instances
+Instances define how and where components or elements are rendered within your project, promoting reusability and flexibility.
+- **Component Instances:** They hold information about the component's props, children, and a reference to the component being rendered. This allows a single component to be reused across different parts of the project.
    - Example: `ref::component::<component_id>`
+- **Element Instances:** Instances can also point to an element. This enables an element to have multiple instances via the `parent_element` key in each instance object, allowing users to insert components between elements dynamically.
+
+### Components
+Components are reusable pieces of UI that can be rendered multiple times across different pages or instances.
+- They define the structure of required props and include an array of elements that make up the component.
+
+### Elements
+Elements are the smallest unit of a component that can be rendered. They can be text, images, or any other HTML element.
+- Elements have an `id`, `index` (for sibling ordering), `parent_id`, and `children`.
+- Each element can be targeted via its **element ms-id**, which identifies the component and instance responsible for rendering the element.
 
 ## Anatomy of a Mortar Studio Project
 A Mortar Studio project adheres to a structured directory and file format as follows:
@@ -53,16 +63,19 @@ A Mortar Studio project adheres to a structured directory and file format as fol
 5. **`./mortar-studio.config.json`**  
    The main configuration file for the project. This file contains metadata and project settings.
 
-## Rendering concepts
-1. **Instance**: A reference to a component with incoming props that maps to the props required by the component. It tells the compiler where to render the component using it's index and page ID.
-2. **Component**: A reusable piece of UI that can be rendered multiple times across different pages or instances. It also holds the structure of the props required for the component and an array of elements that make up the component. Each element follows a parent child relationship using thier parent ID and index to determine.
-3. **Elements**: The smallest unit of a component that can be rendered. It can be a text element, image element, or any other HTML element. Each element has an id, index to help with the ordering of siblings for a parent element, parent ID and children.
-4. **Element ms-id**: This is an ID that let's us know the component and instance responsible for rendering that element and we also use that for targeting the element (Ex. when adding a bounding box)
+## Rendering Concepts
+1. **Instance:** A reference to a component or element with incoming props that map to the required props. It tells the compiler where to render the component or element using its `index` and `page_id`.
+2. **Component:** A reusable piece of UI that holds the structure of its required props and an array of elements that define the component.
+   - Each element follows a parent-child relationship, using `parent_id` and `index` to establish their hierarchy.
+3. **Elements:** The smallest unit of a component, including text, image, or other HTML elements. Each has properties such as `id`, `index`, `parent_id`, and `children`.
+4. **Element ms-id:** A unique identifier for the component and instance responsible for rendering an element. It is also used for targeting elements (e.g., adding a bounding box).
 
 ## Features
 - **No-Code Builder:** Design apps visually with ease.
 - **Code Export:** Generate clean and reusable code for **React (Vite)**, **Next.js**, or **Nuxt.js**.
 - **Hosting Options:** Choose between Mortar Studio Cloud or self-hosting.
 - **Flexible Development:** Sync builder changes with local development in real-time.
+- **Instance Flexibility:** Support for inserting components between elements and rendering multiple instances of an element through the `parent_element` key in instance objects.
 
 Mortar Studio is designed to enhance productivity, streamline the development process, and offer developers unparalleled flexibility in creating modern web applications.
+

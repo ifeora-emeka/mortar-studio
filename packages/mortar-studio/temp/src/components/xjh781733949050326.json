@@ -1,0 +1,80 @@
+{
+  "id": "xjh781733949050326",
+  "name": "what people say",
+  "elements": [
+    {
+      "htmlTag": "div",
+      "parent_element_id": null,
+      "attributes": {
+        "className": "flex flex-col bg-white p-10 rounded-xl gap-2 border border-2"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "67gxb"
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "67gxb",
+      "attributes": {
+        "className": "text-3xl font-bold"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "e8fe9401-aead-4df8-b1e3-6670a597d532",
+      "textContent": "Default heading"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "67gxb",
+      "attributes": {
+        "className": "text-black/70 mb-5"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 1,
+      "id": "ead78c36-a109-44ab-9c34-5c8ebcd2bb4f",
+      "textContent": "These files are created automatically. But you can edit them as you think fit in the future. Use these settings for the correct display of your site on social networks and in search engines."
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "67gxb",
+      "attributes": {
+        "className": "w-full flex items-center"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 2,
+      "id": "9995c1c0-3b71-42f6-ba2b-75f8371b4d2d"
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "9995c1c0-3b71-42f6-ba2b-75f8371b4d2d",
+      "attributes": {
+        "className": "bg-black text-white px-7 py-3  w-auto rounded-lg"
+      },
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "563c29a1-511a-4b44-8684-c87d75bce3c5"
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "563c29a1-511a-4b44-8684-c87d75bce3c5",
+      "attributes": {},
+      "customProps": {},
+      "styles": {},
+      "children": [],
+      "index": 0,
+      "id": "aac4269b-6d08-4785-9106-e50937aae765",
+      "textContent": "Download files"
+    }
+  ],
+  "props": []
+}

@@ -49,16 +49,30 @@ export default class SyncController {
                 fs.writeFileSync(pageFilePath, JSON.stringify(page, null, 2));
             });
 
-            instances.forEach(instance => {
-                const pageDir = path.join(pagesDir, instance.page_id);
-                fs.mkdirSync(pageDir, { recursive: true });
+            const instancesDir = path.join(rootDir, 'instances');
+            if (!fs.existsSync(instancesDir)) {
+                fs.mkdirSync(instancesDir, { recursive: true });
+            }
 
-                const instancesFilePath = path.join(pageDir, 'instances.json');
-                const existingInstances = fs.existsSync(instancesFilePath)
-                    ? JSON.parse(fs.readFileSync(instancesFilePath, 'utf-8'))
-                    : [];
-                existingInstances.push(instance);
-                fs.writeFileSync(instancesFilePath, JSON.stringify(existingInstances, null, 2));
+            instances.forEach(instance => {
+                if (instance.page_id) {
+                    const pageDir = path.join(pagesDir, instance.page_id);
+                    const instancesFilePath = path.join(pageDir, 'instances.json');
+                    let pageInstances = [];
+                    if (fs.existsSync(instancesFilePath)) {
+                        pageInstances = JSON.parse(fs.readFileSync(instancesFilePath, 'utf-8'));
+                    }
+                    const instanceIndex = pageInstances.findIndex((inst: any) => inst.id === instance.id);
+                    if (instanceIndex > -1) {
+                        pageInstances[instanceIndex] = instance;
+                    } else {
+                        pageInstances.push(instance);
+                    }
+                    fs.writeFileSync(instancesFilePath, JSON.stringify(pageInstances, null, 2));
+                } else {
+                    const instancePath = path.join(instancesDir, `${instance.id}.json`);
+                    fs.writeFileSync(instancePath, JSON.stringify(instance, null, 2));
+                }
             });
 
             // Sync components
@@ -79,6 +93,7 @@ export default class SyncController {
             const variablesDir = path.join(process.env.MORTAR_ROOT_DIRECTORY as string, 'variables');
             const variablesFilePath = path.join(variablesDir, 'variables.json');
             const variableSetsFilePath = path.join(variablesDir, 'sets.json');
+            const rootDir = process.env.MORTAR_ROOT_DIRECTORY as string;
 
             if (!fs.existsSync(variablesFilePath) || !fs.existsSync(variableSetsFilePath)) {
                 return res.status(404).json({ message: 'Variables or Variable Sets not found' });
@@ -105,17 +120,16 @@ export default class SyncController {
                         pages.push(page);
                     }
 
-                    // console.log('INSTANCE ::', {
-                    //     pageId,
-                    //     pageDir,
-                    //     instancesFilePath,
-                    //     exists: fs.existsSync(instancesFilePath)
-                    // })
-
-                    if (fs.existsSync(instancesFilePath)) {
-                        const pageInstances = JSON.parse(fs.readFileSync(instancesFilePath, 'utf-8'));
-                        instances.push(...pageInstances);
-                        // console.log('INSTANCE AFTER:::', instances)
+                    const instancesDir = path.join(rootDir, 'instances');
+                    if (fs.existsSync(instancesDir)) {
+                        const instanceFiles = fs.readdirSync(instancesDir);
+                        instanceFiles.forEach(instanceFile => {
+                            const instanceFilePath = path.join(instancesDir, instanceFile);
+                            if (fs.existsSync(instanceFilePath)) {
+                                const instance = JSON.parse(fs.readFileSync(instanceFilePath, 'utf-8'));
+                                instances.push(instance);
+                            }
+                        });
                     }
                 }
             }

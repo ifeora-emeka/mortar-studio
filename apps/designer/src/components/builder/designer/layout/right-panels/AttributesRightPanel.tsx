@@ -10,12 +10,12 @@ export default function AttributesRightPanel() {
     const { state: { activePanel } } = useRightPanelContext();
     const { updateElementAttributes } = useElement();
     const { state: { activeElements } } = usePreviewContext();
-    const [attributes, setAttributes] = useState(activeElements[0]?.attributes?.class || "");
+    const [attributes, setAttributes] = useState(activeElements[0]?.attributes?.className || "");
     const [src, setSrc] = useState(activeElements[0]?.attributes?.src || "");
 
     useEffect(() => {
         if (activeElements[0]) {
-            setAttributes(activeElements[0].attributes.class || "");
+            setAttributes(activeElements[0].attributes.className || "");
             if (activeElements[0].htmlTag === 'img') {
                 setSrc(activeElements[0].attributes.src || "");
             }
@@ -24,7 +24,7 @@ export default function AttributesRightPanel() {
 
     const handleAttributesChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setAttributes(e.target.value);
-        updateElementAttributes({ class: e.target.value });
+        updateElementAttributes({ className: e.target.value });
     };
 
     const handleSrcChange = (e: React.ChangeEvent<HTMLInputElement>) => {

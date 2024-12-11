@@ -9,11 +9,13 @@ import {
     ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 import React from "react";
+import {useElement} from "@/components/builder/hooks/element.hook.tsx";
 
 
 export default function EachElementMenu({children}: { children: React.ReactNode }) {
+    const { copyActiveElement, pasteElement, duplicateElement, deleteElement, cutActiveElement } = useElement();
     return <>
-        <ContextMenu>
+        <ContextMenu >
             <ContextMenuTrigger asChild>
                 {children}
             </ContextMenuTrigger>
@@ -49,24 +51,24 @@ export default function EachElementMenu({children}: { children: React.ReactNode 
                     </ContextMenuSubContent>
                 </ContextMenuSub>
                 <ContextMenuSeparator />
-                <ContextMenuItem inset disabled>
+                <ContextMenuItem inset onClick={cutActiveElement}>
                     Cut
                     <ContextMenuShortcut>⌘X</ContextMenuShortcut>
                 </ContextMenuItem>
-                <ContextMenuItem inset>
+                <ContextMenuItem inset onClick={copyActiveElement}>
                     Copy
                     <ContextMenuShortcut>⌘C</ContextMenuShortcut>
                 </ContextMenuItem>
-                <ContextMenuItem inset>
+                <ContextMenuItem inset onClick={pasteElement}>
                     Paste
                     <ContextMenuShortcut>⌘V</ContextMenuShortcut>
                 </ContextMenuItem>
-                <ContextMenuItem inset>
+                <ContextMenuItem inset onClick={duplicateElement}>
                     Duplicate
                     <ContextMenuShortcut>⌘D</ContextMenuShortcut>
                 </ContextMenuItem>
                 <ContextMenuSeparator />
-                <ContextMenuItem inset>
+                <ContextMenuItem inset onClick={deleteElement}>
                     Delete
                     <ContextMenuShortcut>⌘Del</ContextMenuShortcut>
                 </ContextMenuItem>
