@@ -11,7 +11,7 @@ export const CssPropertiesSchema = z.object(
 );
 
 export const CreateMortarStyleSchema = z.object({
-    light: CssPropertiesSchema,
+    default: CssPropertiesSchema,
     dark: CssPropertiesSchema,
     hover: CssPropertiesSchema,
     focus: CssPropertiesSchema,
@@ -21,9 +21,16 @@ type CssProperties = {
     [K in (typeof knownCssProperties.all)[number]]?: string;
 };
 
+export type MortarStyleMode = {
+    default: CssProperties,
+    dark: CssProperties,
+    hover: CssProperties,
+    focus: CssProperties,
+}
+
 export type MortarStyle = {
-    light: CssProperties;
-    dark: CssProperties;
-    hover: CssProperties;
-    focus: CssProperties;
+    mobile: MortarStyleMode,
+    md: MortarStyleMode,
+    lg: MortarStyleMode,
+    xl: MortarStyleMode,
 };

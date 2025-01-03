@@ -6,7 +6,7 @@ import DesignerHeader
     from "@/components/builder/designer/layout/header/DesignerHeader.tsx";
 import {lazy} from "react";
 
-const DesignerPreview = lazy(() => import("./layout/DesignerPreview"));
+const DesignerPreview = lazy(() => import("./layout/DesignerPreview/DesignerPreview.tsx"));
 
 export default function Designer() {
     return <>

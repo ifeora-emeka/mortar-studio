@@ -6,6 +6,7 @@ import {
 export function staticHeading(): MortarElement {
     return {
         ...defaultStaticElements,
+        name: 'heading',
         htmlTag: 'h1',
         textContent: "Default heading",
         attributes: {

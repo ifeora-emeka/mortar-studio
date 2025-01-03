@@ -5,6 +5,8 @@ import {usePreviewContext} from "@/components/builder/context/preview.context.ts
 import InstanceRenderer from "@/components/builder/designer/components/Renderers/InstanceRenderer.tsx";
 import {compileInstances} from "@repo/common/utils";
 import { MortarElement } from "@repo/common/schema/element";
+import DesignerPreviewHeader
+    from "@/components/builder/designer/layout/DesignerPreview/DesignerPreviewHeader.tsx";
 
 export default function DesignerPreview() {
     const { state: { activePage, instances, activeElements, activePageInstances, activeComponents, components } } = usePreviewContext();
@@ -241,10 +243,7 @@ export default function DesignerPreview() {
                     id={'resizable-browser-window'}
                     className={`relative min-h-[--body-height] max-h-[--body-height] ${width} flex flex-col shadow-md`}
                 >
-                    <header
-                        className={'min-h-[--header-height-sm] bg-card border rounded-tl-lg rounded-tr-lg flex items-center justify-between px-default'}>
-                        <h1 className={'text-lg text-muted-foreground'}>{activePage.title}</h1>
-                    </header>
+                    <DesignerPreviewHeader />
                     <Frame
                         ref={frameRef}
                         className={'bg-white border-l border-r flex-1 max-h-[calc(100vh-var(--header-height)-var(--header-height-sm))]'}
@@ -253,7 +252,7 @@ export default function DesignerPreview() {
         <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="viewport" content="width=1024, initial-scale=1.0">
             <script src="https://cdn.tailwindcss.com"></script>
             <script>
                 tailwind.config = {
@@ -291,7 +290,7 @@ export default function DesignerPreview() {
                     >
                         <>
                             {
-                                compileInstances(instancesByPageID).map(instance => {
+                                compileInstances(instancesByPageID).sort((a, b) => a.index - b.index).map(instance => {
                                     return <InstanceRenderer
                                         key={instance.id}
                                         instance={instance}

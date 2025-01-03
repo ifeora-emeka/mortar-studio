@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import {MortarComponent} from "@repo/common/schema/component";
 import {HttpException} from "../../exceptions/HttpException.js";
+import {MortarElementInstance} from "@repo/common/schema/instance";
 
 export default class SyncController {
 
@@ -102,10 +103,10 @@ export default class SyncController {
             const variables = JSON.parse(fs.readFileSync(variablesFilePath, 'utf-8'));
             const variableSets = JSON.parse(fs.readFileSync(variableSetsFilePath, 'utf-8'));
 
-            // pages and instances
-            const pagesDir = path.join(process.env.MORTAR_ROOT_DIRECTORY as string, 'pages');
+            // Fetch pages and instances
+            const pagesDir = path.join(rootDir, 'pages');
             const pages = [];
-            const instances = [];
+            let instances: MortarElementInstance[] = [];
 
             if (fs.existsSync(pagesDir)) {
                 const pageDirs = fs.readdirSync(pagesDir);
@@ -120,16 +121,22 @@ export default class SyncController {
                         pages.push(page);
                     }
 
-                    const instancesDir = path.join(rootDir, 'instances');
-                    if (fs.existsSync(instancesDir)) {
-                        const instanceFiles = fs.readdirSync(instancesDir);
-                        instanceFiles.forEach(instanceFile => {
-                            const instanceFilePath = path.join(instancesDir, instanceFile);
-                            if (fs.existsSync(instanceFilePath)) {
-                                const instance = JSON.parse(fs.readFileSync(instanceFilePath, 'utf-8'));
-                                instances.push(instance);
-                            }
-                        });
+                    if (fs.existsSync(instancesFilePath)) {
+                        const pageInstances = JSON.parse(fs.readFileSync(instancesFilePath, 'utf-8'));
+                        instances = instances.concat(pageInstances);
+                    }
+                }
+            }
+
+            // Fetch instances from /instances directory
+            const instancesDir = path.join(rootDir, 'instances');
+            if (fs.existsSync(instancesDir)) {
+                const instanceFiles = fs.readdirSync(instancesDir);
+                for (const instanceFile of instanceFiles) {
+                    const instanceFilePath = path.join(instancesDir, instanceFile);
+                    if (fs.existsSync(instanceFilePath)) {
+                        const rootInstances = JSON.parse(fs.readFileSync(instanceFilePath, 'utf-8'));
+                        instances = instances.concat(rootInstances);
                     }
                 }
             }

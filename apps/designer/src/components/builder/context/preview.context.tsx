@@ -65,7 +65,6 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
 
 
     const setPreviewState = (newState: Partial<PreviewState>) => {
-        console.log('SET PREVIEW STATE:', {newState})
         setState((prevState) => ({...prevState, ...newState}));
     };
 
@@ -157,7 +156,7 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         };
     }, [state.components, state.pages, state.variables, state.variableSets, state.styles, state.instances]);
 
-    console.log('PREVIEW CONTEXT::::', state)
+    // console.log('PREVIEW CONTEXT::::', state)
 
     return (
         <PreviewContext.Provider

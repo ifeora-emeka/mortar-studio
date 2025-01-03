@@ -423,6 +423,31 @@ export const useElement = () => {
         });
     };
 
+    const setElementAsActive = (element: MortarElement | null) => {
+        const { instances, components } = state;
+
+        if (!element) {
+            setPreviewState({
+                activeElements: [],
+                activeComponents: [],
+                activePageInstances: []
+            });
+            return;
+        }
+
+
+        const component = components.find(comp => comp.elements.some(el => el.id === element.id));
+        const instance = instances.find(ins => ins.ref === `ref::component::${component?.id}`);
+
+        if (instance && component) {
+            setPreviewState({
+                activeElements: [element],
+                activeComponents: [component],
+                activePageInstances: [instance]
+            });
+        }
+    };
+
     return {
         appendElement,
         prependElement,
@@ -431,10 +456,11 @@ export const useElement = () => {
         incrementElementIndex,
         decrementElementIndex,
         updateElementAttributes,
-        setActiveElement,
         updateElement,
         copyActiveElement,
         pasteElement,
-        cutActiveElement
+        cutActiveElement,
+        setElementAsActive,
+        setActiveElement
     };
 };

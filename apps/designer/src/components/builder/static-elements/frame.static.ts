@@ -6,9 +6,10 @@ import {
 export function staticFrame(): MortarElement {
     return {
         ...defaultStaticElements,
+        name: 'frame',
         htmlTag: 'div',
         attributes: {
-            className: 'h-[100px] w-[100%] bg-blue-100 p-5'
+            className: 'min-h-[100px] w-[100%] bg-blue-100 p-5'
         }
     }
 

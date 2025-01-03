@@ -33,7 +33,7 @@ export default function DesignerHeader() {
             </Button>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant={'secondary'}>
+                    <Button variant={'secondary'} className={'dark:hover:bg-pink-200'}>
                         <GitBranch/> main
                     </Button>
                 </DropdownMenuTrigger>

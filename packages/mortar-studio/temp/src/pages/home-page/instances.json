@@ -1,19 +1,9 @@
 [
   {
-    "id": "instance-ygwhz7wxl4",
+    "id": "instance-a8tqfms4vq",
     "page_id": "home-page",
     "children": [],
-    "ref": "ref::component::kdv361733948840213",
-    "parentInstance": null,
-    "index": 0,
-    "incomingProps": [],
-    "parentElement": null
-  },
-  {
-    "id": "instance-7emcip49ys",
-    "page_id": "home-page",
-    "children": [],
-    "ref": "ref::component::xjh781733949050326",
+    "ref": "ref::component::wda2t1735939180766",
     "parentInstance": null,
     "index": 0,
     "incomingProps": [],

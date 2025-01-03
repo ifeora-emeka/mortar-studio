@@ -16,8 +16,10 @@ export default function PagesLeftPanel() {
     return (
         <>
             <CreatePageModel open={showAdd} setOpen={(e) => setShowAdd(e)}/>
-            <LeftPanelContainer show={activePanel == 'pages'}
-                                onAdd={() => setShowAdd(true)}>
+            <LeftPanelContainer
+                show={activePanel == 'pages'}
+                onAdd={() => setShowAdd(true)}
+            >
                 <div className="flex flex-col gap-sm p-sm">
                     {
                         pages.map((page) => (

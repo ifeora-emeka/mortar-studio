@@ -14,7 +14,8 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-
+import BackgroundProperty
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/background/BackgroundProperty.tsx";
 
 export default function StylesRightPanel() {
     const {state: {activePanel}} = useRightPanelContext()
@@ -39,6 +40,7 @@ export default function StylesRightPanel() {
             <Accordion type="multiple" defaultValue={['typography', 'element-settings']}>
                 <ElementSettings/>
                 <TypographyStyles />
+                <BackgroundProperty />
             </Accordion>
         </RightPanelContainer>
     );

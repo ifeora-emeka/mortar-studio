@@ -6,6 +6,7 @@ import {
 export function staticParagraph(): MortarElement {
     return {
         ...defaultStaticElements,
+        name: "paragraph",
         htmlTag: 'p',
         textContent: "Default paragraph"
     }
