@@ -67,7 +67,7 @@ export default function AddComponentModal({open, onOpen}: {
             ...staticFrame(),
             id: frameID,
             attributes: {
-                className: "flex flex-col p-5"
+                // className: "flex flex-col p-5"
             },
         }
 

@@ -38,3 +38,5 @@ export type MortarVariableSet = {
     index: number;
     isStatic?: boolean;
 }
+
+export type SupportedRef = 'variables' | 'elements';

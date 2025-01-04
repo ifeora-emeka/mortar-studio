@@ -1,28 +1,37 @@
 {
-  "id": "siksl1735950148060",
+  "id": "rp1xk1735952388201",
   "name": "Home hero section",
   "elements": [
     {
       "htmlTag": "div",
       "parent_element_id": null,
-      "attributes": {
-        "className": "flex flex-col p-5"
-      },
+      "attributes": {},
       "children": [],
       "index": 0,
-      "id": "rm156",
+      "id": "lrrxn",
       "style": {},
       "textContent": null,
       "name": "frame",
       "tailwindStyles": {
         "default": {
           "default": {
-            "backgroundColor": "#EFF6FF"
+            "bg": "#c1c137",
+            "p": "30px"
           },
           "dark": {},
           "hover": {},
           "focus": {},
           "active": {}
+        },
+        "lg": {
+          "default": {
+            "bg": "ref::variables::secondary-color-1"
+          }
+        },
+        "md": {
+          "default": {
+            "bg": "#4be633"
+          }
         }
       }
     }

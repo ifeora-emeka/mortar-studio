@@ -137,8 +137,6 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         }));
     };
 
-
-
     useEffect(() => {
         if (state.pages.length > 0 && !state.activePage) {
             const activePage = state.pages.find(page => page.route == "/");

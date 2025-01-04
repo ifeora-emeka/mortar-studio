@@ -1,5 +1,6 @@
 import {MortarElementInstance} from "../schemas/instance.schema.js";
 import {MortarElement} from "../schemas/elements.schema.js";
+import {SupportedRef} from "../schemas/variables.schema.js";
 
 
 export function compileInstances(instances: MortarElementInstance[]): MortarElementInstance[] {
@@ -55,7 +56,7 @@ export function compileElements(elements: MortarElement[]): MortarElement[] {
     });
 
     const sortElements = (elements: MortarElement[]) => {
-        elements.forEach((element:MortarElement) => {
+        elements.forEach((element: MortarElement) => {
             // @ts-ignore
             element.children.sort((a, b) => a.index - b.index);
             // @ts-ignore
@@ -66,4 +67,8 @@ export function compileElements(elements: MortarElement[]): MortarElement[] {
     sortElements(roots);
 
     return roots;
+}
+
+export const outputVariableRef = ({id, type}: { id: string; type: SupportedRef }) => {
+    return `ref::${type}::${id}`;
 }

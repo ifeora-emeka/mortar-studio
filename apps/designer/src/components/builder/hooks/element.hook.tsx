@@ -6,7 +6,6 @@ import {
 } from "@/components/builder/static-elements/index.static.ts";
 import {MortarElementInstance} from "@repo/common/schema/instance";
 import {MortarComponent} from "@repo/common/schema/component";
-import { Properties as CSSProperties } from 'csstype';
 
 
 export const useElement = () => {
@@ -22,7 +21,8 @@ export const useElement = () => {
         );
     };
 
-    const updateElementTailwindStyles = (style: Partial<CSSProperties>) => {
+    const updateElementTailwindStyles = (style: Record<string, string>) => {
+        console.log('updateElementTailwindStyles:::', style);
         const { activeElements, components, activeBreakpoint, activeState } = state;
 
         const activeElement = activeElements[0];

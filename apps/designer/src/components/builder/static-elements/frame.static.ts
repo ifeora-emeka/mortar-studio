@@ -9,12 +9,13 @@ export function staticFrame(): MortarElement {
         name: 'frame',
         htmlTag: 'div',
         attributes: {
-            className: 'min-h-[100px] w-[100%] p-5'
+            // className: 'min-h-[100px] w-[100%] p-5'
         },
         tailwindStyles: {
             default: {
                 default: {
-                    backgroundColor: '#EFF6FF',
+                    bg: '#EFF6FF',
+                    p: "30px"
                 },
                 dark: {},
                 hover: {},

@@ -19,11 +19,11 @@ export const CreateMortarStyleSchema = z.object({
 });
 
 export type MortarStyleMode = {
-    default: Partial<CSSProperties>,
-    dark?: Partial<CSSProperties>,
-    hover?: Partial<CSSProperties>,
-    focus?: Partial<CSSProperties>,
-    active?: Partial<CSSProperties>,
+    default: Record<string, string>,
+    dark?: Record<string, string>,
+    hover?: Record<string, string>,
+    focus?: Record<string, string>,
+    active?: Record<string, string>,
 }
 
 export type MortarStyle = {

@@ -115,10 +115,11 @@
     "slug": "secondary-color-1",
     "name": "50",
     "type": "color",
-    "lightValue": "#f3edea",
+    "lightValue": "#0c61d0",
     "darkValue": "#f3edea",
     "setID": "secondary-color",
-    "isStatic": true
+    "isStatic": true,
+    "new": false
   },
   {
     "id": "secondary-color-2",

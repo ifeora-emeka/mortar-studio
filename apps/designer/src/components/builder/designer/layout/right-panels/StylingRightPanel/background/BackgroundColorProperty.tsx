@@ -6,26 +6,27 @@ import {useElement} from "@/components/builder/hooks/element.hook.tsx";
 import {useEffect, useState} from "react";
 
 export default function BackgroundColorProperty() {
-    const {state: {activeElements, activeBreakpoint, activeState}} = usePreviewContext();
+    const {state: {activeElements, activeBreakpoint, activeState, variables}} = usePreviewContext();
     const {updateElementTailwindStyles} = useElement();
-    const currentValue = activeElements?.[0]?.tailwindStyles?.[activeBreakpoint]?.[activeState]?.backgroundColor;
+    const originalValue = activeElements?.[0]?.tailwindStyles?.[activeBreakpoint]?.[activeState]?.bg;
+    const currentValue = originalValue?.includes('ref::') ? variables.filter(x => x.id === originalValue?.split("::")[2])[0]?.lightValue : originalValue;
     const [value, setValue] = useState(currentValue || '#ffffff');
+
+
+    const handleSave = (bg: string) => {
+        updateElementTailwindStyles({bg})
+    }
 
     useEffect(() => {
         setValue(currentValue || '#ffffff');
-    },[activeElements, activeBreakpoint, activeState]);
-
-    useEffect(() => {
-        if(value ! == currentValue) {
-            updateElementTailwindStyles({backgroundColor: value});
-        }
-    },[value])
-
-    if(currentValue) return null;
+    }, [activeElements, activeBreakpoint, activeState, variables]);
 
     return <>
-        <PropertySection label={'Background color'}>
-            <ColorInput value={value} onChange={setValue}/>
+        <PropertySection label={'Background color'} onVariableConnect={handleSave}>
+            <ColorInput
+                value={value}
+                onChange={handleSave}
+            />
         </PropertySection>
     </>
 }

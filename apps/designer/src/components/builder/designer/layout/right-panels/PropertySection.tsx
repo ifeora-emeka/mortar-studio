@@ -5,13 +5,16 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
+import VariableSelectorDropdown
+    from "@/components/builder/designer/components/VariableSelectorDropdown.tsx";
 
 
 type Props = {
     label: string;
     children: React.ReactNode;
+    onVariableConnect: (value:string) => void;
 }
-export default function PropertySection({label, children}: Props) {
+export default function PropertySection({label, children, onVariableConnect}: Props) {
     return <>
         <div className={'space-y-sm'}>
             <div className={'flex justify-between items-center'}>
@@ -19,11 +22,13 @@ export default function PropertySection({label, children}: Props) {
                 <div className={'space-x-sm'}>
                     <Tooltip>
                         <TooltipTrigger asChild>
-                            <button
-                                className={'text-muted-foreground hover:text-foreground'}
-                            >
-                                <LayoutGrid className={'h-3 w-3'}/>
-                            </button>
+                            <VariableSelectorDropdown onChange={onVariableConnect}>
+                                <button
+                                    className={'text-muted-foreground hover:text-foreground'}
+                                >
+                                    <LayoutGrid className={'h-3 w-3'}/>
+                                </button>
+                            </VariableSelectorDropdown>
                         </TooltipTrigger>
                         <TooltipContent>
                             <p>Link a variable</p>
