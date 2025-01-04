@@ -10,7 +10,14 @@ export function staticHeading(): MortarElement {
         htmlTag: 'h1',
         textContent: "Default heading",
         attributes: {
-            className: "text-2xl font-bold"
+            // className: "text-2xl font-bold"
+        },
+        tailwindStyles: {
+            default: {
+                default: {
+                    text: "10rem"
+                }
+            }
         }
     }
 

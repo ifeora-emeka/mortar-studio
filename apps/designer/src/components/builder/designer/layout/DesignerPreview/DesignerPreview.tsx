@@ -1,4 +1,4 @@
-import {useState, useRef, useEffect} from 'react';
+import {useRef, useEffect} from 'react';
 import Frame from 'react-frame-component';
 import DesignerToolBar from "@/components/builder/designer/components/DesignerToolBar/DesignerToolBar.tsx";
 import {usePreviewContext} from "@/components/builder/context/preview.context.tsx";
@@ -9,7 +9,7 @@ import DesignerPreviewHeader
     from "@/components/builder/designer/layout/DesignerPreview/DesignerPreviewHeader.tsx";
 
 export default function DesignerPreview() {
-    const { state: { activePage, instances, activeElements, activePageInstances, activeComponents, components, activeBreakpoint } } = usePreviewContext();
+    const { state: { activePage, instances, activeElements, activePageInstances, activeComponents, components, activeBreakpoint, variables } } = usePreviewContext();
     const frameRef = useRef<HTMLIFrameElement>(null);
     const instancesByPageID = activePage ? instances.filter(i => i.page_id === activePage.id) : [];
     const width = activeBreakpoint === 'default' ? '400px' : activeBreakpoint === 'md' ? '600px' : activeBreakpoint === 'lg' ? '97%' : '100%';
@@ -298,6 +298,7 @@ export default function DesignerPreview() {
                                         activeElements={activeElements}
                                         components={components}
                                         instances={instances}
+                                        variables={variables}
                                     />
                                 })
                             }

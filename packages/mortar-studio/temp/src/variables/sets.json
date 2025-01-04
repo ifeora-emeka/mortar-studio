@@ -19,5 +19,12 @@
     "slug": "spacing",
     "index": 2,
     "isStatic": true
+  },
+  {
+    "name": "accent colors",
+    "id": "019431cf-b30d-7309-8e1c-9fefcc2933b8",
+    "slug": "set-3",
+    "index": 3,
+    "new": false
   }
 ]

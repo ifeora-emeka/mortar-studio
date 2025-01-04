@@ -4,14 +4,14 @@ import {
     AccordionTrigger
 } from "@/components/ui/accordion.tsx";
 
-export default function TypographyStyles() {
+export default function LayoutProperty(){
     return <>
-        <AccordionItem value="typography">
+        <AccordionItem value="layout">
             <AccordionTrigger>
-                Typography
+                Layout
             </AccordionTrigger>
             <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
+
             </AccordionContent>
         </AccordionItem>
     </>

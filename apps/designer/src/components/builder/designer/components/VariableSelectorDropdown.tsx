@@ -11,24 +11,26 @@ import {Search} from "lucide-react";
 import {MortarVariable} from "@repo/common/schema/variables";
 import {outputVariableRef} from "@repo/common/utils";
 
-export default function VariableSelectorDropdown({children, onChange}: {
+export default function VariableSelectorDropdown({children, onChange, disabled}: {
     children: React.ReactNode;
     onChange: (value: string) => void;
+    disabled?:boolean;
 }) {
     const {state: {variables, variableSets}} = usePreviewContext();
     return <>
         <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger disabled={disabled} asChild>
                 {children}
             </DropdownMenuTrigger>
             <DropdownMenuContent className={'p-sm'}>
                 <div className={'h-[20rem] max-h-[20rem] w-[20rem] space-y-sm'}>
                     <header
-                        className={'h-[calc(3rem)] border rounded-xl flex items-center gap-sm px-sm'}>
+                        className={'h-[calc(2.5rem)] border rounded-xl flex items-center gap-sm px-sm'}>
                         <Search className={'text-muted-foreground h-6 w-6'}/>
                         <input
                             className={'flex-1 bg-none bg-inherit border-none outline-none'}
                             placeholder={'Search for variables...'}
+                            autoFocus
                         />
                     </header>
                     <div

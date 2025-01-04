@@ -9,6 +9,7 @@ import InstanceRenderer
     from "@/components/builder/designer/components/Renderers/InstanceRenderer.tsx";
 import {convertMortarStyleToTailwindClasses} from '@repo/common/utils'
 import {cn} from "@/lib/utils.ts";
+import {MortarVariable} from "@repo/common/schema/variables";
 
 const voidElements = new Set([
     "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"
@@ -21,7 +22,8 @@ export default function ElementRenderer(
         component,
         activeElements,
         components,
-        instances
+        instances,
+        variables
     }: {
         element: MortarElement;
         instance: MortarElementInstance;
@@ -29,6 +31,7 @@ export default function ElementRenderer(
         activeElements: MortarElement[];
         components: MortarComponent[];
         instances: MortarElementInstance[];
+        variables: MortarVariable[]
     }) {
     const {setActiveElement} = useElement();
     const mortarStudioID = `ref::${instance.id}::${component.id}::${element.id}`;
@@ -42,7 +45,7 @@ export default function ElementRenderer(
 
     const childInstances = instances?.filter(childInstance => childInstance.parentElement === element.id);
 
-    const tailwindClassList = convertMortarStyleToTailwindClasses(element.tailwindStyles);
+    const tailwindClassList = convertMortarStyleToTailwindClasses(element.tailwindStyles, variables);
 
     const defaultProps = {
         id: element.id,
@@ -79,6 +82,7 @@ export default function ElementRenderer(
                             activeElements={activeElements}
                             components={components}
                             instances={instances}
+                            variables={variables}
                         />
                     )
                 )}
@@ -89,6 +93,7 @@ export default function ElementRenderer(
                         activeElements={activeElements}
                         components={components}
                         instances={instances}
+                        variables={variables}
                     />
                 ))}
             </Tag>

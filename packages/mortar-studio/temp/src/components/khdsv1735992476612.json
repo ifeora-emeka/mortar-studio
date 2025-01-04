@@ -1,0 +1,55 @@
+{
+  "id": "khdsv1735992476612",
+  "name": "Home hero section",
+  "elements": [
+    {
+      "htmlTag": "div",
+      "parent_element_id": null,
+      "attributes": {
+        "src": ""
+      },
+      "children": [],
+      "index": 0,
+      "id": "9a8kp",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "#EFF6FF",
+            "p": "30px"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "9a8kp",
+      "attributes": {
+        "src": "",
+        "className": "p-9"
+      },
+      "children": [],
+      "index": 0,
+      "id": "510376b6-ed04-4a82-ac15-3b48818a972e",
+      "style": {},
+      "textContent": "Take me home",
+      "name": "heading",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "text": "ref::variables::primary-color-3",
+            "textSize": "ref::variables::spacing-3xlarge",
+            "bg": "ref::variables::primary-color-7"
+          }
+        }
+      }
+    }
+  ],
+  "props": []
+}

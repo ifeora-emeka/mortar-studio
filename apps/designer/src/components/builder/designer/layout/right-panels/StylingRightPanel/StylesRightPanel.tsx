@@ -6,7 +6,7 @@ import {
     Accordion,
 } from "@/components/ui/accordion.tsx";
 import TypographyStyles
-    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/TypographyStyles.tsx";
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/typography/TypographyStyles.tsx";
 import {
     Select,
     SelectContent,
@@ -16,31 +16,46 @@ import {
 } from "@/components/ui/select"
 import BackgroundProperty
     from "@/components/builder/designer/layout/right-panels/StylingRightPanel/background/BackgroundProperty.tsx";
+import LayoutProperty
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/layout/LayoutProperty.tsx";
 
 export default function StylesRightPanel() {
     const {state: {activePanel}} = useRightPanelContext()
 
     return (
-        <RightPanelContainer show={activePanel == 'styling'} label={'Styling'} headerComponent={<>
-            <div>
-                <Select>
-                    <SelectTrigger className="w-[180px]">
-                        <SelectValue placeholder="Default" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="default">Default</SelectItem>
-                        <SelectItem value="hover">Hover</SelectItem>
-                        <SelectItem value="focus">Focus</SelectItem>
-                        <SelectItem value="disabled">Disabled</SelectItem>
-                    </SelectContent>
-                </Select>
+        <RightPanelContainer
+            show={activePanel == 'styling'} label={'Styling'}
+            headerComponent={
+                <>
+                    <div>
+                        <Select>
+                            <SelectTrigger className="w-[180px]">
+                                <SelectValue placeholder="Default"/>
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem
+                                    value="default">Default</SelectItem>
+                                <SelectItem
+                                    value="hover">Hover</SelectItem>
+                                <SelectItem
+                                    value="focus">Focus</SelectItem>
+                                <SelectItem
+                                    value="disabled">Disabled</SelectItem>
+                            </SelectContent>
+                        </Select>
 
-            </div>
-        </>}>
-            <Accordion type="multiple" defaultValue={['typography', 'background', 'element-settings']}>
+                    </div>
+                </>
+            }
+        >
+            <Accordion
+                type="multiple"
+                defaultValue={['typography', 'background', 'layout', 'element-settings']}
+            >
                 <ElementSettings/>
-                <TypographyStyles />
-                <BackgroundProperty />
+                <TypographyStyles/>
+                <BackgroundProperty/>
+                <LayoutProperty/>
             </Accordion>
         </RightPanelContainer>
     );

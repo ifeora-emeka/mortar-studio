@@ -115,11 +115,10 @@
     "slug": "secondary-color-1",
     "name": "50",
     "type": "color",
-    "lightValue": "#0c61d0",
+    "lightValue": "#f3edea",
     "darkValue": "#f3edea",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-2",
@@ -307,5 +306,38 @@
     "darkValue": "5rem",
     "setID": "spacing",
     "isStatic": true
+  },
+  {
+    "id": "019431cf-f184-76c8-94c8-f4f925b01461",
+    "name": "50",
+    "index": 28,
+    "type": "color",
+    "lightValue": "#e9c4f3",
+    "darkValue": null,
+    "setID": "019431cf-b30d-7309-8e1c-9fefcc2933b8",
+    "slug": "variable-28",
+    "new": false
+  },
+  {
+    "id": "019431d0-308a-7128-bf84-61f205e3806d",
+    "name": "100",
+    "index": 29,
+    "type": "color",
+    "lightValue": "#dca5eb",
+    "darkValue": null,
+    "setID": "019431cf-b30d-7309-8e1c-9fefcc2933b8",
+    "slug": "variable-29",
+    "new": false
+  },
+  {
+    "id": "019431d1-cd74-75ae-b45b-64981c21eb1f",
+    "name": "200",
+    "index": 30,
+    "type": "color",
+    "lightValue": "#cb83de",
+    "darkValue": null,
+    "setID": "019431cf-b30d-7309-8e1c-9fefcc2933b8",
+    "slug": "variable-30",
+    "new": false
   }
 ]
