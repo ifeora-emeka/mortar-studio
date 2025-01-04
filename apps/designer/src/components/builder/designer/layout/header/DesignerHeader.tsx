@@ -2,8 +2,8 @@ import {Button} from "@/components/ui/button.tsx";
 import {
     GitBranch,
     GitBranchPlus,
-    GitMerge,
-    Moon,
+    GitMerge, MonitorDot, MonitorSmartphone,
+    Moon, Settings, Smartphone, Tablet,
     Trash2,
     Upload
 } from "lucide-react";
@@ -17,23 +17,46 @@ import {
 } from "@/components/ui/dropdown-menu"
 import {useTheme} from "@/components/theme-provider.tsx";
 import {usePreviewContext} from "@/components/builder/context/preview.context.tsx";
+import {Separator} from "@/components/ui/separator.tsx";
 
 
 export default function DesignerHeader() {
     const {setTheme, theme} = useTheme();
-    const { sendSync } = usePreviewContext();
+    const {sendSync, setPreviewState, state: {activeBreakpoint}} = usePreviewContext();
 
     return <header
         className="bg-card border-b h-header flex justify-between items-center px-default z-[1000]">
         <h1 className="text-2xl font-bold text-muted-foreground">Mortar Studio</h1>
-        <div className={'flex items-center gap-default'}>
+        <div className={'flex items-center gap-sm'}>
             <Button size={'icon'} variant={'secondary'}
                     onClick={() => setTheme(theme == 'dark' ? 'light' : 'dark')}>
                 <Moon/>
             </Button>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant={'secondary'} className={'dark:hover:bg-pink-200'}>
+                    <Button variant={'secondary'}>
+                        <MonitorSmartphone/> {activeBreakpoint}
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                    <DropdownMenuLabel>Screen size</DropdownMenuLabel>
+                    <DropdownMenuSeparator/>
+                    <DropdownMenuItem onClick={() => setPreviewState({activeBreakpoint: 'lg'})}>
+                        <MonitorDot/> Desktop
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setPreviewState({activeBreakpoint: 'md'})}>
+                        <Tablet/> Tablet
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setPreviewState({activeBreakpoint: 'default'})}>
+                        <Smartphone/> Mobile
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator/>
+                    <DropdownMenuItem><Settings/> Custom size</DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant={'secondary'}>
                         <GitBranch/> main
                     </Button>
                 </DropdownMenuTrigger>
@@ -50,6 +73,7 @@ export default function DesignerHeader() {
                 </DropdownMenuContent>
             </DropdownMenu>
 
+            <Separator orientation={'vertical'}/>
 
             <Button onClick={sendSync}>
                 <Upload/> Push

@@ -1,5 +1,6 @@
 import * as z from 'zod';
-import {CssPropertiesSchema, MortarStyle} from './styles.schema.js'
+import {CssPropertiesSchema, MortarStyle} from './styles.schema.js';
+import { } from 'known-css-properties'
 
 
 export const CreateMortarElementSchema = z.object({

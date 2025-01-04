@@ -37,7 +37,7 @@ export default function StylesRightPanel() {
 
             </div>
         </>}>
-            <Accordion type="multiple" defaultValue={['typography', 'element-settings']}>
+            <Accordion type="multiple" defaultValue={['typography', 'background', 'element-settings']}>
                 <ElementSettings/>
                 <TypographyStyles />
                 <BackgroundProperty />

@@ -3,7 +3,8 @@ import {
     AccordionItem,
     AccordionTrigger
 } from "@/components/ui/accordion.tsx";
-import ColorInput from "@/components/builder/designer/components/ColorInput.tsx";
+import BackgroundColorProperty
+    from "./BackgroundColorProperty.tsx";
 
 export default function BackgroundProperty(){
     return <>
@@ -12,7 +13,7 @@ export default function BackgroundProperty(){
                 Background
             </AccordionTrigger>
             <AccordionContent>
-                <ColorInput value={'blue'} onChange={console.log} />
+                <BackgroundColorProperty />
             </AccordionContent>
         </AccordionItem>
     </>

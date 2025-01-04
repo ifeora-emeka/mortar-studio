@@ -6,6 +6,7 @@ import {
 } from "@/components/builder/static-elements/index.static.ts";
 import {MortarElementInstance} from "@repo/common/schema/instance";
 import {MortarComponent} from "@repo/common/schema/component";
+import { Properties as CSSProperties } from 'csstype';
 
 
 export const useElement = () => {
@@ -19,6 +20,42 @@ export const useElement = () => {
         return components.find(component =>
             component.elements.some(element => element.id === activeElement.id)
         );
+    };
+
+    const updateElementTailwindStyles = (style: Partial<CSSProperties>) => {
+        const { activeElements, components, activeBreakpoint, activeState } = state;
+
+        const activeElement = activeElements[0];
+        if (!activeElement) return;
+
+        const activeComponent = components.find(component =>
+            component.elements.some(element => element.id === activeElement.id)
+        );
+        if (!activeComponent) return;
+
+        const updatedElement = {
+            ...activeElement,
+            tailwindStyles: {
+                ...activeElement.tailwindStyles,
+                [activeBreakpoint]: {
+                    ...activeElement.tailwindStyles[activeBreakpoint],
+                    [activeState]: {
+                        ...activeElement.tailwindStyles[activeBreakpoint]?.[activeState],
+                        ...style
+                    }
+                }
+            }
+        };
+
+        const updatedComponent = {
+            ...activeComponent,
+            elements: activeComponent.elements.map(el => el.id === activeElement.id ? updatedElement : el)
+        };
+
+        setPreviewState({
+            components: components.map(comp => comp.id === activeComponent.id ? updatedComponent : comp),
+            activeElements: [updatedElement]
+        });
     };
 
     const appendElement = (elementData: Partial<MortarElement>) => {
@@ -461,6 +498,7 @@ export const useElement = () => {
         pasteElement,
         cutActiveElement,
         setElementAsActive,
-        setActiveElement
+        setActiveElement,
+        updateElementTailwindStyles
     };
 };

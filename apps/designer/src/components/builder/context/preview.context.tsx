@@ -23,6 +23,8 @@ interface PreviewState {
     activeComponents: MortarComponent[];
     mode: Mode;
     activeElements: MortarElement[];
+    activeBreakpoint: 'default' | 'md'| 'lg' | 'xl';
+    activeState: 'default' | 'hover' | 'focus' | 'active';
 }
 
 interface PreviewContextProps {
@@ -61,6 +63,8 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         activePage: null,
         activeElements: [],
         mode: 'system',
+        activeBreakpoint: 'lg',
+        activeState: 'default'
     });
 
 

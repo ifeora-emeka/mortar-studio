@@ -1,0 +1,31 @@
+{
+  "id": "siksl1735950148060",
+  "name": "Home hero section",
+  "elements": [
+    {
+      "htmlTag": "div",
+      "parent_element_id": null,
+      "attributes": {
+        "className": "flex flex-col p-5"
+      },
+      "children": [],
+      "index": 0,
+      "id": "rm156",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "backgroundColor": "#EFF6FF"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    }
+  ],
+  "props": []
+}

@@ -1,5 +1,6 @@
 import * as z from 'zod';
 import knownCssProperties from 'known-css-properties';
+import { Properties as CSSProperties } from 'csstype';
 
 const cssProperties = knownCssProperties.all;
 
@@ -17,20 +18,17 @@ export const CreateMortarStyleSchema = z.object({
     focus: CssPropertiesSchema,
 });
 
-type CssProperties = {
-    [K in (typeof knownCssProperties.all)[number]]?: string;
-};
-
 export type MortarStyleMode = {
-    default: CssProperties,
-    dark: CssProperties,
-    hover: CssProperties,
-    focus: CssProperties,
+    default: Partial<CSSProperties>,
+    dark?: Partial<CSSProperties>,
+    hover?: Partial<CSSProperties>,
+    focus?: Partial<CSSProperties>,
+    active?: Partial<CSSProperties>,
 }
 
 export type MortarStyle = {
-    mobile: MortarStyleMode,
-    md: MortarStyleMode,
-    lg: MortarStyleMode,
-    xl: MortarStyleMode,
+    default: MortarStyleMode,
+    md?: MortarStyleMode,
+    lg?: MortarStyleMode,
+    xl?: MortarStyleMode,
 };

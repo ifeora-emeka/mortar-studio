@@ -96,8 +96,7 @@
     "lightValue": "#12263f",
     "darkValue": "#12263f",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-10",

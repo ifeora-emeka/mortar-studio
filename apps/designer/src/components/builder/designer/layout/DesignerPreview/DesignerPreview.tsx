@@ -9,10 +9,10 @@ import DesignerPreviewHeader
     from "@/components/builder/designer/layout/DesignerPreview/DesignerPreviewHeader.tsx";
 
 export default function DesignerPreview() {
-    const { state: { activePage, instances, activeElements, activePageInstances, activeComponents, components } } = usePreviewContext();
-    const [width] = useState('w-[95%]');
+    const { state: { activePage, instances, activeElements, activePageInstances, activeComponents, components, activeBreakpoint } } = usePreviewContext();
     const frameRef = useRef<HTMLIFrameElement>(null);
     const instancesByPageID = activePage ? instances.filter(i => i.page_id === activePage.id) : [];
+    const width = activeBreakpoint === 'default' ? '400px' : activeBreakpoint === 'md' ? '600px' : activeBreakpoint === 'lg' ? '97%' : '100%';
 
     useEffect(() => {
         const handleResize = () => {
@@ -240,8 +240,9 @@ export default function DesignerPreview() {
         >
             {
                 activePage && <div
+                    style={{ width }}
                     id={'resizable-browser-window'}
-                    className={`relative min-h-[--body-height] max-h-[--body-height] ${width} flex flex-col shadow-md`}
+                    className={`relative min-h-[--body-height] max-h-[--body-height] flex flex-col shadow-md`}
                 >
                     <DesignerPreviewHeader />
                     <Frame

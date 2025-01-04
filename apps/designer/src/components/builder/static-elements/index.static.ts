@@ -10,5 +10,37 @@ export const defaultStaticElements: MortarElement = {
     id: generateRandomID(11),
     style: {},
     textContent: null,
-    name: 'element'
+    name: 'element',
+    tailwindStyles: {
+        default: {
+            default: {
+
+            },
+            dark: {},
+            hover: {},
+            focus: {},
+            active: {}
+        },
+        xl: {
+            default: {},
+            dark: {},
+            hover: {},
+            focus: {},
+            active: {}
+        },
+        md: {
+            default: {},
+            dark: {},
+            hover: {},
+            focus: {},
+            active: {}
+        },
+        lg: {
+            default: {},
+            dark: {},
+            hover: {},
+            focus: {},
+            active: {}
+        }
+    }
 }
