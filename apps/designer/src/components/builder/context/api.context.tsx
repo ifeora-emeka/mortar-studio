@@ -54,6 +54,7 @@ export const APIProvider = ({children}: { children: ReactNode }) => {
                 components: response.data.components,
                 pages: response.data.pages,
                 instances: response.data.instances,
+                fonts: response.data.fonts
             })
             return response.data;
         } catch (error) {

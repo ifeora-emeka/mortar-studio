@@ -6,18 +6,11 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {MortarVariable} from "@repo/common/schema/variables";
+} from "@/components/ui/dropdown-menu.tsx";
+import {DesignerInputProps} from '@repo/common/types/input';
 import VariableSelectorDropdown
     from "@/components/builder/designer/components/VariableSelectorDropdown.tsx";
 
-interface MeasurementInputProps {
-    value: string;
-    onChange: (value: string) => void;
-    onBlur?: () => void;
-    disabled?: boolean;
-    variable?: MortarVariable;
-}
 
 export default function MeasurementInput(
     {
@@ -26,7 +19,7 @@ export default function MeasurementInput(
         onBlur,
         disabled,
         variable
-    }: MeasurementInputProps) {
+    }: DesignerInputProps) {
     const [focus, setFocus] = useState(false);
     const [numericValue, setNumericValue] = useState('');
     const [unit, setUnit] = useState('px');
@@ -69,9 +62,9 @@ export default function MeasurementInput(
         <>
             <VariableSelectorDropdown onChange={onChange} disabled={!variable}>
                 <div
-                    className={cn('flex items-center w-full gap-2 border border-background bg-background p-1 rounded-md text-muted-foreground px-2', {
-                        "border-foreground/50 text-foreground": focus,
-                        "hover:border-foreground/50 hover:text-foreground": !disabled,
+                    className={cn('flex items-center w-full gap-2 border border-input bg-background hover:bg-accent p-1 rounded-md text-muted-foreground px-2', {
+                        "text-foreground": focus,
+                        "hover:text-foreground": !disabled,
                         "cursor-pointer": isDisabled
                     })}
                 >

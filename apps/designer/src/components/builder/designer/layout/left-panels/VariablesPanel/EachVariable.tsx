@@ -4,8 +4,8 @@ import {MortarVariable} from "@repo/common/schema/variables";
 import {useEffect, useRef, useState} from "react";
 import {usePreviewContext} from "@/components/builder/context/preview.context.tsx";
 import {cn} from "@/lib/utils.ts";
-import ColorInput from "@/components/builder/designer/components/ColorInput.tsx";
-import MeasurementInput from "@/components/builder/designer/components/MeasurementInput.tsx";
+import ColorInput from "@/components/builder/designer/components/designer-inputs/ColorInput.tsx";
+import MeasurementInput from "@/components/builder/designer/components/designer-inputs/MeasurementInput.tsx";
 
 const EachVariable = ({variable}: {
     variable: (MortarVariable & { new?: boolean });

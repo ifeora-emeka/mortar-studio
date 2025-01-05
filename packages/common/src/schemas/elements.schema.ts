@@ -1,6 +1,5 @@
 import * as z from 'zod';
 import {CssPropertiesSchema, MortarStyle} from './styles.schema.js';
-import { } from 'known-css-properties'
 
 
 export const CreateMortarElementSchema = z.object({
@@ -18,7 +17,7 @@ export type MortarElement = {
     parent_element_id: string | null;
     htmlTag: string;
     attributes: Record<string, string>;
-    style: Record<string, any>; // regular react in-line styling
+    style: Record<string, any>;
     children: MortarElement[];
     textContent: string | null;
     tailwindStyles: MortarStyle;

@@ -11,7 +11,7 @@ import {
     Heading,
     ImageIcon,
     LayoutList,
-    Pilcrow,
+    Pilcrow, SmilePlus,
     SquareDashed
 } from "lucide-react";
 import AddComponentModal
@@ -48,21 +48,42 @@ export default function ToolBarAddOptions({children}: { children: React.ReactNod
                     onClick={() => appendElement({
                         ...staticFrame(),
                         htmlTag: 'div'
-                    })}><FrameIcon/> Div</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => appendElement({
-                    ...staticHeading(),
-                    htmlTag: 'h1'
-                })}><Heading/> Heading</DropdownMenuItem>
+                    })}
+                >
+                    <FrameIcon/> Div
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                    onClick={() => appendElement({
+                        ...staticHeading(),
+                        htmlTag: 'h1'
+                    })}
+                >
+                    <Heading/> Heading
+                </DropdownMenuItem>
                 <DropdownMenuItem
                     onClick={() => appendElement({
                         ...staticParagraph(),
                         htmlTag: 'p'
-                    })}><Pilcrow/> Paragraph</DropdownMenuItem>
+                    })}
+                >
+                    <Pilcrow/> Paragraph
+                </DropdownMenuItem>
                 <DropdownMenuItem
                     onClick={() => appendElement({
                         ...staticImage(),
                         htmlTag: 'img'
-                    })}><ImageIcon/>Image</DropdownMenuItem>
+                    })}
+                >
+                    <ImageIcon/>Image
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                    onClick={() => appendElement({
+                        ...staticImage(),
+                        htmlTag: 'i'
+                    })}
+                >
+                    <SmilePlus /> Icon
+                </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     </>

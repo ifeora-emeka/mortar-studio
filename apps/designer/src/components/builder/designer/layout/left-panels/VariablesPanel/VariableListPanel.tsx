@@ -1,4 +1,3 @@
-import {cn} from "@/lib/utils.ts";
 import {
     Table,
     TableBody,
@@ -21,6 +20,8 @@ import {v7 as UID} from "uuid";
 import slugify from "slugify";
 import EachVariable
     from "@/components/builder/designer/layout/left-panels/VariablesPanel/EachVariable.tsx";
+import LeftPanelSubContainer
+    from "@/components/builder/designer/layout/left-panels/LeftPanelSubContainer.tsx";
 
 export default function VariableListPanel({show, selectedSetID}: {
     show: boolean;
@@ -59,15 +60,12 @@ export default function VariableListPanel({show, selectedSetID}: {
         pushToArray("variables", newVariable);
     };
 
-
     const filteredVariables = variables.filter(variable => variable.setID === selectedSetID);
 
     return (
-        <div
-            className={cn("bg-card border-r min-h-[--body-height] max-h-[--body-height] fixed z-30 w-[calc(var(--panel-width)+var(--panel-width))] shadow-xl transition-all", {
-                "left-[-40rem] duration-300": !show,
-                "left-[calc(var(--header-height)+var(--panel-width))] duration-500": show
-            })}>
+        <LeftPanelSubContainer
+            show={show}
+        >
             <Table>
                 <TableHeader className={`h-header`}>
                     <TableRow className={'hover:bg-card'}>
@@ -107,8 +105,8 @@ export default function VariableListPanel({show, selectedSetID}: {
                     ))}
                 </TableBody>
             </Table>
-            <div className={'h-52'}/>
-        </div>
+
+        </LeftPanelSubContainer>
     );
 }
 

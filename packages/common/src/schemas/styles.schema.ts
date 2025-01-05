@@ -1,6 +1,5 @@
 import * as z from 'zod';
 import knownCssProperties from 'known-css-properties';
-import { Properties as CSSProperties } from 'csstype';
 
 const cssProperties = knownCssProperties.all;
 

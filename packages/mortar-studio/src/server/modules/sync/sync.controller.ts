@@ -5,6 +5,10 @@ import path from 'path';
 import {MortarComponent} from "@repo/common/schema/component";
 import {HttpException} from "../../exceptions/HttpException.js";
 import {MortarElementInstance} from "@repo/common/schema/instance";
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default class SyncController {
 
@@ -156,13 +160,21 @@ export default class SyncController {
                 }
             }
 
+            // Fetch fonts from ../fonts/fonts.json
+            const fontsFilePath = path.join(__dirname, '../fonts/fonts.json');
+            let fonts = [];
+            if (fs.existsSync(fontsFilePath)) {
+                fonts = JSON.parse(fs.readFileSync(fontsFilePath, 'utf-8'));
+            }
+
             const data: APISyncData = {
                 variables,
                 variableSets,
                 components,
                 instances,
                 styles: [],
-                pages
+                pages,
+                fonts
             };
 
             res.status(200).json(data);

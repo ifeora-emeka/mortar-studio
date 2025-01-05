@@ -59,7 +59,13 @@ const SetList = ({onSetSelect, selectedSetID}: {
                         <EachVariableSet
                             key={variableSet.id}
                             variableSet={variableSet}
-                            onClick={() => onSetSelect(variableSet)}
+                            onClick={() => {
+                                if(selectedSetID === variableSet.id) {
+                                    onSetSelect(null)
+                                }else {
+                                    onSetSelect(variableSet)
+                                }
+                            }}
                             active={selectedSetID === variableSet.id}
                             onSetSelect={onSetSelect}
                         />

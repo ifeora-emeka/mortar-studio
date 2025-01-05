@@ -10,6 +10,8 @@ import StylePropertyGrid
     from "@/components/builder/designer/layout/right-panels/StylePropertyGrid.tsx";
 import FontSizeProperty
     from "@/components/builder/designer/layout/right-panels/StylingRightPanel/typography/FontSizeProperty.tsx";
+import FontFamilyProperty
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/typography/FontFamilyProperty.tsx";
 
 export default function TypographyStyles() {
     const {state: {activeElements}} = usePreviewContext();
@@ -21,6 +23,7 @@ export default function TypographyStyles() {
                     Typography
                 </AccordionTrigger>
                 <AccordionContent>
+                    <FontFamilyProperty/>
                     <StylePropertyGrid>
                         <ColorProperty/>
                         <FontSizeProperty/>

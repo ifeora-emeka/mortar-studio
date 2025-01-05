@@ -8,10 +8,12 @@ import {MortarElement} from '@repo/common/schema/element'
 import axios from "axios";
 import {LOCAL_API_URL} from "@/components/builder/config/api.config.ts";
 import {toast} from "@/hooks/use-toast.ts";
+import {GoogleFont} from "@repo/common/schema/config";
 
 type Mode = 'light' | 'dark' | 'system';
 
 interface PreviewState {
+    fonts: GoogleFont[];
     pages: MortarPage[];
     components: MortarComponent[];
     styles: MortarStyle[];
@@ -64,7 +66,8 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         activeElements: [],
         mode: 'system',
         activeBreakpoint: 'lg',
-        activeState: 'default'
+        activeState: 'default',
+        fonts: []
     });
 
 

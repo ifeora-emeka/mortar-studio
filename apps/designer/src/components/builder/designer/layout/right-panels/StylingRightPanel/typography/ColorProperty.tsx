@@ -1,31 +1,18 @@
-import ColorInput from "@/components/builder/designer/components/ColorInput.tsx";
+import ColorInput
+    from "@/components/builder/designer/components/designer-inputs/ColorInput.tsx";
 import PropertySection
     from "@/components/builder/designer/layout/right-panels/PropertySection.tsx";
-import {usePreviewContext} from "@/components/builder/context/preview.context.tsx";
-import {useElement} from "@/components/builder/hooks/element.hook.tsx";
-import {useEffect, useState} from "react";
+import {useElementStyle} from "@/components/builder/hooks/style.hook.tsx";
 
 export default function ColorProperty() {
-    const {state: {activeElements, activeBreakpoint, activeState, variables}} = usePreviewContext();
-    const {updateElementTailwindStyles} = useElement();
-    const originalValue = activeElements?.[0]?.tailwindStyles?.[activeBreakpoint]?.[activeState]?.text;
-    const currentValue = originalValue?.includes('ref::') ? variables.filter(x => x.id === originalValue?.split("::")[2])[0]?.lightValue : originalValue;
-    const [value, setValue] = useState(currentValue || '#ffffff');
-
-
-    const handleSave = (text: string) => {
-        updateElementTailwindStyles({text})
-    }
-
-    useEffect(() => {
-        setValue(currentValue || '#ffffff');
-    }, [activeElements, activeBreakpoint, activeState, variables]);
+    const {value, handleSave, variable} = useElementStyle("text")
 
     return <>
-        <PropertySection label={'Color'} onVariableConnect={handleSave}>
+        <PropertySection label={'Color'} onVariableConnect={handleSave} variable={variable}>
             <ColorInput
                 value={value}
                 onChange={handleSave}
+                variable={variable}
             />
         </PropertySection>
     </>

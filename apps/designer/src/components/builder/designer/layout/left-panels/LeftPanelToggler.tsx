@@ -37,7 +37,7 @@ export default function LeftPanelToggler() {
                     <EachToggleBtn onClick={() => toggleLeftPanel('blocks')} alignTooltip="right" tooltip="Blocks" active={activePanel == 'blocks'}>
                         <Cuboid />
                     </EachToggleBtn>
-                    <EachToggleBtn onClick={() => toggleLeftPanel('site-settings')} alignTooltip="right" tooltip="Site settings" active={activePanel == 'styles'}>
+                    <EachToggleBtn onClick={() => toggleLeftPanel('settings')} alignTooltip="right" tooltip="Site settings" active={activePanel == 'settings'}>
                         <Settings2 />
                     </EachToggleBtn>
                 </div>

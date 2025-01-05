@@ -15,7 +15,7 @@ export function staticHeading(): MortarElement {
         tailwindStyles: {
             default: {
                 default: {
-                    text: "10rem"
+                    textSize: "10rem"
                 }
             }
         }

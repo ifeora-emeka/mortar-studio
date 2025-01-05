@@ -4,6 +4,8 @@ import VariablePanel
     from "@/components/builder/designer/layout/left-panels/VariablesPanel/VariablesPanel.tsx";
 import LayersPanel
     from "@/components/builder/designer/layout/left-panels/LayerPanel/LayersPanel.tsx";
+import SiteSettingsPanel
+    from "@/components/builder/designer/layout/left-panels/site-settings/SiteSettingsPanel.tsx";
 
 export default function LeftPanel() {
     return (
@@ -12,6 +14,7 @@ export default function LeftPanel() {
             <ComponentsLeftPanel />
             <VariablePanel />
             <LayersPanel />
+            <SiteSettingsPanel />
         </>
     )
 }
