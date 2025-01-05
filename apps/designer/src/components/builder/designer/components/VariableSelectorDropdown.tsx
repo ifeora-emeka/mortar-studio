@@ -23,7 +23,7 @@ export default function VariableSelectorDropdown({children, onChange, disabled}:
                 {children}
             </DropdownMenuTrigger>
             <DropdownMenuContent className={'p-sm'}>
-                <div className={'h-[20rem] max-h-[20rem] w-[20rem] space-y-sm'}>
+                <div className={'h-[18rem] max-h-[18rem] w-[20rem] space-y-sm'}>
                     <header
                         className={'h-[calc(2.5rem)] border rounded-xl flex items-center gap-sm px-sm'}>
                         <Search className={'text-muted-foreground h-6 w-6'}/>
@@ -34,7 +34,7 @@ export default function VariableSelectorDropdown({children, onChange, disabled}:
                         />
                     </header>
                     <div
-                        className={'max-h-[calc(20rem-3rem)] overflow-y-auto overflow-x-hidden flex flex-col'}>
+                        className={'max-h-[calc(18rem-3rem)] overflow-y-auto overflow-x-hidden flex flex-col'}>
                         {
                             variableSets.map((variableSet, index) => {
                                 return <div key={index}>

@@ -78,6 +78,8 @@ export default function ElementSettings() {
                         !activeElements[0].textContent || activeElements[0].textContent !== null &&
                         <StylePropertyContainer label={'Text content'}>
                             <Textarea
+                                rows={5}
+                                className={'bg-background hover:bg-accent text-muted-foreground hover:text-foreground border-input'}
                                 placeholder={'Enter text content or link a value'}
                                 value={textContent || ''}
                                 onChange={handleTextContentChange}

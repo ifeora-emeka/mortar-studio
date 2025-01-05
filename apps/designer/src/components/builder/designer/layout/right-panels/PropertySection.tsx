@@ -14,15 +14,16 @@ import {MortarVariable} from "@repo/common/schema/variables";
 type Props = {
     label: string;
     children: React.ReactNode;
-    onVariableConnect: (value: string) => void;
+    onVariableConnect?: (value: string) => void;
     variable?: MortarVariable;
 }
+
 export default function PropertySection(
     {
         label,
         children,
         onVariableConnect,
-        variable
+        variable,
     }: Props) {
     return <>
         <div className={'space-y-sm mb-default group'}>
@@ -36,36 +37,49 @@ export default function PropertySection(
                 </Label>
                 <div className={'space-x-sm'}>
                     {
-                        variable ? <Tooltip>
-                            <TooltipTrigger asChild>
-                                <button
-                                    onClick={() => onVariableConnect(variable.lightValue)}
-                                    className={cn('text-muted-foreground hover:text-foreground group-hover:opacity-100 opacity-0', {
-                                        'text-orange-100': variable
-                                    })}
-                                >
-                                    <Unlink className={'h-3 w-3'}/>
-                                </button>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Unlink variable</p>
-                            </TooltipContent>
-                        </Tooltip> : <Tooltip>
-                            <TooltipTrigger asChild>
-                                <VariableSelectorDropdown onChange={onVariableConnect}>
-                                    <button
-                                        className={cn('text-muted-foreground hover:text-foreground group-hover:opacity-100 opacity-0', {
-                                            'text-orange-100': variable
-                                        })}
-                                    >
-                                        <LayoutGrid className={'h-3 w-3'}/>
-                                    </button>
-                                </VariableSelectorDropdown>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Link a variable</p>
-                            </TooltipContent>
-                        </Tooltip>
+                        onVariableConnect && <>
+                            {
+                                variable ? <Tooltip>
+                                    <TooltipTrigger asChild>
+                                        <button
+                                            onClick={() => {
+                                                if (onVariableConnect) {
+                                                    onVariableConnect(variable.lightValue)
+                                                }
+                                            }}
+                                            className={cn('text-muted-foreground hover:text-foreground group-hover:opacity-100 opacity-0', {
+                                                'text-orange-100': variable
+                                            })}
+                                        >
+                                            <Unlink className={'h-3 w-3'}/>
+                                        </button>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                        <p>Unlink variable</p>
+                                    </TooltipContent>
+                                </Tooltip> : <Tooltip>
+                                    <TooltipTrigger asChild>
+                                        <VariableSelectorDropdown
+                                            onChange={e => {
+                                                if (onVariableConnect) {
+                                                    onVariableConnect(e)
+                                                }
+                                            }}>
+                                            <button
+                                                className={cn('text-muted-foreground hover:text-foreground group-hover:opacity-100 opacity-0', {
+                                                    'text-orange-100': variable
+                                                })}
+                                            >
+                                                <LayoutGrid className={'h-3 w-3'}/>
+                                            </button>
+                                        </VariableSelectorDropdown>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                        <p>Link a variable</p>
+                                    </TooltipContent>
+                                </Tooltip>
+                            }
+                        </>
                     }
                     <button
                         className={'text-muted-foreground hover:text-foreground group-hover:opacity-100 opacity-0'}>

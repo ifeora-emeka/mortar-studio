@@ -14,10 +14,24 @@
     "isStatic": true
   },
   {
-    "id": "spacing",
-    "name": "spacing",
-    "slug": "spacing",
+    "id": "sizes",
+    "name": "sizes",
+    "slug": "sizes",
     "index": 2,
+    "isStatic": true
+  },
+  {
+    "id": "semantic-color",
+    "name": "semantic colors",
+    "slug": "semantic-color",
+    "index": 3,
+    "isStatic": true
+  },
+  {
+    "id": "accent-color",
+    "name": "accent colors",
+    "slug": "accent-color",
+    "index": 4,
     "isStatic": true
   }
 ]

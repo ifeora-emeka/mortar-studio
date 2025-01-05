@@ -12,6 +12,12 @@ import FontSizeProperty
     from "@/components/builder/designer/layout/right-panels/StylingRightPanel/typography/FontSizeProperty.tsx";
 import FontFamilyProperty
     from "@/components/builder/designer/layout/right-panels/StylingRightPanel/typography/FontFamilyProperty.tsx";
+import FrontWeightProperty
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/typography/FrontWeightProperty.tsx";
+import LineHeight
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/typography/LineHeight.tsx";
+import TextAlignProperty
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/typography/TextAlignProperty.tsx";
 
 export default function TypographyStyles() {
     const {state: {activeElements}} = usePreviewContext();
@@ -27,6 +33,13 @@ export default function TypographyStyles() {
                     <StylePropertyGrid>
                         <ColorProperty/>
                         <FontSizeProperty/>
+                    </StylePropertyGrid>
+                    <StylePropertyGrid>
+                        <FrontWeightProperty/>
+                        <LineHeight/>
+                    </StylePropertyGrid>
+                    <StylePropertyGrid>
+                        <TextAlignProperty/>
                     </StylePropertyGrid>
                 </AccordionContent>
             </AccordionItem>

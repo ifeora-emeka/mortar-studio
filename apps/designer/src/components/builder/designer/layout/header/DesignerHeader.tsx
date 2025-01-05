@@ -25,7 +25,7 @@ export default function DesignerHeader() {
     const {sendSync, setPreviewState, state: {activeBreakpoint}} = usePreviewContext();
 
     return <header
-        className="bg-card border-b h-header flex justify-between items-center px-default z-[1000]">
+        className="bg-card border-b h-header flex justify-between items-center px-default z-20">
         <h1 className="text-2xl font-bold text-muted-foreground">Mortar Studio</h1>
         <div className={'flex items-center gap-sm'}>
             <Button size={'icon'} variant={'secondary'}

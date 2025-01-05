@@ -65,7 +65,7 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         activePage: null,
         activeElements: [],
         mode: 'system',
-        activeBreakpoint: 'lg',
+        activeBreakpoint: 'default',
         activeState: 'default',
         fonts: []
     });

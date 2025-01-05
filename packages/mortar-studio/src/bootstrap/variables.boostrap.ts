@@ -11,8 +11,8 @@ export const createStaticVariables = () => {
             slug: 'primary-color-1',
             name: '50',
             type: 'color',
-            lightValue: '#f0f4fa',
-            darkValue: '#f0f4fa',
+            lightValue: '#f0fdf4',
+            darkValue: '#f0fdf4',
             setID: 'primary-color',
             isStatic: true
         },
@@ -22,8 +22,8 @@ export const createStaticVariables = () => {
             slug: 'primary-color-2',
             name: '100',
             type: 'color',
-            lightValue: '#d9e2ec',
-            darkValue: '#d9e2ec',
+            lightValue: '#dcfce7',
+            darkValue: '#dcfce7',
             setID: 'primary-color',
             isStatic: true
         },
@@ -33,8 +33,8 @@ export const createStaticVariables = () => {
             slug: 'primary-color-3',
             name: '200',
             type: 'color',
-            lightValue: '#b7c6d2',
-            darkValue: '#b7c6d2',
+            lightValue: '#bbf7d0',
+            darkValue: '#bbf7d0',
             setID: 'primary-color',
             isStatic: true
         },
@@ -44,8 +44,8 @@ export const createStaticVariables = () => {
             slug: 'primary-color-4',
             name: '300',
             type: 'color',
-            lightValue: '#8da9be',
-            darkValue: '#8da9be',
+            lightValue: '#86efac',
+            darkValue: '#86efac',
             setID: 'primary-color',
             isStatic: true
         },
@@ -55,8 +55,8 @@ export const createStaticVariables = () => {
             slug: 'primary-color-5',
             name: '400',
             type: 'color',
-            lightValue: '#6b8eae',
-            darkValue: '#6b8eae',
+            lightValue: '#4ade80',
+            darkValue: '#4ade80',
             setID: 'primary-color',
             isStatic: true
         },
@@ -66,8 +66,8 @@ export const createStaticVariables = () => {
             slug: 'primary-color-6',
             name: '500',
             type: 'color',
-            lightValue: '#4a708b',
-            darkValue: '#4a708b',
+            lightValue: '#22c55e',
+            darkValue: '#22c55e',
             setID: 'primary-color',
             isStatic: true
         },
@@ -77,8 +77,8 @@ export const createStaticVariables = () => {
             slug: 'primary-color-7',
             name: '600',
             type: 'color',
-            lightValue: '#2a5674',
-            darkValue: '#2a5674',
+            lightValue: '#16a34a',
+            darkValue: '#16a34a',
             setID: 'primary-color',
             isStatic: true
         },
@@ -88,8 +88,8 @@ export const createStaticVariables = () => {
             slug: 'primary-color-8',
             name: '700',
             type: 'color',
-            lightValue: '#1e3a56',
-            darkValue: '#1e3a56',
+            lightValue: '#15803d',
+            darkValue: '#15803d',
             setID: 'primary-color',
             isStatic: true
         },
@@ -99,8 +99,8 @@ export const createStaticVariables = () => {
             slug: 'primary-color-9',
             name: '800',
             type: 'color',
-            lightValue: '#12263f',
-            darkValue: '#12263f',
+            lightValue: '#166534',
+            darkValue: '#166534',
             setID: 'primary-color',
             isStatic: true
         },
@@ -110,8 +110,8 @@ export const createStaticVariables = () => {
             slug: 'primary-color-10',
             name: '900',
             type: 'color',
-            lightValue: '#09172a',
-            darkValue: '#09172a',
+            lightValue: '#14532d',
+            darkValue: '#14532d',
             setID: 'primary-color',
             isStatic: true
         },
@@ -122,8 +122,8 @@ export const createStaticVariables = () => {
             slug: 'secondary-color-1',
             name: '50',
             type: 'color',
-            lightValue: '#f3edea',
-            darkValue: '#f3edea',
+            lightValue: '#f7fee7',
+            darkValue: '#f7fee7',
             setID: 'secondary-color',
             isStatic: true
         },
@@ -133,8 +133,8 @@ export const createStaticVariables = () => {
             slug: 'secondary-color-2',
             name: '100',
             type: 'color',
-            lightValue: '#e1d3cd',
-            darkValue: '#e1d3cd',
+            lightValue: '#ecfccb',
+            darkValue: '#ecfccb',
             setID: 'secondary-color',
             isStatic: true
         },
@@ -144,8 +144,8 @@ export const createStaticVariables = () => {
             slug: 'secondary-color-3',
             name: '200',
             type: 'color',
-            lightValue: '#d0b9b0',
-            darkValue: '#d0b9b0',
+            lightValue: '#d9f99d',
+            darkValue: '#d9f99d',
             setID: 'secondary-color',
             isStatic: true
         },
@@ -155,8 +155,8 @@ export const createStaticVariables = () => {
             slug: 'secondary-color-4',
             name: '300',
             type: 'color',
-            lightValue: '#c09f93',
-            darkValue: '#c09f93',
+            lightValue: '#bef264',
+            darkValue: '#bef264',
             setID: 'secondary-color',
             isStatic: true
         },
@@ -166,8 +166,8 @@ export const createStaticVariables = () => {
             slug: 'secondary-color-5',
             name: '400',
             type: 'color',
-            lightValue: '#af8576',
-            darkValue: '#af8576',
+            lightValue: '#a3e635',
+            darkValue: '#a3e635',
             setID: 'secondary-color',
             isStatic: true
         },
@@ -177,8 +177,8 @@ export const createStaticVariables = () => {
             slug: 'secondary-color-6',
             name: '500',
             type: 'color',
-            lightValue: '#9e6b59',
-            darkValue: '#9e6b59',
+            lightValue: '#84cc16',
+            darkValue: '#84cc16',
             setID: 'secondary-color',
             isStatic: true
         },
@@ -188,8 +188,8 @@ export const createStaticVariables = () => {
             slug: 'secondary-color-7',
             name: '600',
             type: 'color',
-            lightValue: '#8e513c',
-            darkValue: '#8e513c',
+            lightValue: '#65a30d',
+            darkValue: '#65a30d',
             setID: 'secondary-color',
             isStatic: true
         },
@@ -199,8 +199,8 @@ export const createStaticVariables = () => {
             slug: 'secondary-color-8',
             name: '700',
             type: 'color',
-            lightValue: '#7d3720',
-            darkValue: '#7d3720',
+            lightValue: '#4d7c0f',
+            darkValue: '#4d7c0f',
             setID: 'secondary-color',
             isStatic: true
         },
@@ -210,8 +210,8 @@ export const createStaticVariables = () => {
             slug: 'secondary-color-9',
             name: '800',
             type: 'color',
-            lightValue: '#6d1d03',
-            darkValue: '#6d1d03',
+            lightValue: '#3f6212',
+            darkValue: '#3f6212',
             setID: 'secondary-color',
             isStatic: true
         },
@@ -221,12 +221,12 @@ export const createStaticVariables = () => {
             slug: 'secondary-color-10',
             name: '900',
             type: 'color',
-            lightValue: '#5c0000',
-            darkValue: '#5c0000',
+            lightValue: '#365314',
+            darkValue: '#365314',
             setID: 'secondary-color',
             isStatic: true
         },
-        // spacing
+        // sizes
         {
             id: 'spacing-small',
             index: 0,
@@ -235,7 +235,7 @@ export const createStaticVariables = () => {
             type: 'measurement',
             lightValue: '0.25rem', // sm
             darkValue: '0.25rem',
-            setID: 'spacing',
+            setID: 'sizes',
             isStatic: true
         },
         {
@@ -246,7 +246,7 @@ export const createStaticVariables = () => {
             type: 'measurement',
             lightValue: '0.5rem', // md
             darkValue: '0.5rem',
-            setID: 'spacing',
+            setID: 'sizes',
             isStatic: true
         },
         {
@@ -257,7 +257,7 @@ export const createStaticVariables = () => {
             type: 'measurement',
             lightValue: '1rem', // lg
             darkValue: '1rem',
-            setID: 'spacing',
+            setID: 'sizes',
             isStatic: true
         },
         {
@@ -268,7 +268,7 @@ export const createStaticVariables = () => {
             type: 'measurement',
             lightValue: '1.5rem', // xl
             darkValue: '1.5rem',
-            setID: 'spacing',
+            setID: 'sizes',
             isStatic: true
         },
         {
@@ -279,7 +279,7 @@ export const createStaticVariables = () => {
             type: 'measurement',
             lightValue: '2rem', // 2xl
             darkValue: '2rem',
-            setID: 'spacing',
+            setID: 'sizes',
             isStatic: true
         },
         {
@@ -290,7 +290,7 @@ export const createStaticVariables = () => {
             type: 'measurement',
             lightValue: '3rem', // 3xl
             darkValue: '3rem',
-            setID: 'spacing',
+            setID: 'sizes',
             isStatic: true
         },
         {
@@ -301,7 +301,7 @@ export const createStaticVariables = () => {
             type: 'measurement',
             lightValue: '4rem', // 4xl
             darkValue: '4rem',
-            setID: 'spacing',
+            setID: 'sizes',
             isStatic: true
         },
         {
@@ -312,9 +312,187 @@ export const createStaticVariables = () => {
             type: 'measurement',
             lightValue: '5rem', // 5xl
             darkValue: '5rem',
-            setID: 'spacing',
+            setID: 'sizes',
             isStatic: true
         },
+        // Semantic colors
+        {
+            id: 'semantic-color-error',
+            index: 0,
+            slug: 'semantic-color-error',
+            name: 'error',
+            type: 'color',
+            lightValue: '#f44336',
+            darkValue: '#f44336',
+            setID: 'semantic-color',
+            isStatic: true
+        },
+        {
+            id: 'semantic-color-warning',
+            index: 1,
+            slug: 'semantic-color-warning',
+            name: 'warning',
+            type: 'color',
+            lightValue: '#ff9800',
+            darkValue: '#ff9800',
+            setID: 'semantic-color',
+            isStatic: true
+        },
+        {
+            id: 'semantic-color-success',
+            index: 2,
+            slug: 'semantic-color-success',
+            name: 'success',
+            type: 'color',
+            lightValue: '#4caf50',
+            darkValue: '#4caf50',
+            setID: 'semantic-color',
+            isStatic: true
+        },
+        {
+            id: 'semantic-color-info',
+            index: 3,
+            slug: 'semantic-color-info',
+            name: 'info',
+            type: 'color',
+            lightValue: '#2196f3',
+            darkValue: '#2196f3',
+            setID: 'semantic-color',
+            isStatic: true
+        },
+        {
+            id: 'semantic-color-background',
+            index: 4,
+            slug: 'semantic-color-background',
+            name: 'background',
+            type: 'color',
+            lightValue: '#F3F6EA',
+            darkValue: '#F3F6EA',
+            setID: 'semantic-color',
+            isStatic: true
+        },
+        {
+            id: 'semantic-color-muted',
+            index: 5,
+            slug: 'semantic-color-muted',
+            name: 'muted',
+            type: 'color',
+            lightValue: '#8B9793',
+            darkValue: '#8B9793',
+            setID: 'semantic-color',
+            isStatic: true
+        },
+        // Accent colors
+        {
+            id: 'accent-color-1',
+            index: 0,
+            slug: 'accent-color-1',
+            name: '50',
+            type: 'color',
+            lightValue: '#f3e8ff',
+            darkValue: '#f3e8ff',
+            setID: 'accent-color',
+            isStatic: true
+        },
+        {
+            id: 'accent-color-2',
+            index: 1,
+            slug: 'accent-color-2',
+            name: '100',
+            type: 'color',
+            lightValue: '#e9d5ff',
+            darkValue: '#e9d5ff',
+            setID: 'accent-color',
+            isStatic: true
+        },
+        {
+            id: 'accent-color-3',
+            index: 2,
+            slug: 'accent-color-3',
+            name: '200',
+            type: 'color',
+            lightValue: '#d8b4fe',
+            darkValue: '#d8b4fe',
+            setID: 'accent-color',
+            isStatic: true
+        },
+        {
+            id: 'accent-color-4',
+            index: 3,
+            slug: 'accent-color-4',
+            name: '300',
+            type: 'color',
+            lightValue: '#c084fc',
+            darkValue: '#c084fc',
+            setID: 'accent-color',
+            isStatic: true
+        },
+        {
+            id: 'accent-color-5',
+            index: 4,
+            slug: 'accent-color-5',
+            name: '400',
+            type: 'color',
+            lightValue: '#a855f7',
+            darkValue: '#a855f7',
+            setID: 'accent-color',
+            isStatic: true
+        },
+        {
+            id: 'accent-color-6',
+            index: 5,
+            slug: 'accent-color-6',
+            name: '500',
+            type: 'color',
+            lightValue: '#9333ea',
+            darkValue: '#9333ea',
+            setID: 'accent-color',
+            isStatic: true
+        },
+        {
+            id: 'accent-color-7',
+            index: 6,
+            slug: 'accent-color-7',
+            name: '600',
+            type: 'color',
+            lightValue: '#7e22ce',
+            darkValue: '#7e22ce',
+            setID: 'accent-color',
+            isStatic: true
+        },
+        {
+            id: 'accent-color-8',
+            index: 7,
+            slug: 'accent-color-8',
+            name: '700',
+            type: 'color',
+            lightValue: '#6b21a8',
+            darkValue: '#6b21a8',
+            setID: 'accent-color',
+            isStatic: true
+        },
+        {
+            id: 'accent-color-9',
+            index: 8,
+            slug: 'accent-color-9',
+            name: '800',
+            type: 'color',
+            lightValue: '#581c87',
+            darkValue: '#581c87',
+            setID: 'accent-color',
+            isStatic: true
+        },
+        {
+            id: 'accent-color-10',
+            index: 9,
+            slug: 'accent-color-10',
+            name: '900',
+            type: 'color',
+            lightValue: '#3b0764',
+            darkValue: '#3b0764',
+            setID: 'accent-color',
+            isStatic: true
+        }
     ];
 
     const variableSets: MortarVariableSet[] = [
@@ -333,10 +511,24 @@ export const createStaticVariables = () => {
             isStatic: true
         },
         {
-            id: 'spacing',
-            name: 'spacing',
-            slug: 'spacing',
+            id: 'sizes',
+            name: 'sizes',
+            slug: 'sizes',
             index: 2,
+            isStatic: true
+        },
+        {
+            id: 'semantic-color',
+            name: 'semantic colors',
+            slug: 'semantic-color',
+            index: 3,
+            isStatic: true
+        },
+        {
+            id: 'accent-color',
+            name: 'accent colors',
+            slug: 'accent-color',
+            index: 4,
             isStatic: true
         }
     ];

@@ -12,7 +12,7 @@ export default function DesignerPreview() {
     const { state: { activePage, instances, activeElements, activePageInstances, activeComponents, components, activeBreakpoint, variables } } = usePreviewContext();
     const frameRef = useRef<HTMLIFrameElement>(null);
     const instancesByPageID = activePage ? instances.filter(i => i.page_id === activePage.id) : [];
-    const width = activeBreakpoint === 'default' ? '400px' : activeBreakpoint === 'md' ? '600px' : activeBreakpoint === 'lg' ? '97%' : '100%';
+    const width = '98%'
 
     useEffect(() => {
         const handleResize = () => {
@@ -236,11 +236,11 @@ export default function DesignerPreview() {
 
     return (
         <div
-            className={'min-h-[--body-height] max-h-[--body-height] bg-background flex-1 flex justify-center'}
+            className={'min-h-[--body-height] max-h-[--body-height] bg-background flex-1 flex justify-center overflow-x-auto'}
         >
             {
                 activePage && <div
-                    style={{ width }}
+                    style={{ width, minWidth: width }}
                     id={'resizable-browser-window'}
                     className={`relative min-h-[--body-height] max-h-[--body-height] flex flex-col shadow-md`}
                 >
