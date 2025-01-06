@@ -1,0 +1,296 @@
+{
+  "id": "1llj81736117406270",
+  "name": "Home hero section",
+  "elements": [
+    {
+      "htmlTag": "div",
+      "parent_element_id": null,
+      "attributes": {
+        "className": "min-h-[100vh] px-[10rem]"
+      },
+      "children": [],
+      "index": 0,
+      "id": "hcmuu",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::secondary-color-1",
+            "p": "30px",
+            "$display": "flex",
+            "$flexDirection": "flex-row",
+            "$alignItems": "items-center"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "hcmuu",
+      "attributes": {
+        "className": "w-full px-0 py-0"
+      },
+      "children": [],
+      "index": 0,
+      "id": "e67f7443-f888-49d6-a9e3-5e967aa88de6",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::secondary-color-1",
+            "p": "30px",
+            "$display": "flex",
+            "$justifyContent": "justify-between",
+            "$alignItems": "items-center",
+            "$gap": "gap-x-[9rem]"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "e67f7443-f888-49d6-a9e3-5e967aa88de6",
+      "attributes": {
+        "className": "w-full px-0 py-0"
+      },
+      "children": [],
+      "index": 0,
+      "id": "54048431-05a5-420f-bb11-2e0205cb419d",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::secondary-color-1",
+            "p": "30px",
+            "$display": "flex",
+            "$flexDirection": "flex-col",
+            "$gap": "gap-y-[1rem]"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "54048431-05a5-420f-bb11-2e0205cb419d",
+      "attributes": {},
+      "children": [],
+      "index": 0,
+      "id": "b69e69dd-4459-4496-b9da-34e1fb0df567",
+      "style": {},
+      "textContent": "LockHex- Your\nDigital Life Manager",
+      "name": "heading",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "textSize": "ref::variables::spacing-4xlarge",
+            "text": "ref::variables::semantic-color-background",
+            "fontWeight": "700"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "54048431-05a5-420f-bb11-2e0205cb419d",
+      "attributes": {},
+      "children": [],
+      "index": 1,
+      "id": "ea7089d9-ffe6-4943-aaad-57ce0a5fa82a",
+      "style": {},
+      "textContent": "Organize online life with LockHex - a secure solution for\npasswords, passkeys, credit cards, and more.",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "text": "ref::variables::semantic-color-muted",
+            "textSize": "ref::variables::spacing-xlarge"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "54048431-05a5-420f-bb11-2e0205cb419d",
+      "attributes": {
+        "className": "px-0 pt-10 pb-0"
+      },
+      "children": [],
+      "index": 2,
+      "id": "0da7a16b-21f9-400c-a8c0-266e92231c1f",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::secondary-color-6",
+            "p": "30px",
+            "$display": "flex",
+            "$gap": "gap-x-[1rem]",
+            "$flexDirection": "flex-row",
+            "$alignItems": "items-center"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "0da7a16b-21f9-400c-a8c0-266e92231c1f",
+      "attributes": {
+        "className": "rounded-full px-10 py-5 flex items-center"
+      },
+      "children": [],
+      "index": 0,
+      "id": "6bd23aae-16e5-4c57-90e0-cb745cd8e406",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::primary-color-6",
+            "p": "30px"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "6bd23aae-16e5-4c57-90e0-cb745cd8e406",
+      "attributes": {},
+      "children": [],
+      "index": 0,
+      "id": "67865fb6-b1f9-4c23-bce8-fb5844c172c1",
+      "style": {},
+      "textContent": "Start 14 days free trial",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "text": "ref::variables::primary-color-2",
+            "textSize": "ref::variables::spacing-large",
+            "fontWeight": "600"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "414d917c-7e5e-45d0-8805-ab19c91bd287",
+      "attributes": {},
+      "children": [],
+      "index": 0,
+      "id": "0131dee0-b5f0-4991-a401-31ec024cbc95",
+      "style": {},
+      "textContent": "Watch demo",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "text": "ref::variables::primary-color-2",
+            "textSize": "ref::variables::spacing-large",
+            "fontWeight": "600"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "0da7a16b-21f9-400c-a8c0-266e92231c1f",
+      "attributes": {
+        "className": "rounded-full px-10 py-5 flex items-center"
+      },
+      "children": [],
+      "index": 1,
+      "id": "414d917c-7e5e-45d0-8805-ab19c91bd287",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::secondary-color-5",
+            "p": "30px"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "e67f7443-f888-49d6-a9e3-5e967aa88de6",
+      "attributes": {
+        "className": "w-full px-0"
+      },
+      "children": [],
+      "index": 1,
+      "id": "dd0e0009-2a8a-421a-abda-e348f75b1d5e",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::secondary-color-6",
+            "p": "30px",
+            "h": "100%"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "dd0e0009-2a8a-421a-abda-e348f75b1d5e",
+      "attributes": {
+        "src": "https://cdn.dribbble.com/userupload/15891252/file/original-3301079672549d007c74c7cbce004e85.jpg?resize=1024x768&vertical=center",
+        "alt": "Placeholder image 150x150",
+        "className": "w-full h-full rounded-3xl"
+      },
+      "children": [],
+      "index": 0,
+      "id": "8ceb6dcd-f63c-4274-836a-abd666a2cde5",
+      "style": {},
+      "textContent": null,
+      "name": "element",
+      "tailwindStyles": {
+        "default": {
+          "default": {}
+        }
+      }
+    }
+  ],
+  "props": []
+}

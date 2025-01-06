@@ -1,10 +1,9 @@
 import {
     Component,
     Cuboid,
-    File, Layers2,
+    File, Folder, Layers2,
     LifeBuoy,
     Logs,
-    Paintbrush,
     Settings,
     Settings2,
 } from "lucide-react"
@@ -30,8 +29,8 @@ export default function LeftPanelToggler() {
                     <EachToggleBtn onClick={() => toggleLeftPanel('variables')} alignTooltip="right" tooltip="Variables" active={activePanel == 'variables'}>
                         <Logs />
                     </EachToggleBtn>
-                    <EachToggleBtn onClick={() => toggleLeftPanel('styles')} alignTooltip="right" tooltip="Styles" active={activePanel == 'styles'}>
-                        <Paintbrush />
+                    <EachToggleBtn onClick={() => toggleLeftPanel('files')} alignTooltip="right" tooltip="Files" active={activePanel == 'files'}>
+                        <Folder />
                     </EachToggleBtn>
                     <Separator />
                     <EachToggleBtn onClick={() => toggleLeftPanel('blocks')} alignTooltip="right" tooltip="Blocks" active={activePanel == 'blocks'}>

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-type Panel = 'pages' | 'layers' | 'styles' | 'components' | 'blocks' | 'variables' | 'settings';
+type Panel = 'pages' | 'layers' | 'styles' | 'components' | 'blocks' | 'variables' | 'settings' | 'files';
 
 interface LeftPanelState {
   activePanel: Panel | null;

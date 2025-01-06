@@ -20,6 +20,8 @@ import LayoutProperty
     from "@/components/builder/designer/layout/right-panels/StylingRightPanel/layout/LayoutProperty.tsx";
 import BorderProperty
     from "@/components/builder/designer/layout/right-panels/StylingRightPanel/border/BorderProperty.tsx";
+import SizeProperty
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/size/SizeProperty.tsx";
 
 export default function StylesRightPanel() {
     const {state: {activePanel}} = useRightPanelContext()
@@ -52,9 +54,10 @@ export default function StylesRightPanel() {
         >
             <Accordion
                 type="multiple"
-                defaultValue={['typography', 'background', 'layout', 'element-settings', 'border']}
+                // defaultValue={['typography', 'background', 'layout', 'element-settings', 'border']}
             >
                 <ElementSettings/>
+                <SizeProperty />
                 <LayoutProperty/>
                 <TypographyStyles/>
                 <BackgroundProperty/>

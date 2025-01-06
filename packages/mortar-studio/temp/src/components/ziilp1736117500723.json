@@ -1,0 +1,492 @@
+{
+  "id": "ziilp1736117500723",
+  "name": "Our clients",
+  "elements": [
+    {
+      "htmlTag": "div",
+      "parent_element_id": null,
+      "attributes": {
+        "className": "min-h-[50vh] bg-white py-[8rem] px-[10rem]"
+      },
+      "children": [],
+      "index": 0,
+      "id": "cuivr",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "#EFF6FF",
+            "p": "30px",
+            "$display": "flex",
+            "$flexDirection": "flex-col",
+            "$gap": "gap-y-[5rem]"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "cuivr",
+      "attributes": {
+        "className": "bg-white p-0"
+      },
+      "children": [],
+      "index": 0,
+      "id": "1d57f4b2-7f81-428d-8e20-4a7613f26c0e",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "#EFF6FF",
+            "p": "30px",
+            "$display": "flex",
+            "$justifyContent": "justify-center"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "cuivr",
+      "attributes": {
+        "className": "bg-white p-0"
+      },
+      "children": [],
+      "index": 1,
+      "id": "981b4ca5-82a2-4975-8806-7416bb310b4d",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "#EFF6FF",
+            "p": "30px",
+            "$display": "flex",
+            "$flexDirection": "flex-col",
+            "$gap": "gap-y-[2rem]"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "1d57f4b2-7f81-428d-8e20-4a7613f26c0e",
+      "attributes": {
+        "className": "max-w-[40rem] text-center"
+      },
+      "children": [],
+      "index": 0,
+      "id": "383fd5b0-9b2b-4005-bef4-56660778d70d",
+      "style": {},
+      "textContent": "LockHex Core Features to Kepp You Secure",
+      "name": "heading",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "textSize": "ref::variables::spacing-3xlarge",
+            "fontWeight": "600"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "981b4ca5-82a2-4975-8806-7416bb310b4d",
+      "attributes": {
+        "className": "bg-white p-0"
+      },
+      "children": [],
+      "index": 0,
+      "id": "a3333231-057a-4c8c-a04e-ca148c8c6a76",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "#EFF6FF",
+            "p": "30px",
+            "$display": "flex",
+            "$flexDirection": "flex-row",
+            "$gap": "gap-x-[2rem]",
+            "$justifyContent": "justify-evenly",
+            "$alignItems": "items-baseline"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "a3333231-057a-4c8c-a04e-ca148c8c6a76",
+      "attributes": {
+        "className": "w-full rounded-3xl p-10"
+      },
+      "children": [],
+      "index": 0,
+      "id": "c5b9bc73-8c41-4354-a28b-fb80da5fc84e",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::019438c1-be20-7148-baa1-d18bc8261a9b",
+            "p": "30px",
+            "$display": "flex",
+            "$flexDirection": "flex-col",
+            "$gap": "gap-y-[7px]"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "c5b9bc73-8c41-4354-a28b-fb80da5fc84e",
+      "attributes": {
+        "className": "mb-5"
+      },
+      "children": [],
+      "index": 0,
+      "id": "f0fc7003-5100-4e2a-87ee-29eb278c1059",
+      "style": {},
+      "textContent": "Default paragraph",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "c5b9bc73-8c41-4354-a28b-fb80da5fc84e",
+      "attributes": {},
+      "children": [],
+      "index": 1,
+      "id": "7a3eab48-800c-4eeb-aeaa-b6f1fe9e91c2",
+      "style": {},
+      "textContent": "Default heading",
+      "name": "heading",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "textSize": "ref::variables::spacing-2xlarge",
+            "fontWeight": "600"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "c5b9bc73-8c41-4354-a28b-fb80da5fc84e",
+      "attributes": {},
+      "children": [],
+      "index": 2,
+      "id": "ca3cf6cf-41ae-4e5d-85c3-804d821acd5f",
+      "style": {},
+      "textContent": "Still using sticky notes to remember your sensitive info? Let LockHex\nsave it instead. Manage passwords, passkeys, credit cards, and\npersonal information in a single secure place.",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "text": "ref::variables::semantic-color-muted"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "395f3af2-55e7-470d-aa39-7d26b1c2dd3f",
+      "attributes": {
+        "className": "mb-5"
+      },
+      "children": [],
+      "index": 0,
+      "id": "8f2b2f62-977b-4ec9-ad01-18047ecf1018",
+      "style": {},
+      "textContent": "Default paragraph",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "395f3af2-55e7-470d-aa39-7d26b1c2dd3f",
+      "attributes": {},
+      "children": [],
+      "index": 1,
+      "id": "c24333e9-a8e6-4b59-b08f-963209e29f0d",
+      "style": {},
+      "textContent": "Default heading",
+      "name": "heading",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "textSize": "ref::variables::spacing-2xlarge",
+            "fontWeight": "600"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "395f3af2-55e7-470d-aa39-7d26b1c2dd3f",
+      "attributes": {},
+      "children": [],
+      "index": 2,
+      "id": "4214602d-bc53-4bc8-896f-8ff1e8e5d2f6",
+      "style": {},
+      "textContent": "Still using sticky notes to remember your sensitive info? Let LockHex\nsave it instead. Manage passwords, passkeys, credit cards, and\npersonal information in a single secure place.",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "text": "ref::variables::semantic-color-muted"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "981b4ca5-82a2-4975-8806-7416bb310b4d",
+      "attributes": {
+        "className": "w-full rounded-3xl p-10"
+      },
+      "children": [],
+      "index": 1,
+      "id": "0f221377-2c7c-4cd5-b590-7b1ad6b12950",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::019438c1-be20-7148-baa1-d18bc8261a9b",
+            "p": "30px",
+            "$display": "flex",
+            "$flexDirection": "flex-row",
+            "$gap": "gap-x-[10rem]",
+            "$justifyContent": "justify-between"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "0f221377-2c7c-4cd5-b590-7b1ad6b12950",
+      "attributes": {
+        "className": "p-0 w-[40%]"
+      },
+      "children": [],
+      "index": 0,
+      "id": "8541278d-329b-4338-87ac-b6e30809ef2b",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::019438c1-be20-7148-baa1-d18bc8261a9b",
+            "p": "30px"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "8541278d-329b-4338-87ac-b6e30809ef2b",
+      "attributes": {
+        "className": "mb-5"
+      },
+      "children": [],
+      "index": 0,
+      "id": "8f59f243-d2ae-4b5a-bf06-152e30bf4d27",
+      "style": {},
+      "textContent": "Default paragraph",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "8541278d-329b-4338-87ac-b6e30809ef2b",
+      "attributes": {},
+      "children": [],
+      "index": 2,
+      "id": "0aac1eaf-3588-48c0-b3dd-9ae85157ccbe",
+      "style": {},
+      "textContent": "Still using sticky notes to remember your sensitive info? Let LockHex\nsave it instead. Manage passwords, passkeys, credit cards, and\npersonal information in a single secure place.",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "text": "ref::variables::semantic-color-muted"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "8541278d-329b-4338-87ac-b6e30809ef2b",
+      "attributes": {},
+      "children": [],
+      "index": 1,
+      "id": "b7add202-c42b-495f-8b4a-42e5274d43b0",
+      "style": {},
+      "textContent": "Default heading",
+      "name": "heading",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "textSize": "ref::variables::spacing-2xlarge",
+            "fontWeight": "600",
+            "bg": "ref::variables::019438c1-be20-7148-baa1-d18bc8261a9b"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "0f221377-2c7c-4cd5-b590-7b1ad6b12950",
+      "attributes": {
+        "src": "https://picsum.photos/800/500",
+        "alt": "Placeholder image 150x150",
+        "className": "w-[25rem] h-full rounded-3xl"
+      },
+      "children": [],
+      "index": 1,
+      "id": "78a5eb4f-6bc7-452a-9c62-e457e4a4b54b",
+      "style": {},
+      "textContent": null,
+      "name": "element",
+      "tailwindStyles": {
+        "default": {
+          "default": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "c1a57dd1-72ee-4d9d-85ef-967ac17e8f5b",
+      "attributes": {
+        "className": "mb-5"
+      },
+      "children": [],
+      "index": 0,
+      "id": "62b2b3e1-a5dc-4ab7-bf82-4ab2a1cdc86c",
+      "style": {},
+      "textContent": "Default paragraph",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "c1a57dd1-72ee-4d9d-85ef-967ac17e8f5b",
+      "attributes": {},
+      "children": [],
+      "index": 1,
+      "id": "33f338a3-8a56-46ab-8f5a-8f9ad0889839",
+      "style": {},
+      "textContent": "Default heading",
+      "name": "heading",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "textSize": "ref::variables::spacing-2xlarge",
+            "fontWeight": "600"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "p",
+      "parent_element_id": "c1a57dd1-72ee-4d9d-85ef-967ac17e8f5b",
+      "attributes": {},
+      "children": [],
+      "index": 2,
+      "id": "54348284-da46-4baa-945b-f72b8f4bb939",
+      "style": {},
+      "textContent": "Still using sticky notes to remember your sensitive info? Let LockHex\nsave it instead. Manage passwords, passkeys, credit cards, and\npersonal information in a single secure place.",
+      "name": "paragraph",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "text": "ref::variables::semantic-color-muted"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "div",
+      "parent_element_id": "a3333231-057a-4c8c-a04e-ca148c8c6a76",
+      "attributes": {
+        "className": "w-full rounded-3xl p-10"
+      },
+      "children": [],
+      "index": 1,
+      "id": "c1a57dd1-72ee-4d9d-85ef-967ac17e8f5b",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::019438c1-be20-7148-baa1-d18bc8261a9b",
+            "p": "30px",
+            "$display": "flex",
+            "$flexDirection": "flex-col",
+            "$gap": "gap-y-[7px]"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    }
+  ],
+  "props": []
+}
