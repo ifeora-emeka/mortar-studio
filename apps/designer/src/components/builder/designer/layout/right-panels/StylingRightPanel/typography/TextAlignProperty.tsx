@@ -20,7 +20,7 @@ export default function TextAlignProperty() {
             variable={variable}
         >
             <ToggleGroup
-                className={'border border-input rounded-lg bg-background'}
+                className={'border border-input rounded-lg bg-background justify-between'}
                 type="single"
                 value={value}
                 onValueChange={(newValue) => {
@@ -33,7 +33,7 @@ export default function TextAlignProperty() {
                         value={optionValue}
                         aria-label={`Align text ${optionValue}`}
                         className={cn(
-                            "p-2 border",
+                            "border p-[1px]",
                             value === optionValue ? "text-foreground bg-accent shadow-sm" : "text-muted-foreground border-background"
                         )}
                     >

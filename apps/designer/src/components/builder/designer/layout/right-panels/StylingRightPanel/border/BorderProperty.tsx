@@ -23,7 +23,9 @@ export default function BorderProperty() {
                     <BorderColorProperty/>
                     <BorderStyleProperty/>
                 </StylePropertyGrid>
-                <BorderWidthProperty/>
+                <StylePropertyGrid>
+                    <BorderWidthProperty/>
+                </StylePropertyGrid>
             </AccordionContent>
         </AccordionItem>
     </>

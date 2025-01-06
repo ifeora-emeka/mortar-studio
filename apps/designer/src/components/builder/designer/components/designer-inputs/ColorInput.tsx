@@ -59,10 +59,11 @@ export default function ColorInput(
         <>
             <VariableSelectorDropdown onChange={onChange} disabled={!variable}>
                 <div
-                    className={cn('flex items-center w-full gap-2 border border-input hover:bg-accent bg-background p-1 rounded-md text-muted-foreground hover:text-foreground', {
+                    className={cn('flex items-center w-full gap-2 border border-input hover:bg-accent bg-background p-1 h-[35px] rounded-md text-muted-foreground hover:text-foreground', {
                         "border-foreground/50 text-foreground": focus,
                         "cursor-pointer": variable
-                    })}>
+                    })}
+                >
                     <Popover
                         open={popoverOpen}
                         onOpenChange={(isOpen) => {
@@ -74,7 +75,7 @@ export default function ColorInput(
                     >
                         <PopoverTrigger asChild disabled={!!variable}>
                             <button
-                                className={'min-h-5 min-w-5 rounded-sm hover:shadow-lg'}
+                                className={'min-h-6 min-w-6 rounded-sm hover:shadow-lg'}
                                 style={{backgroundColor: value || "#0000"}}
                                 aria-label="Color picker"
                                 role="button"

@@ -5,11 +5,10 @@
     "slug": "primary-color-1",
     "name": "50",
     "type": "color",
-    "lightValue": "#1bbf7b",
-    "darkValue": "#1bbf7b",
+    "lightValue": "#f0fdf4",
+    "darkValue": "#f0fdf4",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-2",
@@ -50,11 +49,10 @@
     "slug": "primary-color-5",
     "name": "400",
     "type": "color",
-    "lightValue": "#41ca91",
+    "lightValue": "#4ade80",
     "darkValue": "#4ade80",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-6",
@@ -62,11 +60,10 @@
     "slug": "primary-color-6",
     "name": "500",
     "type": "color",
-    "lightValue": "#1bbf7b",
+    "lightValue": "#22c55e",
     "darkValue": "#22c55e",
     "setID": "primary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "primary-color-7",
@@ -118,11 +115,10 @@
     "slug": "secondary-color-1",
     "name": "50",
     "type": "color",
-    "lightValue": "#062120",
-    "darkValue": "#062120",
+    "lightValue": "#f7fee7",
+    "darkValue": "#f7fee7",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-2",
@@ -152,11 +148,10 @@
     "slug": "secondary-color-4",
     "name": "300",
     "type": "color",
-    "lightValue": "#596b6a",
-    "darkValue": "#596b6a",
+    "lightValue": "#bef264",
+    "darkValue": "#bef264",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-5",
@@ -164,11 +159,10 @@
     "slug": "secondary-color-5",
     "name": "400",
     "type": "color",
-    "lightValue": "#304645",
-    "darkValue": "#304645",
+    "lightValue": "#a3e635",
+    "darkValue": "#a3e635",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-6",
@@ -176,11 +170,10 @@
     "slug": "secondary-color-6",
     "name": "500",
     "type": "color",
-    "lightValue": "#062120",
-    "darkValue": "#062120",
+    "lightValue": "#84cc16",
+    "darkValue": "#84cc16",
     "setID": "secondary-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "secondary-color-7",
@@ -279,7 +272,8 @@
     "lightValue": "2rem",
     "darkValue": "2rem",
     "setID": "sizes",
-    "isStatic": true
+    "isStatic": true,
+    "new": false
   },
   {
     "id": "spacing-3xlarge",
@@ -364,11 +358,10 @@
     "slug": "semantic-color-background",
     "name": "background",
     "type": "color",
-    "lightValue": "#FFFFFF",
-    "darkValue": "#FFFFFF",
+    "lightValue": "#F3F6EA",
+    "darkValue": "#F3F6EA",
     "setID": "semantic-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "semantic-color-muted",
@@ -376,11 +369,10 @@
     "slug": "semantic-color-muted",
     "name": "muted",
     "type": "color",
-    "lightValue": "#97A5B3",
-    "darkValue": "#97A5B3",
+    "lightValue": "#8B9793",
+    "darkValue": "#8B9793",
     "setID": "semantic-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "accent-color-1",
@@ -391,7 +383,8 @@
     "lightValue": "#f3e8ff",
     "darkValue": "#f3e8ff",
     "setID": "accent-color",
-    "isStatic": true
+    "isStatic": true,
+    "new": false
   },
   {
     "id": "accent-color-2",
@@ -413,7 +406,8 @@
     "lightValue": "#d8b4fe",
     "darkValue": "#d8b4fe",
     "setID": "accent-color",
-    "isStatic": true
+    "isStatic": true,
+    "new": false
   },
   {
     "id": "accent-color-4",
@@ -435,7 +429,8 @@
     "lightValue": "#a855f7",
     "darkValue": "#a855f7",
     "setID": "accent-color",
-    "isStatic": true
+    "isStatic": true,
+    "new": false
   },
   {
     "id": "accent-color-6",
@@ -493,25 +488,14 @@
     "isStatic": true
   },
   {
-    "id": "019438a8-ee3a-756b-b7b5-f6cb9c0f7683",
+    "id": "01943da2-a5c6-70a4-a9c2-e2e5f1925836",
     "name": "text",
     "index": 44,
     "type": "color",
-    "lightValue": "#13161F",
+    "lightValue": "#ffffff",
     "darkValue": null,
     "setID": "semantic-color",
     "slug": "variable-44",
-    "new": false
-  },
-  {
-    "id": "019438c1-be20-7148-baa1-d18bc8261a9b",
-    "name": "card",
-    "index": 45,
-    "type": "color",
-    "lightValue": "#F0F4F6",
-    "darkValue": null,
-    "setID": "semantic-color",
-    "slug": "variable-45",
     "new": false
   }
 ]

@@ -1,0 +1,31 @@
+{
+  "id": "6x9ua1736201698240",
+  "name": "About us section",
+  "elements": [
+    {
+      "htmlTag": "div",
+      "parent_element_id": null,
+      "attributes": {},
+      "children": [],
+      "index": 0,
+      "id": "eikwo",
+      "style": {},
+      "textContent": null,
+      "name": "frame",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "bg": "ref::variables::secondary-color-1",
+            "p": "30px",
+            "h": "30rem"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
+        }
+      }
+    }
+  ],
+  "props": []
+}

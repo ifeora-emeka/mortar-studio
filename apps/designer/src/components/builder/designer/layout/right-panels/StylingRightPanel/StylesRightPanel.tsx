@@ -22,6 +22,10 @@ import BorderProperty
     from "@/components/builder/designer/layout/right-panels/StylingRightPanel/border/BorderProperty.tsx";
 import SizeProperty
     from "@/components/builder/designer/layout/right-panels/StylingRightPanel/size/SizeProperty.tsx";
+import PlacementProperty
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/position/PlacementProperty.tsx";
+import SpacingProperty
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/spacing/SpacingProperty.tsx";
 
 export default function StylesRightPanel() {
     const {state: {activePanel}} = useRightPanelContext()
@@ -53,13 +57,16 @@ export default function StylesRightPanel() {
             }
         >
             <Accordion
+                className={'pb-40'}
                 type="multiple"
                 // defaultValue={['typography', 'background', 'layout', 'element-settings', 'border']}
             >
                 <ElementSettings/>
                 <SizeProperty />
                 <LayoutProperty/>
+                <PlacementProperty />
                 <TypographyStyles/>
+                <SpacingProperty />
                 <BackgroundProperty/>
                 <BorderProperty />
             </Accordion>

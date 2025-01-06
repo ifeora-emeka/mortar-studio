@@ -28,7 +28,7 @@ export default function FontWeightProperty() {
     return (
         <PropertySection label="Font weight" onVariableConnect={handleSave} variable={variable}>
             <Select value={value} onValueChange={handleSave}>
-                <SelectTrigger className="w-full border border-input bg-background hover:bg-accent">
+                <SelectTrigger className="w-full border border-input bg-background hover:bg-accent h-[35px]">
                     <SelectValue placeholder="Select font weight" />
                 </SelectTrigger>
                 <SelectContent>
