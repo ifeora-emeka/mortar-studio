@@ -39,15 +39,21 @@
       "attributes": {},
       "children": [],
       "index": 0,
-      "id": "6b548400-fe0c-450d-bbf0-b10e79074c9f",
+      "id": "062560e7-6f9c-4893-ba8c-c0679a9c00ce",
       "style": {},
       "textContent": null,
       "name": "frame",
       "tailwindStyles": {
         "default": {
           "default": {
-            "bg": "#EFF6FF",
-            "p": "30px"
+            "$bg": "bg-[#326db7]",
+            "w": "100%",
+            "p": "1rem",
+            "rounded": "2rem",
+            "$bgOpacity": "op-0",
+            "$display": "flex",
+            "$gap": "gap-x-[5rem]",
+            "bg": "ref::variables::accent-color-2"
           },
           "dark": {},
           "hover": {},
@@ -58,49 +64,20 @@
     },
     {
       "htmlTag": "div",
-      "parent_element_id": "hk3ku",
-      "attributes": {},
-      "children": [],
-      "index": 1,
-      "id": "e43dc910-d870-4df7-87ff-b9fecbb8aac3",
-      "style": {},
-      "textContent": null,
-      "name": "frame",
-      "tailwindStyles": {
-        "default": {
-          "default": {
-            "bg": "#EFF6FF",
-            "p": "30px",
-            "w": "14rem",
-            "h": "14rem",
-            "$position": "relative"
-          },
-          "dark": {},
-          "hover": {},
-          "focus": {},
-          "active": {}
-        }
-      }
-    },
-    {
-      "htmlTag": "div",
-      "parent_element_id": "e43dc910-d870-4df7-87ff-b9fecbb8aac3",
+      "parent_element_id": "062560e7-6f9c-4893-ba8c-c0679a9c00ce",
       "attributes": {},
       "children": [],
       "index": 0,
-      "id": "4d5b22c9-2399-4aeb-b5eb-84216fcc7892",
+      "id": "9e03fb9a-ba58-469c-8ddc-a8b3362f7be3",
       "style": {},
       "textContent": null,
       "name": "frame",
       "tailwindStyles": {
         "default": {
           "default": {
-            "bg": "#7ece9e",
-            "p": "30px",
-            "$position": "absolute",
-            "top": "-20px",
-            "$borderColor": "border-[#000000]",
-            "left": "19px"
+            "$bg": "bg-[#EFF6FF]",
+            "w": "100%",
+            "p": "1rem"
           },
           "dark": {},
           "hover": {},
@@ -110,25 +87,27 @@
       }
     },
     {
-      "htmlTag": "h1",
-      "parent_element_id": "hk3ku",
+      "htmlTag": "div",
+      "parent_element_id": "062560e7-6f9c-4893-ba8c-c0679a9c00ce",
       "attributes": {},
       "children": [],
-      "index": 2,
-      "id": "eadf1663-b176-4a04-bee5-05a1d2eaaa79",
+      "index": 1,
+      "id": "940de11f-ff6c-4f83-8f68-ffb832c1173c",
       "style": {},
-      "textContent": "My main heading text",
-      "name": "heading",
+      "textContent": null,
+      "name": "frame",
       "tailwindStyles": {
         "default": {
           "default": {
-            "textSize": "9rem",
-            "text": "ref::variables::accent-color-2",
-            "fontWeight": "700",
-            "top": "0px",
-            "$textAlign": "text-center",
-            "p": "0px"
-          }
+            "$bg": "bg-[ref::variables::secondary-color-8]",
+            "w": "100%",
+            "p": "1rem",
+            "bg": "ref::variables::accent-color-1"
+          },
+          "dark": {},
+          "hover": {},
+          "focus": {},
+          "active": {}
         }
       }
     }

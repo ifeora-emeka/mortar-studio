@@ -1,11 +1,11 @@
 import {Request, Response, NextFunction} from 'express'
-import { APISyncData } from '@repo/common/schema/api'
+import {APISyncData} from '@repo/common/schema/api'
 import fs from 'fs';
 import path from 'path';
 import {MortarComponent} from "@repo/common/schema/component";
 import {HttpException} from "../../exceptions/HttpException.js";
 import {MortarElementInstance} from "@repo/common/schema/instance";
-import { fileURLToPath } from 'url';
+import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,11 +14,17 @@ export default class SyncController {
 
     public create = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const { variables, variableSets, pages, components, instances }: APISyncData = req.body;
+            const {
+                variables,
+                variableSets,
+                pages,
+                components,
+                instances
+            }: APISyncData = req.body;
 
-            components.forEach((component:MortarComponent) => {
+            components.forEach((component: MortarComponent) => {
                 component.elements.forEach(el => {
-                    if(el.children.length > 0){
+                    if (el.children.length > 0) {
                         throw new HttpException(400, 'Nested elements are not supported');
                     }
                 })
@@ -31,9 +37,9 @@ export default class SyncController {
             directories.forEach(dir => {
                 const dirPath = path.join(rootDir, dir);
                 if (fs.existsSync(dirPath)) {
-                    fs.rmSync(dirPath, { recursive: true, force: true });
+                    fs.rmSync(dirPath, {recursive: true, force: true});
                 }
-                fs.mkdirSync(dirPath, { recursive: true });
+                fs.mkdirSync(dirPath, {recursive: true});
             });
 
             // Sync variables and variable sets
@@ -48,7 +54,7 @@ export default class SyncController {
             const pagesDir = path.join(rootDir, 'pages');
             pages.forEach(page => {
                 const pageDir = path.join(pagesDir, page.id);
-                fs.mkdirSync(pageDir, { recursive: true });
+                fs.mkdirSync(pageDir, {recursive: true});
 
                 const pageFilePath = path.join(pageDir, 'page.json');
                 fs.writeFileSync(pageFilePath, JSON.stringify(page, null, 2));
@@ -56,7 +62,7 @@ export default class SyncController {
 
             const instancesDir = path.join(rootDir, 'instances');
             if (!fs.existsSync(instancesDir)) {
-                fs.mkdirSync(instancesDir, { recursive: true });
+                fs.mkdirSync(instancesDir, {recursive: true});
             }
 
             instances.forEach(instance => {
@@ -87,7 +93,7 @@ export default class SyncController {
                 fs.writeFileSync(componentFilePath, JSON.stringify(component, null, 2));
             });
 
-            res.status(201).json({ message: 'Sync data stored successfully' });
+            res.status(201).json({message: 'Sync data stored successfully'});
         } catch (error) {
             next(error);
         }
@@ -101,7 +107,7 @@ export default class SyncController {
             const rootDir = process.env.MORTAR_ROOT_DIRECTORY as string;
 
             if (!fs.existsSync(variablesFilePath) || !fs.existsSync(variableSetsFilePath)) {
-                return res.status(404).json({ message: 'Variables or Variable Sets not found' });
+                return res.status(404).json({message: 'Variables or Variable Sets not found'});
             }
 
             const variables = JSON.parse(fs.readFileSync(variablesFilePath, 'utf-8'));
@@ -167,6 +173,24 @@ export default class SyncController {
                 fonts = JSON.parse(fs.readFileSync(fontsFilePath, 'utf-8'));
             }
 
+            // Fetch files from the public directory
+            const publicDir = process.env.MORTAR_PUBLIC_DIRECTORY as string;
+            const files = [];
+            if (fs.existsSync(publicDir)) {
+                const publicFiles = fs.readdirSync(publicDir);
+                for (const file of publicFiles) {
+                    const filePath = path.join(publicDir, file);
+                    const fileStats = fs.statSync(filePath);
+                    const isImage = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'].includes(path.extname(file).toLowerCase());
+                    files.push({
+                        name: path.basename(file, path.extname(file)),
+                        extension: path.extname(file),
+                        size: fileStats.size,
+                        thumbnail: isImage ? `/files/download/${file}` : null
+                    });
+                }
+            }
+
             const data: APISyncData = {
                 variables,
                 variableSets,
@@ -174,11 +198,13 @@ export default class SyncController {
                 instances,
                 styles: [],
                 pages,
-                fonts
+                fonts,
+                files
             };
 
             res.status(200).json(data);
-        } catch (error) {
+        } catch
+            (error) {
             next(error);
         }
     }

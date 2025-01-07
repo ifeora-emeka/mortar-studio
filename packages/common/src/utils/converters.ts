@@ -4,19 +4,22 @@ import {MortarVariable} from "../schemas/variables.schema.js";
 /**
  * Converts a MortarStyle object to an array of Tailwind CSS class strings.
  *
- * This function processes the given MortarStyle object and generates an array of Tailwind CSS class strings.
- * It handles different style modes (default, dark, hover, focus, etc.) and breakpoints (default, md, lg, xl, etc.).
+ * This function processes the given MortarStyle object and generates an array of
+ * Tailwind CSS class strings. It handles different style modes (default, dark, hover,
+ * focus, etc.) and breakpoints (default, md, lg, xl, etc.).
  *
  * The function performs the following steps:
  * 1. Iterates over each breakpoint and mode in the MortarStyle object.
  * 2. For each style property, it checks if the value is a reference to a variable.
- * 3. If the value is a reference, it retrieves the actual value from the provided variables array.
+ * 3. If the value is a reference, it retrieves the actual value from the provided
+ * variables array.
  * 4. Formats the style property key from camelCase to kebab-case.
  * 5. Wraps the value in square brackets to create a Tailwind CSS class string.
  * 6. Adds the generated class string to the classList array.
  *
  * @param {MortarStyle} style - The MortarStyle object containing style properties.
- * @param {MortarVariable[]} [variables] - An optional array of MortarVariable objects for resolving variable references.
+ * @param {MortarVariable[]} [variables] - An optional array of MortarVariable objects
+ *     for resolving variable references.
  * @returns {string[]} An array of Tailwind CSS class strings.
  */
 export const convertMortarStyleToTailwindClasses = (style: MortarStyle, variables?: MortarVariable[]): string[] => {

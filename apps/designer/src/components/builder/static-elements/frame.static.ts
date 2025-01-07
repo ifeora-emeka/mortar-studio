@@ -14,8 +14,9 @@ export function staticFrame(): MortarElement {
         tailwindStyles: {
             default: {
                 default: {
-                    bg: '#EFF6FF',
-                    p: "30px"
+                    $bg: 'bg-[#EFF6FF]',
+                    w: "100%",
+                    p: "1rem"
                 },
                 dark: {},
                 hover: {},

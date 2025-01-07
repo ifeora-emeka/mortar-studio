@@ -1,11 +1,11 @@
-import express, { Request, Response } from 'express';
+import express, {Request, Response} from 'express';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { allRoutes } from './routes.js';
-import { Routes } from '../types/route.types.js';
+import {fileURLToPath} from 'url';
+import {allRoutes} from './routes.js';
+import {Routes} from '../types/route.types.js';
 import cors from 'cors';
 import fs from 'fs';
-import { LOCAL_DEV } from "../config/app.config.js";
+import {LOCAL_DEV} from "../config/app.config.js";
 import createStaticFiles from "../bootstrap/index.bootstrap.js";
 
 type MortarStudioServerConfig = {
@@ -21,10 +21,12 @@ export class MortarStudioServer {
 
         if (config?.rootDir) {
             process.env.MORTAR_ROOT_DIRECTORY = config.rootDir;
+            process.env.MORTAR_PUBLIC_DIRECTORY = path.resolve(config.rootDir, '../public');
         } else {
             const __filename = fileURLToPath(import.meta.url);
             const __dirname = path.dirname(__filename);
             process.env.MORTAR_ROOT_DIRECTORY = path.resolve(__dirname, '../src');
+            process.env.MORTAR_PUBLIC_DIRECTORY = path.resolve(__dirname, '../public');
         }
 
         const __filename = fileURLToPath(import.meta.url);
@@ -34,10 +36,8 @@ export class MortarStudioServer {
 
         const srcDir = process.env.MORTAR_ROOT_DIRECTORY;
         if (!fs.existsSync(srcDir)) {
-            fs.mkdirSync(srcDir, { recursive: true });
+            fs.mkdirSync(srcDir, {recursive: true});
             console.log('src directory created');
-        } else {
-            console.log('src directory already exists');
         }
 
         this.initializeMiddlewares();
@@ -62,7 +62,7 @@ export class MortarStudioServer {
 
     private initializeMiddlewares() {
         this.app.use(express.json());
-        this.app.use(express.urlencoded({ extended: true }));
+        this.app.use(express.urlencoded({extended: true}));
         this.app.use(cors());
     }
 }

@@ -10,6 +10,7 @@ import {MortarStyle} from "./styles.schema.js";
 import {CreateMortarPageSchema, MortarPage} from "./page.schema.js";
 import { z } from 'zod';
 import {GoogleFont} from "./config.schema.js";
+import {MortarFile} from "./files.schema.js";
 
 export const APISyncDataSchema = z.object({
     components: z.array(CreateComponentSchema),
@@ -28,4 +29,5 @@ export interface APISyncData {
     styles: MortarStyle[];
     pages: MortarPage[];
     fonts: GoogleFont[];
+    files: MortarFile[];
 }

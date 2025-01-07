@@ -8,7 +8,7 @@ export default function BackgroundColorProperty() {
 
     return (
         <PropertySection
-            label={'Background color'}
+            label={'Color'}
             onVariableConnect={handleSave}
             variable={variable}
         >

@@ -16,6 +16,7 @@
     "./schema/page": "./dist/schemas/page.schema.js",
     "./schema/component": "./dist/schemas/components.schema.js",
     "./schema/element": "./dist/schemas/elements.schema.js",
+    "./schema/files": "./dist/schemas/files.schema.d.ts",
     "./schema/config": "./dist/schemas/config.schema.js"
   },
   "devDependencies": {

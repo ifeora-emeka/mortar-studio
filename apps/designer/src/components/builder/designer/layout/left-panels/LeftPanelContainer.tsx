@@ -7,15 +7,22 @@ import {Plus} from "lucide-react";
 import {Button} from "@/components/ui/button.tsx";
 
 
-export default function LeftPanelContainer({children, show, headerChildren, onAdd}: {
-    children: React.ReactNode;
-    show?: boolean;
-    headerChildren?: React.ReactNode,
-    onAdd?: () => void
-}) {
+export default function LeftPanelContainer(
+    {
+        children,
+        show,
+        headerChildren,
+        onAdd,
+        onSearch
+    }: {
+        children: React.ReactNode;
+        show?: boolean;
+        headerChildren?: React.ReactNode,
+        onAdd?: () => void
+        onSearch?: (keyword: string) => void;
+    }) {
     const {state: {activePanel}} = useLeftPanelContext();
     const [ready, setReady] = React.useState(false);
-
 
     useEffect(() => {
         if (!show) {
@@ -35,19 +42,28 @@ export default function LeftPanelContainer({children, show, headerChildren, onAd
                     "left-[-20rem]": !show
                 })}>
                 {ready && <header
-                    className="h-header max-h-header border-b flex items-center px-sm gap-default">
+                    className="h-header max-h-header border-b flex items-center px-sm gap-default"
+                >
                     <div className="flex-1">
-                        <Input placeholder={`Search ${activePanel}...`}
-                               className={'bg-accent hover:shadow-sm'}/>
+                        <Input
+                            onChange={e => {
+                                if (onSearch) {
+                                    onSearch(e.target.value)
+                                }
+                            }}
+                            placeholder={`Search ${activePanel}...`}
+                            className={'bg-accent hover:shadow-sm'}
+                        />
                     </div>
+                    {headerChildren}
                     {
                         onAdd &&
                         <Button variant={'outline'} size={'icon'} onClick={onAdd}>
                             <Plus/>
                         </Button>
                     }
-                    {headerChildren}
-                </header>}
+                </header>
+                }
                 <ScrollArea
                     className="h-[--side-bar-body-height] max-h-[--side-bar-body-height] bg-card">
                     {ready ? children : null}

@@ -9,7 +9,7 @@ import {
 import { useElementStyle } from "@/components/builder/hooks/style.hook";
 
 export default function BorderStyleProperty() {
-    const { value, handleSave, variable } = useElementStyle("borderStyle");
+    const { value, handleSave, variable } = useElementStyle("$borderStyle");
 
     const borderStyles = [
         { value: "border-none", label: "None" },

@@ -1,5 +1,6 @@
 import {createContext, useContext, useState, ReactNode, useEffect} from 'react';
 import {MortarComponent} from '@repo/common/schema/component';
+import {MortarFile} from '@repo/common/schema/files';
 import {MortarElementInstance} from '@repo/common/schema/instance';
 import {MortarStyle} from '@repo/common/schema/styles'
 import {MortarVariable, MortarVariableSet} from '@repo/common/schema/variables';
@@ -23,6 +24,7 @@ interface PreviewState {
     activePage: MortarPage | null;
     activePageInstances: MortarElementInstance[];
     activeComponents: MortarComponent[];
+    files: MortarFile[],
     mode: Mode;
     activeElements: MortarElement[];
     activeBreakpoint: 'default' | 'md'| 'lg' | 'xl';
@@ -67,7 +69,8 @@ export const PreviewProvider = ({children}: { children: ReactNode }) => {
         mode: 'system',
         activeBreakpoint: 'default',
         activeState: 'default',
-        fonts: []
+        fonts: [],
+        files: []
     });
 
 

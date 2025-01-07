@@ -228,7 +228,8 @@
     "lightValue": "0.25rem",
     "darkValue": "0.25rem",
     "setID": "sizes",
-    "isStatic": true
+    "isStatic": true,
+    "new": false
   },
   {
     "id": "spacing-medium",
@@ -239,7 +240,8 @@
     "lightValue": "0.5rem",
     "darkValue": "0.5rem",
     "setID": "sizes",
-    "isStatic": true
+    "isStatic": true,
+    "new": false
   },
   {
     "id": "spacing-large",
@@ -380,7 +382,7 @@
     "slug": "accent-color-1",
     "name": "50",
     "type": "color",
-    "lightValue": "#f3e8ff",
+    "lightValue": "#5ad733",
     "darkValue": "#f3e8ff",
     "setID": "accent-color",
     "isStatic": true,
