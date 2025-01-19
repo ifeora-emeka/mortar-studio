@@ -9,6 +9,8 @@ import StylePropertyGrid
     from "@/components/builder/designer/layout/right-panels/StylePropertyGrid.tsx";
 import BackgroundOpacity
     from "@/components/builder/designer/layout/right-panels/StylingRightPanel/background/BackgroundOpacity.tsx";
+import BackgroundImageProperty
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/background/BackgroundImageProperty.tsx";
 
 export default function BackgroundProperty() {
     return <>
@@ -21,6 +23,7 @@ export default function BackgroundProperty() {
                     <BackgroundColorProperty/>
                     <BackgroundOpacity />
                 </StylePropertyGrid>
+                <BackgroundImageProperty />
             </AccordionContent>
         </AccordionItem>
     </>

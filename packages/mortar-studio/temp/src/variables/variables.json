@@ -228,8 +228,7 @@
     "lightValue": "0.25rem",
     "darkValue": "0.25rem",
     "setID": "sizes",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "spacing-medium",
@@ -240,8 +239,7 @@
     "lightValue": "0.5rem",
     "darkValue": "0.5rem",
     "setID": "sizes",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "spacing-large",
@@ -274,8 +272,7 @@
     "lightValue": "2rem",
     "darkValue": "2rem",
     "setID": "sizes",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "spacing-3xlarge",
@@ -382,11 +379,10 @@
     "slug": "accent-color-1",
     "name": "50",
     "type": "color",
-    "lightValue": "#5ad733",
+    "lightValue": "#f3e8ff",
     "darkValue": "#f3e8ff",
     "setID": "accent-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "accent-color-2",
@@ -408,8 +404,7 @@
     "lightValue": "#d8b4fe",
     "darkValue": "#d8b4fe",
     "setID": "accent-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "accent-color-4",
@@ -431,8 +426,7 @@
     "lightValue": "#a855f7",
     "darkValue": "#a855f7",
     "setID": "accent-color",
-    "isStatic": true,
-    "new": false
+    "isStatic": true
   },
   {
     "id": "accent-color-6",
@@ -488,16 +482,5 @@
     "darkValue": "#3b0764",
     "setID": "accent-color",
     "isStatic": true
-  },
-  {
-    "id": "01943da2-a5c6-70a4-a9c2-e2e5f1925836",
-    "name": "text",
-    "index": 44,
-    "type": "color",
-    "lightValue": "#ffffff",
-    "darkValue": null,
-    "setID": "semantic-color",
-    "slug": "variable-44",
-    "new": false
   }
 ]

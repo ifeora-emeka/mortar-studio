@@ -1,6 +1,6 @@
 {
-  "id": "6x9ua1736201698240",
-  "name": "About us section",
+  "id": "tojya1736293683882",
+  "name": "Home hero section",
   "elements": [
     {
       "htmlTag": "div",
@@ -8,16 +8,17 @@
       "attributes": {},
       "children": [],
       "index": 0,
-      "id": "eikwo",
+      "id": "jf8cr",
       "style": {},
       "textContent": null,
       "name": "frame",
       "tailwindStyles": {
         "default": {
           "default": {
-            "bg": "ref::variables::secondary-color-1",
-            "p": "30px",
-            "h": "30rem"
+            "bg": "#EFF6FF",
+            "w": "100%",
+            "p": "1rem",
+            "$bg": "#cc2525"
           },
           "dark": {},
           "hover": {},
