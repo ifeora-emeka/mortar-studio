@@ -12,7 +12,7 @@ interface APIConfigState {
 
 interface APIContextProps {
     state: APIConfigState;
-    getSync: (url: string) => Promise<APISyncData>;
+    getSync: () => Promise<APISyncData>;
 }
 
 const APIContext = createContext<APIContextProps | undefined>(undefined);

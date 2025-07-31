@@ -15,15 +15,54 @@
       "tailwindStyles": {
         "default": {
           "default": {
-            "bg": "#EFF6FF",
+            "bg": "ref::variables::semantic-color-error",
             "w": "100%",
             "p": "1rem",
-            "$bg": "#cc2525"
+            "$bg": "#cc2525",
+            "h": "100%"
           },
           "dark": {},
           "hover": {},
           "focus": {},
           "active": {}
+        }
+      }
+    },
+    {
+      "htmlTag": "h1",
+      "parent_element_id": "jf8cr",
+      "attributes": {},
+      "children": [],
+      "index": 0,
+      "id": "d90f15d7-7698-411d-987a-3a6b02dff767",
+      "style": {},
+      "textContent": "Get Started Today",
+      "name": "heading",
+      "tailwindStyles": {
+        "default": {
+          "default": {
+            "textSize": "10rem"
+          }
+        }
+      }
+    },
+    {
+      "htmlTag": "img",
+      "parent_element_id": "jf8cr",
+      "attributes": {
+        "src": "https://picsum.photos/300/400",
+        "alt": "Placeholder image 150x150",
+        "className": "w-[150px] h-[150px]"
+      },
+      "children": [],
+      "index": 1,
+      "id": "afc3ec18-ae0c-4464-bbf3-4e8bcc99e11d",
+      "style": {},
+      "textContent": null,
+      "name": "element",
+      "tailwindStyles": {
+        "default": {
+          "default": {}
         }
       }
     }

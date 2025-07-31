@@ -1,3 +1,4 @@
+//todo: delete this component
 import {Ellipsis, SquareArrowOutUpRight} from "lucide-react";
 
 type Props = {

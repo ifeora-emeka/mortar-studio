@@ -1,4 +1,4 @@
-import {useState, useMemo} from "react";
+import {useState, useMemo, useRef} from "react";
 import LeftPanelContainer
     from "@/components/builder/designer/layout/left-panels/LeftPanelContainer.tsx";
 import {useLeftPanelContext} from "@/components/builder/context/left-panel.context.tsx";
@@ -10,12 +10,15 @@ import {LOCAL_API_URL} from "@/components/builder/config/api.config.ts";
 import {cn} from "@/lib/utils.ts";
 import {toast} from "@/hooks/use-toast.ts";
 import axios from "axios";
+import {useAPIContext} from "@/components/builder/context/api.context.tsx";
 
 export default function FilesLeftPanel() {
     const {state: {activePanel}} = useLeftPanelContext();
     const {state: {files}} = usePreviewContext();
+    const {getSync} = useAPIContext();
     const [keyword, setKeyword] = useState('');
     const [isGridLayout, setIsGridLayout] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const filteredFiles = useMemo(() => {
         return files.filter(file =>
@@ -25,6 +28,39 @@ export default function FilesLeftPanel() {
 
     const toggleLayout = () => {
         setIsGridLayout(prev => !prev);
+    };
+
+    const handleAdd = () => {
+        fileInputRef.current?.click();
+    };
+
+    const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        const files = event.target.files;
+        if (files) {
+            const formData = new FormData();
+            for (let i = 0; i < files.length; i++) {
+                formData.append('files', files[i]);
+            }
+            try {
+                await axios.post(`${LOCAL_API_URL}/files`, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                });
+                getSync()
+                toast({
+                    title: "Upload success",
+                    description: "Files uploaded successfully",
+                });
+            } catch (error) {
+                console.error('Error uploading files:', error);
+                toast({
+                    title: "Upload error",
+                    description: "Error uploading files. Please try again.",
+                    variant: 'destructive'
+                });
+            }
+        }
     };
 
     return (
@@ -41,10 +77,10 @@ export default function FilesLeftPanel() {
                     {isGridLayout ? <LayoutList/> : <LayoutGrid/>}
                 </Button>
             }
-            onAdd={() => {
-                // Add file functionality here
-            }}
+            onAdd={handleAdd}
         >
+            <input type={'file'} ref={fileInputRef} hidden onChange={handleFileChange}
+                   multiple/>
             <div
                 className={`flex flex-col pb-20 ${isGridLayout ? 'grid grid-cols-2' : ''}`}>
                 {filteredFiles.map((file, i) => (
@@ -85,12 +121,12 @@ const EachFile = ({file, isGridLayout}: { file: MortarFile; isGridLayout: boolea
                 "flex-col items-center": isGridLayout
             })}
         >
-           <button
-               onClick={handleDelete}
-               className={'absolute top-default right-default text-xs bg-accent p-sm shadow-md rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300'}
-           >
-               <Trash className={'h-4 w-4'} />
-           </button>
+            <button
+                onClick={handleDelete}
+                className={'absolute top-default right-default text-xs bg-accent p-sm shadow-md rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300'}
+            >
+                <Trash className={'h-4 w-4'}/>
+            </button>
             <div
                 className={cn(` border rounded-md flex items-center justify-center bg-background overflow-hidden`, {
                     "w-full h-[100px]": isGridLayout,
@@ -121,4 +157,3 @@ const EachFile = ({file, isGridLayout}: { file: MortarFile; isGridLayout: boolea
         </div>
     );
 };
-

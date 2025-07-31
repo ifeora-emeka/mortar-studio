@@ -1,7 +1,7 @@
 import RightPanelContainer from "../RightPanelContainer.tsx";
 import {useRightPanelContext} from "@/components/builder/context/right-panel.context.tsx";
 import ElementSettings
-    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/ElementSettings.tsx";
+    from "@/components/builder/designer/layout/right-panels/StylingRightPanel/ElementSettings/ElementSettings.tsx";
 import {
     Accordion,
 } from "@/components/ui/accordion.tsx";
